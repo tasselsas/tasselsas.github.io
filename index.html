@@ -241,13 +241,14 @@
   #footertext{
       font-size: 24px;
       line-height: 24px;
-      display: inline-block;
       padding-top: 50px;
       padding-bottom: 50px;
       margin: 0;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: normal;
       color: #444444;
+      text-align: center;
+      display: block;
   }
   #eventcontainer{
       width: 100%;
@@ -406,6 +407,11 @@
   #sidebar h3 {
       font-size: 13px;
   }
+  #developer{
+      float: left;
+      position: relative;
+      top: 100px;
+  }
   @media screen and (min-width: 760px) {
       #menu {
           display: none;
@@ -533,9 +539,12 @@
       }
   }
   @media screen and (max-width: 528px) {
-      #footer{
-          height: auto;
-      }
+        #footer{
+            height: auto;
+        }
+        #developer{
+            top: 120px;
+        }
   }
   @media screen and (max-width: 980px) {
       #righttext{
@@ -810,6 +819,7 @@
            </div>
         </div>
     </div>
+    <span id='developer'>Developed by Kohei Sanno</span>
     <div id=footer>
         <h2 id='footertext'>For questions or inquiries, contact tasselsas@gmail.com.</h2>
     </div>

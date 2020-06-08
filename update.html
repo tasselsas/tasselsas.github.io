@@ -48,21 +48,30 @@
         text-align: center;
     }
     #footer{
-        width: 100%;
-        background-color: rgb(192, 192, 192);
-        display: block;
-        text-align: center;
-        height: 120px;
-        margin: 0;
-        padding: 0;
+      width: 100%;
+      background-color: rgb(192, 192, 192);
+      display: block;
+      text-align: center;
+      height: auto;
+      margin: 0;
+      padding: 0;
     }
     #footertext{
-        font-size: 24px;
-        line-height: 24px;
-        display: inline-block;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        margin: 0;
+      font-size: 24px;
+      line-height: 24px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: normal;
+      color: #444444;
+      text-align: center;
+      display: block;
+    }
+    #developer{
+        float: left;
+        position: relative;
+        top: 100px;
     }
     #centered{
         margin: 0 auto;
@@ -173,6 +182,9 @@
         #footer{
             height: auto;
         }
+        #developer{
+            top: 120px;
+        }
     }
     </style>
 </head>
@@ -232,6 +244,7 @@ Joji
         <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
     
     </div>
+    <span id='developer'>Developed by Kohei Sanno</span>
     <div id=footer>
         <h2 id='footertext'>For questions or inquiries, contact tasselsas@gmail.com.</h2>
     </div>
