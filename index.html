@@ -599,7 +599,8 @@
       #viddesktop{
         display: block;
         position: static;
-        width: 100%;
+        width: 95%;
+        margin-left: 5% ;
         -ms-transform: none;
         transform: none;
       }
@@ -607,10 +608,24 @@
           position: static;
           float: right;
           width: 48%;
-          margin-top: 20px;
-          -ms-transform: none;
-          transform: none;
+          -ms-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
       }
+  }
+  @media screen and (max-width: 720px) and (min-width:640px){
+    .rightparent{
+        margin-top: 10%;
+    }
+  }
+  @media screen and (max-width: 850px) and (min-width:720px){
+    .rightparent{
+        margin-top: 5%;
+    }
+  }
+  @media screen and (max-width: 980px) and (min-width:850px){
+    .rightparent{
+        margin-top: 2%;
+    }
   }
   </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -626,10 +641,12 @@
             if (w<940){
                 $('li').css({'padding':"0 "+(w*0.025).toString()+"px"});
             }
-            if (w<980){
+            if (w<980 && w>640){
               $("#desktopparent").insertBefore("#before");
             }
-            
+            if (w<640){
+              $("#desktopparent").insertAfter("#before");
+            }
             
             $(window).resize(function(){
                 var w = $(window).width();
@@ -642,10 +659,13 @@
                 if (w<940){
                     $('li').css({'padding':"0 "+(w*0.025).toString()+"px"});
                 }
-                if (w<980){
+                if (w<640){
+                  $("#desktopparent").insertAfter("#before");
+                }
+                if (w<980 && w>640){
                   $("#desktopparent").insertBefore("#before");
                 }
-                if (w>980){
+                if (w>=980){
                   $("#desktopparent").insertAfter("#vidParent");
                 }
             });
@@ -746,35 +766,35 @@
     <div class="bookmark" id="about"></div>
     <div id="mission">
         <div id=svg5></div>
-        <div class=leftalign id='vidParent'>
+        <div class=leftalign>
             <h1 class='merri'>
                 About TASSEL
             </h1>
-            <h3 class=normal id='before'>
+            <img src="https://i.ibb.co/pxfh0b5/Webp-net-resizeimage.jpg" alt="Webp-net-resizeimage" border="0" class='mobile'>
+            <h3 class=normal>
               TASSEL (“Teaching And Sharing Skills to Enrich Lives”) is a U.S. 501(c)(3) public charity established in 2012. Initially TASSEL's sole activity was having U.S.-based, trained volunteers provide free English classes over video conferencing to the poor in rural Cambodia. But it has quickly evolved to include actively encouraging, recruiting, training and funding high potential Cambodian adults to become teachers as well as providing food aid, medical care access and other support services to the poorest families who have limited capabilities to earn income. More information about our organization can be found at tasselcambodia.org.
             </h3>
         </div>
-        <div class=rightparent id='desktopparent'>
-          <iframe id='viddesktop' width="560" height="280" src="https://www.youtube.com/embed/zGZfM13dKGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class=rightparent>
+          <img src="https://i.ibb.co/pxfh0b5/Webp-net-resizeimage.jpg" alt="Webp-net-resizeimage" border="0" class='rightalign'>
         </div>
         <div id=svg6></div>
     </div>
     <div class="bookmark" id="eventbookmark"></div>
     <div id="eventcontainer">
         <div id='event'>
-            <div class=leftalign>
-                <h1 class='merri'>
+            <div class=leftalign id='vidParent'>
+                <h1 class='merri' id='before'>
                     About the Event
                 </h1>
-                <img src="https://i.ibb.co/pxfh0b5/Webp-net-resizeimage.jpg" alt="Webp-net-resizeimage" border="0" class='mobile'>
                 <h3 class=normal>
                   The TASSEL SAS Gala is an annual event hosted by the TASSEL chapter at SAS, which engages in direct service, indirect service, research, and advocacy in order to make an indelible impact in the lives of the Cambodians we serve. Over the past four years, the TASSEL SAS Gala has raised over 200,000 SGD, all of which was used to enrich the lives of our students and their families. Through this event, we hope not only to raise funds, but also to spread TASSEL’s mission and shine a light on the lives of those we serve. 
                 </h3>
                 <h3></h3>
                 <h3 id=strong>More on the TASSEL 2019 Gala ></h3>
             </div>
-            <div class=rightparent>
-                <img src="https://i.ibb.co/pxfh0b5/Webp-net-resizeimage.jpg" alt="Webp-net-resizeimage" border="0" class='rightalign'>
+            <div class=rightparent id='desktopparent'>
+              <iframe id='viddesktop' width="560" height="290" src="https://www.youtube.com/embed/zGZfM13dKGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
