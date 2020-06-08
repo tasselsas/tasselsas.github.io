@@ -1,14 +1,744 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE HTML>
+<html lang=en>
+<head>
     <title>TASSEL SAS Gala</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TASSEL 2020 Gala">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″ />
     <link rel="icon" href='https://static.wixstatic.com/media/dc5aad_3ff951301b3543479d847e185f5e5abd~mv2.png/v1/fill/w_73,h_61,al_c,q_85,usm_0.66_1.00_0.01/TASSEL%20LOGO-final%20draft.webp'>
-  </head>
-  <body>
-<iframe src="https://script.google.com/macros/s/AKfycbyspA0tEL2FpdWOdQzIGZ0T9Yce6qX6O-8-V6wmXPZTpN_JVtjW/exec" style="position:absolute; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
-    Your browser doesn't support iframes
-</iframe>
-  </body>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="tass.js" type="text/javascript"></script>
+    <base target="_top">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+      @import url('https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display&family=Raleway&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+  
+  
+  * {
+      font-family: 'Noto Sans HK', sans-serif;
+      box-sizing: border-box;
+  }
+  #backgroundBox{
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0%;
+    left:0%;
+    margin:0px;
+    padding:0px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  body, html{
+      margin: 0;
+      padding: 0;
+  }
+  .icon {
+      right: 50px;
+      display: block;
+      top: 15px;
+      z-index: 8;
+      height: 30px;
+      width: 30px;
+      transition: transform 0.1s ease;
+      position: fixed;
+  }
+ #paypal-button-container{
+     display:none;
+  }
+ #donatepage{
+    position:relative;
+    top: 200px;
+  }
+  .mobile{
+      margin: 0 auto;
+      display: none;
+  }
+  .bookmark{
+     position:relative;
+     bottom: 80px;
+  }
+  #eventbookmark{
+     position:relative;
+     bottom: 80px;
+  }
+  #home{
+     position:relative;
+     bottom: 130px;
+  }
+  .merri{
+      font-family: 'Merriweather', serif;
+      font-size: 34px;
+      margin-bottom: 20px;
+  }
+  #close {
+      display: none;
+      width: 30px;
+      height: 30px;
+  }
+  .normal{
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+  }
+  #strong{
+      font-weight:700;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      margin-top: 10px;
+  }
+  #donatetext{
+      position:relative;
+      color: white;
+  }
+  #banner{
+    width: 100%;
+    height: 330px;
+    background: rgb(23, 68, 130);
+    margin-top: 150px;
+  }
+
+  #nav {
+      width: 100%;
+      height: 10px;
+      background-color: (253, 253, 253);
+      position: fixed;
+      z-index: 5;
+      text-align: center;
+  }
+  #purchase {
+      margin: 0 auto;
+      width: 150px;
+      height: 50px;
+      position: relative;
+      top: 80px;
+      background-color: rgb(241, 208, 76);
+      border-radius: 6px;
+  }
+  #purchase:hover{
+    background-color: rgb(231, 197, 59);
+  }
+  #purchaseanchor:hover{
+    text-decoration: none;
+  }
+  #purchase h3 {
+      font-family: 'Noto Sans HK', sans-serif;
+      text-align: center;
+      font-size: 16px;
+      padding: 13px 0;
+  }
+  #overlay {
+      width: 100%;
+      height: 100%;
+      top:0;
+      position: fixed;
+      background-color: rgb(0, 0, 0, 0.6);
+      display: none;
+      z-index: 8;
+      text-align: center
+  }
+  .overlaytxt{
+      color: white;
+      line-height: 90px;
+      position: relative;
+      top: 70px;
+  }
+  .overlaytxt a{
+      color: white;
+      font-family: 'Merriweather', serif;
+  }
+  #overlaytxt a {
+      color: white;
+  }
+  .stopscroll {
+      overflow:hidden;
+  }
+  #ban {
+      position:absolute;
+      top: 8%;
+      left: 95%;
+      -ms-transform: translate(-95%, 0%);
+      transform: translate(-95%, 0%);
+      z-index: 3;
+      width: 70%;
+  }
+  #ban h1{
+      font-size: 28px;
+      color: white;
+      font-family: 'Merriweather', serif;
+  }
+  #donateright{
+      display: inline-block;
+      height: auto;
+      width: 360px;
+      position: relative;
+      top: 50%;
+      left: 20%;
+      -ms-transform: translate(-20%, -50%);
+      transform: translate(-20%, -50%);
+      color: white;
+  }
+  .leftalign{
+      width: 50%;
+      display: inline-block;
+      margin:30px;
+  }
+  .leftalign1{
+      width: 50%;
+      display: block;
+  }
+  .rightalign{
+      position: relative;
+      width: 75%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-90%, -50%);
+  }
+  .rightparent{
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+  }
+  
+  .rightalign3{
+      position: relative;
+      width: 150px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-90%, -50%);
+  }
+  #footer{
+      width: 100%;
+      background-color: rgb(192, 192, 192);
+      display: block;
+      text-align: center;
+      height: auto;
+      margin: 0;
+      padding: 0;
+  }
+  #footertext{
+      font-size: 24px;
+      line-height: 24px;
+      display: inline-block;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: normal;
+      color: #444444;
+  }
+  #eventcontainer{
+      width: 100%;
+      margin: 50px auto 0;
+      background-color: rgb(255, 227, 117);
+  }
+  #right{
+      height:100%;
+      width:54%;
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 10px;
+}
+  #left{
+      width: 45%;
+      display: inline-block;
+      height: 100%;
+  }
+  #righttext{
+      text-align: center;
+      color:rgb(253, 253, 253);
+      position: relative;
+      top: 60px;
+      font-family: "Raleway";
+      font-size: 40px;
+  }
+  #event {
+      width: 82%;
+      margin: 0 auto;
+      height: 100%;
+      position: relative;
+  }
+  #centered{
+      margin: 0 auto;
+  }
+  #mission{
+      position: relative;
+      width: 82%;
+      height: 100%;
+      margin: 50px auto 0px;
+  }
+  #donate{
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin: 50px auto;
+      background-color: rgb(23, 68, 130);
+  }
+  ul.nav1 {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 0px;
+      width: 100%;
+      transition: top 0.2s;
+      z-index: 5;
+      background-color: (253, 253, 253);
+  }
+  .navi {
+      font-size: 18px;
+      display: inline-block;
+      font-family:'Playfair Display';
+      background-color: (253, 253, 253);
+      width: 120px;
+  }
+  
+  #central{
+      margin:0 auto;
+      display: block;
+      width: 60px;
+      position:relative;
+      top: 15px;
+  }
+  
+  li {
+      display: inline-block;
+      padding: 0 70px;
+      background-color: (253, 253, 253);
+      text-align: center;
+      margin: 0 auto;
+  }
+  a {
+      text-decoration: none;
+      color: black;
+  }
+  
+  a:hover {
+      text-decoration: underline;
+      color: black;
+  }
+  #background{
+      top: 0px;
+      height: 95px;
+      width: 100%;
+      background-color: rgb(253, 253, 253);
+      position:fixed;
+      z-index: 4;
+  }
+  #svg{
+      top:90px;
+      position: fixed;
+      z-index: 5;
+      background-color: rgb(178, 147, 24);
+      width: 100%;
+      height: 8px;
+  }
+  #svg2{
+      top: 98px;
+      position: fixed;
+      z-index: 5;
+      background-color: rgb(8, 47, 100);
+      width: 100%;
+      height: 8px;
+  }
+  #svg3{
+      position: relative;
+      z-index: 1;
+      background-color: rgb(199, 208, 216);
+      width: 100%;
+      margin-top: 50px;
+      height: 230px;
+  }
+  #svg4{
+      position: relative;
+      top: 7px;
+      margin-left: -7px;
+      z-index: 2;
+      height: 216px;
+      width: 100%;
+      background-color: rgb(23, 68, 130);
+  }
+  #svg5{
+      position: absolute;
+      margin: 0 auto;
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: rgb(178, 147, 24);
+  }
+  #svg6{
+      position: relative;
+      left: 0px;  
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: rgb(23, 68, 130);
+  }
+  #donateright h2{
+      color: rgb(255, 227, 117);
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 500;
+  }
+  #donateright h2:hover{
+      text-decoration: underline;
+      color: rgb(255, 227, 117);
+  }
+  #sidebar h3 {
+      font-size: 13px;
+  }
+  @media screen and (min-width: 760px) {
+      #menu {
+          display: none;
+      }
+  }
+  @media screen and (max-width: 350px) {
+      .ban{
+          font-size:1em;
+          top: 90px;
+      }
+  }
+  @media screen and (max-width: 760px) {
+      #footertext{
+      font-size: 20px;
+      }
+      .navi {
+      display: none;
+      }
+      .merri{
+       margin: 15px 0;
+      }
+      .normal{
+       margin: 10px 0 20px 0;
+      }
+      #strong{
+      margin-bottom: 20px;
+      }
+      #left{
+      width: 65%;
+      height: 50%;
+      margin: 0 auto;
+      display: block;
+      }
+      #right{
+      width: 100%;
+      height: 50%;
+      margin-bottom: 200px;
+      display: block;
+      }
+      #righttext{
+      top: 40px;
+      }
+      #purchase{
+      top: 60px;
+      }
+      #banner{
+      height: 500px;
+      margin-top: 110px;
+      }
+      .ban{
+          text-align: center;
+      }
+      .rightalign, .rightalign3 {
+          display:none;
+      }
+      #central{
+          top: 3px;
+      }
+      #svg{
+      top:62px;
+      }
+      #svg2{
+      top: 70px;
+      position: fixed;
+      z-index: 5;
+      }
+      #svg3{
+          width: 100%;
+          border-style: solid;
+          border-color: rgb(199, 208, 216);
+          border-width: 7px;
+          background-color: transparent;
+          top: 20px;
+      }
+      #svg4{
+          background-color: transparent;
+      }
+      #ban h1{
+          text-align: center;
+          font-size: 24px;
+      }
+      #ban {
+          top: 30%;
+          left: 0%;
+          -ms-transform: translate(0%, -30%);
+          transform: translate(0%, -30%);
+          width: 100%;
+          margin-left: 7px;
+          margin-top: 0px;
+      }
+      #background{
+      height: 70px;
+      }
+      #donatetext{
+      margin-right: 6px;
+      }
+      .leftalign1{
+          width: 100%;
+      }
+      #donateright{
+          top: 50%;
+          left: 0%;
+          -ms-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+      }
+      .rightparent{
+         width: 80%;
+      }
+      #form, #selection{
+          width: 220px;
+      }
+      #formtitle{
+         font-size: 18px;
+     }
+  }
+  @media screen and (max-width: 450px) {
+      #donatetext{
+          font-size:20px;
+      }
+      #donateright h2{
+          font-size:16px;
+      }
+      .merri{
+          font-size: 28px;
+      }
+  }
+  @media screen and (max-width: 528px) {
+      #footer{
+          height: auto;
+      }
+  }
+  @media screen and (max-width: 1100px) {
+      #righttext{
+          font-size: 30px;
+      }
+      .ban{
+          font-size:22px;
+          top: 90px;
+      }
+      .rightalign{
+          display: none;
+      }
+  }
+  @media screen and (max-width: 640px) {
+      .leftalign{
+          width: 100%;
+          margin:0;
+      }
+      .mobile{
+      display: block;
+      width: 100%;
+      text-align: center;
+      float: none;
+      margin: 20px 0;
+      }
+      #mission{
+          width: 92%; 
+      }
+      #event{
+          width: 92%;
+      }
+
+  }
+  @media screen and (max-width: 1100px) and (min-width:640px){
+      .mobile{
+          display: block;
+          width: 48%;
+          float: right;
+      }
+      .leftalign{
+          width: 98%;
+          margin: 0 1%;
+      }
+  }
+  </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){       
+            var w = $(window).width();
+            if (w>1240){
+                $('li').css({'padding':"0 "+(w*0.045).toString()+"px"});
+            }
+            if (w>940 && w<1240){
+                $('li').css({'padding':"0 "+(w*0.04).toString()+"px"});
+            }
+            if (w<940){
+                $('li').css({'padding':"0 "+(w*0.025).toString()+"px"});
+            }
+            
+            
+            
+            $(window).resize(function(){
+                var w = $(window).width();
+                if (w>1240){
+                    $('li').css({'padding':"0 "+(w*0.045).toString()+"px"});
+                }
+                if (w>940 && w<1240){
+                    $('li').css({'padding':"0 "+(w*0.04).toString()+"px"});
+                }
+                if (w<940){
+                    $('li').css({'padding':"0 "+(w*0.025).toString()+"px"});
+                }
+            });
+            
+            $('a[href*="#"]:not([href="#"])').click(function() {
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+             });
+
+    $('.icon').on('click', (event)=>{
+        $('#overlay').fadeToggle();
+        $('body').toggleClass('stopscroll');
+    })
+    $('.overlaytxt a').on('click', (event)=>{
+        $('#overlay').fadeToggle();
+        $('body').toggleClass('stopscroll');
+        if($(window).width()<=760) {
+            $('#menu').fadeToggle();
+            $('#close').fadeToggle();
+        } else {
+            $('#close').fadeToggle();
+        }
+    })
+    $('#menu').on('click', (event)=>{
+        event.preventDefault();
+        $('#menu').fadeToggle();
+        $('#close').fadeToggle();
+    })
+    $('#close').on('click', (event)=>{
+        event.preventDefault();
+        if($(window).width()<=760) {
+            $('#menu').fadeToggle();
+            $('#close').fadeToggle();
+        } else {
+            $('#close').fadeToggle();
+        }
+    })
+    $(".icon").hover(function(){
+        $(this).css({"transform": "scale(1.1)"});
+        }, function(){
+        $(this).css({"transform": "scale(1.0)"});
+    });
+        });
+
+    </script>
+</head>
+<body>
+<div id="#backgroundBox">
+    <div id='overlay'>
+        <div id='overlaytext'>
+                <h1 class=overlaytxt><a href="#home">HOME</a></h1>
+                <h1 class=overlaytxt><a href="#about">ABOUT</a></h1>
+                <h1 class=overlaytxt><a href="#eventbookmark">THE GALA</a></h1>
+                <h1 class=overlaytxt><a href='https://www.tasselsasgala.com/donate.html'>DONATE</a></h1>
+        </div>
+    </div>
+    <a href='#'><img src="https://i.ibb.co/9y4Vr1t/204478-200.png" alt="204478-200" border="0" class='icon' id='menu'><img src="https://i.ibb.co/s2RwTSX/ezgif-com-webp-to-png-1.png" alt="ezgif-com-webp-to-png-1" border="0" class='icon' id='close'></a>
+    <div id=background>
+        <div class=content>
+            <div id=nav>
+                <ul class=nav1>
+                    <li><a href="#home" class="navi defaultlink">HOME</a></li>
+                    <li><a href="#about" class="navi defaultlink">ABOUT</a></li>
+                    <li><a href="https://www.tasselsasgala.com"><img src="https://i.ibb.co/z28KS9S/ezgif-com-webp-to-png.png" alt="ezgif-com-webp-to-png" border="0" id='central'></a></li>
+                    <li><a href="#eventbookmark" class="navi defaultlink">THE GALA</a></li>
+                    <li><a href='https://tasselsas.github.io/donate.html' class="navi defaultlink">DONATE</a></li>
+                </ul>
+            </div>
+            <div id=svg></div>
+            <div id=svg2></div>
+        </div>
+    </div>
+    <div id="home"></div>
+    <div id="banner">
+        <div id=left>
+            <div id=svg3><div id=svg4>
+            <div id='ban'>
+            <h1>TASSEL SAS Gala</h1>
+            <h1>Venue: TBD</h1>
+            <h1>Date: TBD</h1>
+            </div>
+            </div></div>
+        </div>
+        <div id=right>
+            <h1 id='righttext'>THEME</h1>
+            <a id='purchaseanchor'><div id='purchase'><h3>Purchase a Ticket</h3></div></a>
+        </div>
+    </div>
+    <div class="bookmark" id="about"></div>
+    <div id="mission">
+        <div id=svg5></div>
+        <div class=leftalign>
+            <h1 class='merri'>
+                Our Mission
+            </h1>
+            <img src="https://i.ibb.co/pxfh0b5/Webp-net-resizeimage.jpg" alt="Webp-net-resizeimage" border="0" border="0" class='mobile'>
+            <h3 class=normal>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat est velit egestas dui. Ut diam quam nulla porttitor massa id neque aliquam. Mauris a diam maecenas sed. In hendrerit gravida rutrum quisque non tellus. Elit duis tristique sollicitudin nibh sit amet commodo nulla. Eget duis at tellus at urna condimentum mattis pellentesque id. Cras adipiscing enim eu turpis egestas pretium. Elementum facilisis leo vel fringilla est. Libero id faucibus nisl tincidunt eget nullam non. Consequat id porta nibh venenatis cras sed felis eget. Enim lobortis scelerisque fermentum dui. In metus vulputate eu scelerisque.
+            </h3>
+        </div>
+        <div class=rightparent>
+            <img src="https://i.ibb.co/pxfh0b5/Webp-net-resizeimage.jpg" alt="Webp-net-resizeimage" border="0" class='rightalign'>
+        </div>
+        <div id=svg6></div>
+    </div>
+    <div class="bookmark" id="eventbookmark"></div>
+    <div id="eventcontainer">
+        <div id='event'>
+            <div class=leftalign>
+                <h1 class='merri'>
+                    About the Event
+                </h1>
+                <img src="https://i.ibb.co/pxfh0b5/Webp-net-resizeimage.jpg" alt="Webp-net-resizeimage" border="0" class='mobile'>
+                <h3 class=normal>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat est velit egestas dui. Ut diam quam nulla porttitor massa id neque aliquam. Mauris a diam maecenas sed. In hendrerit gravida rutrum quisque non tellus. Elit duis tristique sollicitudin nibh sit amet commodo nulla. Eget duis at tellus at urna condimentum mattis pellentesque id. Cras adipiscing enim eu turpis egestas pretium. Elementum facilisis leo vel fringilla est. Libero id faucibus nisl tincidunt eget nullam non. Consequat id porta nibh venenatis cras sed felis eget. Enim lobortis scelerisque fermentum dui. In metus vulputate eu scelerisque.
+                </h3>
+                <h3></h3>
+                <h3 id=strong>More on the TASSEL 2019 Gala ></h3>
+            </div>
+            <div class=rightparent>
+                <img src="https://i.ibb.co/pxfh0b5/Webp-net-resizeimage.jpg" alt="Webp-net-resizeimage" border="0" class='rightalign'>
+            </div>
+        </div>
+    </div>
+    <div class="bookmark" id="donation"></div>
+    <div id="donate">
+         <img src="https://i.ibb.co/Fq1YLVs/Webp-net-resizeimage.jpg" alt="Webp-net-resizeimage" border="0" class='leftalign1'>
+        <div class=rightparent>
+           <div id=donateright>
+               <h1 class='merri' id='donatetext'>
+                   Every dollar matters.
+               </h1>
+               <a href='https://www.tasselsasgala.com/donate.html'> <h2 id='yellowtext'>Donate Now</h2></a>
+           </div>
+        </div>
+    </div>
+    <div id=footer>
+        <h2 id='footertext'>For questions or inquiries, contact tasselsas@gmail.com.</h2>
+    </div>
+</div>
+</body>
 </html>
