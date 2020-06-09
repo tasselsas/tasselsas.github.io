@@ -90,6 +90,8 @@
       font-family: 'Open Sans', sans-serif;
       font-size: 14px;
       margin-top: 10px;
+      text-decoration: none;
+      color: black;
   }
   #donatetext{
       position:relative;
@@ -120,7 +122,7 @@
       border-radius: 6px;
   }
   #purchase:hover{
-    background-color: rgb(231, 197, 59);
+    background-color: rgb(226, 190, 47);
   }
   #purchaseanchor:hover{
     text-decoration: none;
@@ -329,15 +331,16 @@
       text-align: center;
       margin: 0 auto;
   }
-  a {
+  .anchor{
       text-decoration: none;
       color: black;
   }
-  
-  a:hover {
+
+  .anchor:hover{
       text-decoration: underline;
       color: black;
   }
+  
   #background{
       top: 0px;
       height: 95px;
@@ -745,11 +748,11 @@
         <div class=content>
             <div id=nav>
                 <ul class=nav1>
-                    <li><a href="#home" class="navi defaultlink">HOME</a></li>
-                    <li><a href="#about" class="navi defaultlink">ABOUT</a></li>
+                    <li><a href="#home" class="navi defaultlink anchor">HOME</a></li>
+                    <li><a href="#about" class="navi defaultlink anchor">ABOUT</a></li>
                     <li><a href="https://www.tasselsasgala.com"><img src="https://i.ibb.co/z28KS9S/ezgif-com-webp-to-png.png" alt="ezgif-com-webp-to-png" border="0" id='central'></a></li>
-                    <li><a href="#eventbookmark" class="navi defaultlink">THE GALA</a></li>
-                    <li><a href='https://www.tasselsasgala.com/donate' class="navi defaultlink">DONATE</a></li>
+                    <li><a href="#eventbookmark" class="navi defaultlink anchor">THE GALA</a></li>
+                    <li><a href='https://www.tasselsasgala.com/donate' class="navi defaultlink anchor">DONATE</a></li>
                 </ul>
             </div>
             <div id=svg></div>
@@ -769,7 +772,7 @@
         </div>
         <div id=right>
             <h1 id='righttext'>Update From Our Founder</h1>
-            <a href='https://www.tasselsasgala.com/update' id='purchaseanchor'><div id='purchase'><h3>Read More</h3></div></a>
+            <a href='https://www.tasselsasgala.com/update' id='purchaseanchor' class='anchor'><div id='purchase'><h3>Read More</h3></div></a>
         </div>
     </div>
     <div class="bookmark" id="about"></div>
@@ -800,7 +803,7 @@
                   The TASSEL SAS Gala is an annual event hosted by the TASSEL chapter at SAS, which engages in direct service, indirect service, research, and advocacy in order to make an indelible impact in the lives of the Cambodians we serve. Over the past four years, the TASSEL SAS Gala has raised over 200,000 SGD, all of which was used to enrich the lives of our students and their families. Through this event, we hope not only to raise funds, but also to spread TASSEL’s mission and shine a light on the lives of those we serve. 
                 </h3>
                 <h3></h3>
-                <h3 id=strong>More on the TASSEL 2019 Gala ></h3>
+                <h3><a href='https://www.tasselsasgala.com/2019gala/' id=strong>More on the TASSEL 2019 Gala ></a></h3>
             </div>
             <div class=rightparent id='desktopparent'>
               <iframe id='viddesktop' width="560" height="290" src="https://www.youtube.com/embed/zGZfM13dKGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -815,7 +818,7 @@
                <h1 class='merri' id='donatetext'>
                    Every dollar matters.
                </h1>
-               <a href='https://www.tasselsasgala.com/donate'> <h2 id='yellowtext'>Donate Now</h2></a>
+               <a href='https://www.tasselsasgala.com/donate' class='anchor'> <h2 id='yellowtext'>Donate Now</h2></a>
            </div>
         </div>
     </div>

@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html lang=en>
+<head>
+    <title>TASSEL Gala</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TASSEL 2020 Gala">
+    <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″ />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="tass.js" type="text/javascript"></script>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit-icons.min.js"></script>
+    <base target="_top">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display&family=Raleway&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+    
+    
+    * {
+        font-family: 'Noto Sans HK', sans-serif;
+        box-sizing: border-box;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    html{
+        padding: 0;
+        margin: 0;
+    }
+    .merri{
+        font-family: 'Merriweather', serif;
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+    #nav {
+        width: 100%;
+        height: 10px;
+        background-color: (253, 253, 253);
+        position: fixed;
+        z-index: 5;
+        text-align: center;
+    }
+    #footer{
+      width: 100%;
+      background-color: rgb(192, 192, 192);
+      display: block;
+      text-align: center;
+      height: auto;
+      margin: 0;
+      padding: 0;
+    }
+    #footertext{
+      font-size: 24px;
+      line-height: 24px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: normal;
+      color: #444444;
+      text-align: center;
+      display: block;
+    }
+    #developer{
+        float: right;
+        position: relative;
+        top: 100px;
+    }
+    #centered{
+        margin: 0 auto;
+    }
+    #body{
+        position: relative;
+        margin: 120px auto 20px;
+        height: 100%;
+        max-width: 850px;
+        width: 80%;
+        text-align: left;
+    }
+    #title{
+        text-align: center;
+        font-size: 28px;
+        color: black;
+    }
+    
+    #central{
+        margin:0 auto;
+        display: block;
+        width: 60px;
+        position:relative;
+        top: 15px;
+    }
+
+    #donate{
+        position: absolute;
+        right: 22%;
+        bottom: 36px;
+        font-size: 20px;
+        font-family:'Playfair Display';
+    }
+    #donate:hover{
+        color: black;
+        text-decoration: underline;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    #background{
+        top: 0px;
+        height: 95px;
+        width: 100%;
+        background-color: rgb(253, 253, 253);
+        position:fixed;
+        z-index: 4;
+    }
+    #svg{
+        top:90px;
+        position: fixed;
+        z-index: 5;
+        background-color: rgb(178, 147, 24);
+        width: 100%;
+        height: 8px;
+    }
+    #svg2{
+        top: 98px;
+        position: fixed;
+        z-index: 5;
+        background-color: rgb(8, 47, 100);
+        width: 100%;
+        height: 8px;
+    }
+    #slideshow{
+        width: 50%;
+        margin: 0 auto 40px;
+    }
+    #donate{
+        float: right;
+    }
+    @media screen and (max-width: 760px) {
+        #footertext{
+        font-size: 20px;
+        }
+        .merri{
+         margin: 15px 0;
+        }
+        #central{
+            top: 3px;
+        }
+        #svg{
+        top:62px;
+        }
+        #svg2{
+        top: 70px;
+        position: fixed;
+        z-index: 5;
+        }
+        #background{
+        height: 70px;
+        }
+        #donate{
+            right: 18%;
+            bottom: 25px;
+            font-size: 18px;
+        }
+        #body{
+            margin: 90px auto 50px;
+        }
+        #slideshow{
+            width: 80%;
+        }
+    }
+    @media screen and (max-width: 528px) {
+        #footer{
+            height: auto;
+        }
+        #developer{
+            top: 120px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id=background>
+        <div class=content>
+            <a href="https://www.tasselsasgala.com"><img src="https://i.ibb.co/z28KS9S/ezgif-com-webp-to-png.png" alt="ezgif-com-webp-to-png" border="0" id='central'></a>
+            <a href='https://www.tasselsasgala.com/donate' id='donate'>DONATE</a>
+            <div id=svg></div>
+            <div id=svg2></div>
+        </div>
+    </div>
+    <div id=body>
+        <p id='title'>
+            2019 TASSEL SAS Gala
+        </p>
+    	<p>
+            The 2019 TASSEL SAS Gala was held on November 17th, 2019 in the Churchill room in Tanglin Club. With nearly 200 guests in attendance, many of whom were SAS faculty or parents, it was our biggest fundraiser yet.<br><br>
+
+            During the event, we took the time to cast a light on the plight of the villagers in Samlot village, which stands as one of the poorest and most devastated villages in Cambodia. Our goal was to gather enough funds to build a new TASSEL school in Samlot in order to provide not just education but also an emotional and physical support system for some of the most impoverished and disadvantaged families in the country. Our theme for the night was “Start a New Chapter”, which reflected our hope that a new school in the village would provide the poverty-stricken villagers a renewed sense of hope and an opportunity to improve their lives. <br><br>
+
+            The event was highlighted by speeches from the TASSEL founder, Joji Tatsugi, as well as TASSEL headmaster Neong Oeurn and TASSEL vice-headmaster Samath Soem. Many SAS students were involved in the running of the event, with many TASSEL SAS members serving as ushers and the SAS musicians performing throughout the night. <br><br>
+            
+            Thanks in no small part to your gracious contribution, we were fortunate enough to achieve, then surpass, our lofty goal of 80,000 SGD––every single penny of which was used to improve and enrich the lives of our families and students.<br><br>
+            
+            Soon after the event, the construction of the new school was underway, and it was completed in early March. Photos of the school are attached below.<br><br>
+            
+            Although the actual classes have not started due to the COVID-19 pandemic, over 160 students have already enrolled in the school––we see that as 160 more Cambodian children who will be cared for, loved, and educated than before.<br><br>
+            
+            Once again, we thank you for your love and generosity.<br><br>
+            
+            For Cambodia,<br><br>
+            2019-2020 TASSEL Officers            
+        </p>
+    </div>
+    <div id='slideshow' class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow>
+
+        <ul class="uk-slideshow-items">
+            <li>
+                <img src="https://drive.google.com/uc?export=view&id=1CrhuiAxP7AndlGvfVoMkWEbiTYYmPQiA" alt="Webp-net-resizeimage" uk-cover>
+            </li>
+            <li>
+                <img src="https://drive.google.com/uc?export=view&id=16Z9IqRh809R3CZGSXZ_xmeUThCof9hRX" alt="Webp-net-resizeimage" uk-cover>
+            </li>
+            <li>
+                <img src="https://drive.google.com/uc?export=view&id=1EYdGk4ryfg_MgzlFUcNDASEKiXuvU94c" alt="Webp-net-resizeimage" uk-cover>
+            </li>
+        </ul>
+    
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+    
+    </div>
+    <span id='developer'>Developed by Kohei Sanno</span>
+    <div id=footer>
+        <h2 id='footertext'>For questions or inquiries, contact tasselsas@gmail.com.</h2>
+    </div>
+</body>
+</html>
