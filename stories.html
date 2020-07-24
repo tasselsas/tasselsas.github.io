@@ -100,6 +100,19 @@ img{
     display: block;
 }
 
+#galleryButton:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#galleryButtonContainer{
+    margin: 0 auto;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 25px;
+}
+
 #gallery-container{
     width: -webkit-calc(100% - 320px);
     width:    -moz-calc(100% - 320px);
@@ -112,9 +125,7 @@ img{
 
 #gallery-intro{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    width: -webkit-calc(100% - 320px);
-    width:    -moz-calc(100% - 320px);
-    width:         calc(100% - 320px);
+    width: 100%;
     height: 100vh;
     float:right;
     display: flex;
@@ -123,14 +134,15 @@ img{
 #gallery-intro h1{
     text-align:left;
     font-size: 60px;
+    margin-left: 320px;
 }
 
 #sidebar{
     width: 230px;
     margin-left:15px;
     margin-top: 10px;
-    display: inline-block;
     position: fixed;
+    top:0;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -171,7 +183,7 @@ img{
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type='module'>
         import jump from '/jump.module.js';
-        var button = document.getElementById('testbutton');
+        var button = document.getElementById('galleryButton');
         button.addEventListener('click', ()=>{
             jump('#gallery-container')
         })
@@ -189,11 +201,15 @@ img{
         <h4><br>Effects of COVID-19 and the Drought</h4>
     </div>
     <div class='main'>
-        <button id='testbutton'>Click on me</button>
         <div id='gallery-intro'>
             <h1>
                 Discover their stories.
             </h1>
+            <div id='galleryButtonContainer'>
+                <svg id='galleryButton' width="4.5em" height="4.5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
+                </svg>
+            </div>
         </div>
         <div id='gallery-container'>
             <div class="row">
