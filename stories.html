@@ -42,145 +42,152 @@
     body, html{
         background-color: rgb(248, 243, 178);
     }
-      .row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
 
-/* Create four equal columns that sits next to each other */
-.column {
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
+    /* Create four equal columns that sits next to each other */
+    .column {
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+    }
 
-.column .element {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-}
+    .column .element {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+    }
 
-.element{
-    position: relative;
-	display: inline-block;
-	overflow: hidden;
-	max-width: 100%;
-	height: auto;
-}
+    .element{
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        max-width: 100%;
+        height: auto;
+    }
 
-img{
-    max-width: 100%;
-}
+    img{
+        max-width: 100%;
+    }
 
-.element:hover .image {
-  opacity: 0.9;
-  transform: scale(1.1);
-  transition-duration: 0.5s;
-}
+    .element:hover .image {
+        opacity: 0.9;
+        transform: scale(1.1);
+        transition-duration: 0.5s;
+    }
 
-.element:hover .middle {
-  opacity: 1;
-}
+    .element:hover .middle {
+        opacity: 1;
+    }
 
-.text {
-	text-align: center;
-	font-size: 18px;
-	display: inline-block;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-moz-transform: translate(-50%, -50%);
-	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-}
+    .text {
+        text-align: center;
+        font-size: 18px;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
 
-.image {
-    display: block;
-}
+    .image {
+        display: block;
+    }
 
-#galleryButton:hover{
-    transform: scale(1.1);
-    cursor: pointer;
-}
+    #galleryButton:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
 
-#galleryButtonContainer{
-    margin: 0 auto;
-    width: 100%;
-    position: absolute;
-    text-align: center;
-    bottom: 25px;
-}
+    #galleryButtonContainer{
+        margin: 0 auto;
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        bottom: 25px;
+    }
 
-#gallery-container{
-    width: -webkit-calc(100% - 320px);
-    width:    -moz-calc(100% - 320px);
-    width:         calc(100% - 320px);
-    float:right;
-    padding-right: 15px;
-    margin-top: 90px;
-    text-align: right;
-}
+    #gallery-container{
+        width: -webkit-calc(100% - 320px);
+        width:    -moz-calc(100% - 320px);
+        width:         calc(100% - 320px);
+        float:right;
+        padding-right: 15px;
+        margin-top: 90px;
+        text-align: right;
+    }
 
-#gallery-intro{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    width: 100%;
-    height: 100vh;
-    float:right;
-    display: flex;
-    align-items: center;
-}
-#gallery-intro h1{
-    text-align:left;
-    font-size: 60px;
-    margin-left: 320px;
-}
+    #gallery-intro{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        width: 100%;
+        height: 100vh;
+        float:right;
+        display: flex;
+        align-items: center;
+    }
+    #gallery-intro h1{
+        text-align:left;
+        font-size: 60px;
+        margin-left: 320px;
+    }
 
-#sidebar{
-    width: 230px;
-    margin-left:15px;
-    margin-top: 10px;
-    position: fixed;
-    top:0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
+    #sidebar{
+        width: 230px;
+        margin-left:15px;
+        margin-top: 10px;
+        position: fixed;
+        top:0;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
 
-.middle {
-	opacity: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.6);
-	color: #fff;
-	padding: 15px;
-	-moz-transition: all 0.4s ease-in-out 0s;
-	-webkit-transition: all 0.4s ease-in-out 0s;
-	-ms-transition: all 0.4s ease-in-out 0s;
-	transition: all 0.4s ease-in-out 0s;
-}
+    .middle {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 15px;
+        -moz-transition: all 0.4s ease-in-out 0s;
+        -webkit-transition: all 0.4s ease-in-out 0s;
+        -ms-transition: all 0.4s ease-in-out 0s;
+        transition: all 0.4s ease-in-out 0s;
+    }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 800px) {
+        .column {
+            flex: 50%;
+            max-width: 50%;
+        }
+    }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+        .column {
+            flex: 100%;
+            max-width: 100%;
+        }
+    }
   </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            if($('#gallery-intro').scrollTop>10){
+                jump('#gallery-container');
+            }
+        });
+    </script>
     <script type='module'>
         import jump from '/jump.module.js';
         var button = document.getElementById('galleryButton');
@@ -198,7 +205,7 @@ img{
         <h1 style='color:rgb(0, 0, 110)'>S</h1>
         <h1 style='color:rgb(0, 0, 110)'>E</h1>
         <h1 style='color:rgb(0, 0, 110)'>L</h1>
-        <h4><br>Effects of COVID-19 and the Drought</h4>
+        <h4><br><br><br>Effects of COVID-19 and the Drought</h4>
     </div>
     <div class='main'>
         <div id='gallery-intro'>
@@ -243,7 +250,7 @@ img{
                 </div>
                 <div class="column">
                     <div class='element'>
-                        <img class='image' src="exhibit5.jpg">
+                        <img class='image' src="exhibit5.JPG">
                         <div class="middle">
                             <div class="text">Sina</div>
                         </div>
