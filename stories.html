@@ -137,6 +137,10 @@
         }
     }
 
+    .modal-content{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
     .main {
         scroll-snap-type: y mandatory;
         height: 100vh;
@@ -216,6 +220,7 @@
         overflow: hidden;
         max-width: 100%;
         height: auto;
+        cursor: pointer;
     }
 
     img{
@@ -399,6 +404,9 @@ li div{
   transition: 0.4s;
 }
 
+.modalimage{
+    margin-bottom: 10px;
+}
     .active{
         background-color: rgb(255, 91, 91);
         color: white;
@@ -557,7 +565,7 @@ li div{
         <div class='section' id='gallery-container'>
             <div class="row">
                 <div class="column">
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal1">
                         <img class='image' src="exhibit1.jpg">
                         <div class="middle">
                             <div class="text">
@@ -565,19 +573,19 @@ li div{
                             </div>
                         </div>
                     </div>
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal2">
                         <img class='image' src="exhibit2.jpg">
                         <div class="middle">
                             <div class="text">Vann</div>
                         </div>
                     </div>
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal3">
                         <img class='image' src="exhibit3.PNG">
                         <div class="middle">
                             <div class="text">Piseth</div>
                         </div>
                     </div>
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal4">
                         <img class='image' src="exhibit4.jpg">
                         <div class="middle">
                             <div class="text">Sophea</div>
@@ -585,25 +593,25 @@ li div{
                     </div>
                 </div>
                 <div class="column">
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal5">
                         <img class='image' src="exhibit5.JPG">
                         <div class="middle">
                             <div class="text">Sina</div>
                         </div>
                     </div>
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal6">
                         <img class='image' src="exhibit6.jpg">
                         <div class="middle">
                             <div class="text">Chantha</div>
                         </div>
                     </div>
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal7">
                         <img class='image' src="exhibit7.jpeg">
                         <div class="middle">
                             <div class="text">Komsot and Kreynich</div>
                         </div>
                     </div>
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal8">
                         <img class='image' src="exhibit8.jpg">
                         <div class="middle">
                             <div class="text">Dary</div>
@@ -611,19 +619,19 @@ li div{
                     </div>
                 </div>
                 <div class="column">
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal9">
                         <img class='image' src="exhibit9.jpg">
                         <div class="middle">
                             <div class="text">Thors</div>
                         </div>
                     </div>
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal10">
                         <img class='image' src="exhibit10.jpg">
                         <div class="middle">
                             <div class="text">Sreyna</div>
                         </div>
                     </div>
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal11">
                         <img class='image' src="exhibit11.PNG">
                         <div class="middle">
                             <div class="text">Sovath</div>
@@ -631,25 +639,25 @@ li div{
                     </div>
                 </div>
                 <div class="column">
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal12">
                         <img class='image' src="exhibit12.jpg">
                         <div class="middle">
                             <div class="text">Reaksa</div>
                         </div>
                     </div>
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal13">
                         <img class='image' src="exhibit13.jpeg">
                         <div class="middle">
                             <div class="text">Vicheka</div>
                         </div>
                     </div>
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal14">
                         <img class='image' src="exhibit14.jpg">
                         <div class="middle">
                             <div class="text">Paneth</div>
                         </div>
                     </div>
-                    <div class='element'>
+                    <div class='element' data-toggle="modal" data-target="#modal15">
                         <img class='image' src="exhibit15.jpg">
                         <div class="middle">
                             <div class="text">Kakada</div>
@@ -678,4 +686,273 @@ li div{
         </div>
     </div>
 </body>
+    <div class="modal fade" id="modal1" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sokheng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='exhibit1.jpg'>
+                    <p>
+                        Sokheng is eight years old.  He lives with his younger brother and parents.  His parents grow corn and other crops on their farm to eat and sell.  But this year due to the drought they have given up on their farm and now survive by catching fish and picking leaves along the river.   The entire family also spends almost all day at the river digging for precious gems.  If they are lucky they may find one piece of ruby to sell for $300 but like many other diggers they may dig all year  and not find anything. They clearly do not have enough to eat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal2" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Vann</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='exhibit2.jpg'>
+                    <p>
+                        Vann is a 53-year old farmer.  Because of the drought he started to hunt for wild pigs, deer, and porcupines at night.  Three weeks before our teachers found him, he had stepped on a landmine and lost his right foot while hunting.  He told our teachers that after stepping on the landmine he crawled all night until he was discovered by a neighbor.  The neighbor told us that when he found Vann crawling, Vann was holding on to an axe because there were tigers in the area.  Vann has two children and a wife who will soon give birth to their third child.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal3" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Piseth</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='exhibit3.PNG'>
+                    <p>
+                        Piseth is a seven-year old boy. Last year his father was travelling on a cart which lost balance and flipped over.  His father died.  His mother then ran away. Piseth now lives with his grandparents.The grandmother normally supports the family by picking and selling leaves but with the drought there are no leaves to sell.  She now goes door-to-door to neighbors' houses to help clean dishes in exchange of food.                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal4" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sophea</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='exhibit4.jpg'>
+                    <p>
+                        Sophea is a 14-year girl who, together with her 18-year old brother, Daruk, attend TASSEL.  Their parents used to live two hours away near theThai border and travel illegally into Thailand daily to earn income as fruit pickers.  However, with the border closing due to COVID, both parents lost their jobs and are back in their village, living with Sophea, Daruk and their grandmother. Daruk found a job as a cart loading laborer but his $60/month income is not enough to support a family of five.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal5" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sina</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='exhibit5.JPG'>
+                    <p>
+                        Sina is a 14-year old TASSEL student who lives with her mother, cousin, grandmother and 10-year old cousin.  Her father abandoned the family before Sina was born.    The family lives in a rental room where they pay $12.50/month to their landlord.   Sina's mother normally earns money playing a Khmer musical instrument during the wedding season and working in restaurants during the off-season.  But due to COVID she lost both jobs.  They are in distress.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal6" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chantha</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='modal6.jpg'>
+                    <p>
+                        Chantha, a 12-year old TASSEL student lives with her parents, a 5-year old sister and a 3-year old brother. The family lives near a town where Chantha's parents are employed at a restaurant -- her mother as a dishwasher ,and her father as a security guard.   Both parents' jobs were reduced to half-time due to COVID and their combiined income has been cut to $100/month which is not enough for a family of five to survive.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal7" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Grandpa Komsot and Grandma Sreynich</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='exhibit7.jpeg'>
+                    <p>
+                        Grandpa Komsot is 71 and lives with his wife,  Grandma Sreynich.  Grandma Sreynich has a mental disorder.  In 1985 while working as a woodcutter in the mountains, Grandpa Komsot stepped on a landmine and lost his left foot.  They have three sons who are all poor.  The eldest used to send $15/month but can no longer help due to COVID.  The second son is disabled after falling from the second floor as a construction worker and has not been supporting them.  The third son also has not been helping them after running away from debt collectors.   Grandma Sreynich used to earn $4/month picking and selling recylcable cans and bottles; but with COVID the Thai border has closed and the recyclables cannot be sold.  Other villagers pity them and have been helping them, but the villagers are also in trouble due to COVID and the drought.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal8" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Dary and Dara</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='exhibit8.jpg'>
+                    <p>
+                        Dary (13) and brother Dara (15) are strong students at TASSEL.  They, along with four other siblings are supported by parents who sell incense at the local pagoda.  But due to COVID,  most worshippers do not go to the pagoda and  their parents' income has dropped dramatically.  The father now travels on a very old motorcycle to other villages and spmetimes even to other provicnes to find people to buy the inceses   But even so, their income is 70% lower than compared to that of pre-COVID days. The family of eight does not have enough to eat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal9" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thors</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='exhibit9.jpg'>
+                    <p>
+                        Thors (14)  and his sister (6)  live with their grandmother and cousins.  Thors' parents are laborers in Thailand but with the border closed due to COVID, the parents have had to return to their village in Cambodia and are jobless.  The parents try hard by growing vegetables behind their house but they cannot grow enough.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal10" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sreyna</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='exhibit10.jpg'>
+                    <p>
+                        Sreyna is 7. Her father was a construction worker in Thailand but lost his job due to the border closing after COVID.  Her mother picked and sold leaves but due to the drought she cannot pick enough.  Sreyna, her six siblings aged 1, 3, 10, 12, and 16 and parents do not have enough.  The mother was crying when our teachers found them.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal11" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sovath</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='modal11.PNG'>
+                    <p>
+                        Sovath is 53 years old.  He and his wife have five children aged 4, 6, 10, 13, and 15.  They earn $90/month finding firewood in the forest to sell. Now with COVID and the drought, finding and selling firewood have become competitive.  Sovath and his wife now go into areas where others won't go --areas where the landmines have not been cleared.  Most do not go into such areas because of the obvious danger but Sovath and his wife say they must go to avoid starvation.  The $90/month was already too little for them to get enough nutrition and now they must even face daily danger.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal12" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reaksa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='exhibit12.jpg'>
+                    <p>
+                        Reaksa is 10.  He is often sick and the parents sold the family land so that he can get medical help.   His 16-year old sister was a laborer in Thailand but because of COVID the border has closed and she is now back, unemployed, and lives with the rest of the family.  Reaksa lives also with  a 12-year old sister, an 8-year old sister, an 81-year old grandmother and his parents.  The parents are farmers but with the drought  they have almost no income.  On the day our teachers met this family, Reaksa had just found some bees.  He and his family had never caught bees before but were happy that they had found something to eat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal13" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Vicheka</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='exhibit13.jpeg'>
+                    <p>
+                        Vicheka is a twelve-year old boy.  He has two older sisters aged 14, and 17.  Vicheka's parents are sick so the older sisters earn money for the family by cutting grass and also puling casssavas.  The sisters' combined income is $60/month in normal times but with COVID and the drought, their income is now almost zero.  They live in a house on their neighbor's land.  The house has no walls and no protection from the rain, sun and wind. They are surviving by finding leaves to eat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal14" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Paneth</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='modal14.jpg'>
+                    <p>
+                        Paneth lives with his younger brother and parents in the forest. Because his family has always been poor he has been working since he was small and although he is 13, he is still in the 3rd grade.  With COVID his parents lost  their jobs  as mango pickers since the Thai  mango market, closed. Three days before our teachers found this family, the parents were in the forest trying to find mushrooms to eat.  During that time, Paneth was at an abandoned mango farm picking manoges for his younger brother when a cobra bit him.   A neighbor saw this and killed the cobra.  Although three days had passed since the incident, the family did not have the $20 to transport him to a city hospital so Paneth was still untreated.  Our teachers found and paid for transportation to bring him to a city hospital four hours away where he was then hospitalized and treated.  He has since been discharged and is now okay.  But the family still does not have enough food.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal15" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Kakada</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class='modalimage' src='exhibit15.jpg'>
+                    <p>
+                        Kakada is a 12-year old TASSEL student .  His mother killed herself,then his father abandoned him and his older siblings. He now lives with his 55-year old grandaunt who has a small shop; but because of COVID she earns only $1/day.  Kakada 's older brother was a factory worker in Thailand and used to send $40/month to support Kakada and his grandaunt.  But with COVID, the brother lost his job and cannot send any money.  Kakada's older sister is poor, married with children and also cannot support Kakada.  He and his grandaunt need help.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </html>
