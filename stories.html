@@ -68,9 +68,10 @@
 
             $( ".main" ).scroll(function() {
                 if(document.getElementsByClassName('main')[0].scrollTop>height && document.getElementsByClassName('main')[0].scrollTop<height*2 && !$("#1").hasClass('active')){
-                    $( "#1" ).addClass('active')
-                    $( "#2" ).removeClass('active')
-                    $( "#2" ).removeClass('active')
+                    $( "#1" ).addClass('active');
+                    $( "#2" ).removeClass('active');
+                    $( "#3" ).removeClass('active');
+                    $( "#4" ).removeClass('active');
                     $("#gallery-container").removeClass("load");
                     $(".slideText").removeClass("load");
                 }
@@ -78,13 +79,23 @@
                     $( "#1" ).removeClass('active')
                     $( "#2" ).addClass('active')
                     $( "#3" ).removeClass('active')
-                    $("#gallery-container").addClass("load");
+                    $( "#4" ).removeClass('active');
+                    $("#gallery-container").removeClass("load");
                     $(".slideText").removeClass("load");
                 }
                 else if(document.getElementsByClassName('main')[0].scrollTop>height*3 && document.getElementsByClassName('main')[0].scrollTop<height*4 && !$("#3").hasClass('active')){
-                    $( "#1" ).removeClass('active')
-                    $( "#2" ).removeClass('active')
-                    $( "#3" ).addClass('active')
+                    $( "#1" ).removeClass('active');
+                    $( "#2" ).removeClass('active');
+                    $( "#3" ).addClass('active');
+                    $( "#4" ).removeClass('active');
+                    $("#gallery-container").addClass("load");
+                    $(".slideText").removeClass("load");
+                }
+                else if(document.getElementsByClassName('main')[0].scrollTop>height*4 && document.getElementsByClassName('main')[0].scrollTop<height*5 && !$("#4").hasClass('active')){
+                    $( "#1" ).removeClass('active');
+                    $( "#2" ).removeClass('active');
+                    $( "#3" ).removeClass('active');
+                    $( "#4" ).addClass('active');
                     $("#gallery-container").removeClass("load");
                     $(".slideText").addClass("load");
                 }
@@ -270,12 +281,16 @@
         display: block;
     }
 
+    #titleButton{
+        color:white;
+    }
+
     #galleryButton:hover{
         transform: scale(1.1);
         cursor: pointer;
     }
 
-    #galleryButtonContainer{
+    #galleryButtonContainer, #titleButtonContainer{
         margin: 0 auto;
         position: absolute;
         text-align: center;
@@ -318,6 +333,13 @@
         text-align:left;
         font-size: 60px;
         margin-left: 320px;
+    }
+
+    #information {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     ul {
@@ -551,6 +573,17 @@ li div{
                 <h1>TASSEL 2020</h1>
                 <h2>An Update from the Founder</h2>
             </div>
+            <div id='titleButtonContainer'>
+                <svg id='titleButton' width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                    <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </div>
+        </div>
+        <div class='section' id='information' style='background-color: rgb(176, 176, 253); position: relative;'>
+            <h3>
+                Information slide
+            </h3>
         </div>
         <div class='section' id='gallery-intro' style='background-color: rgb(176, 176, 253); position: relative;'>
             <h1>
