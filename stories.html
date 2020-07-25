@@ -187,10 +187,12 @@
         button.addEventListener('click', ()=>{
             jump('#gallery-container')
         })
-        $( document ).ready(function() {
+        $( "html" ).scroll(function() {
             if($('html').scrollTop>70){
                 jump('#gallery-container');
             }
+        });
+        $( document ).ready(function() {
             $("button").click(function(){
                 alert($('html').scrollTop());
             });
