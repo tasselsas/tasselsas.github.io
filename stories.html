@@ -20,10 +20,6 @@
                 scrollspeed: 130
              });
         });   
-        function testing(){
-            alert(document.getElementsByClassName('main')[0].scrollTop)
-
-        }
 
         $( document ).ready(function() {
             var links = document.getElementsByClassName('extLink');
@@ -48,26 +44,13 @@
                 links[i].addEventListener('mouseover', mouseOver, false);
                 links[i].addEventListener('mouseout', mouseOut, false);
             }
-
-
-            var elements = document.getElementsByClassName("nav");
-
-            var myFunction = function() {
-                var elements = document.getElementsByClassName("nav");
-                for (var i = 0; i < elements.length; i++) {
-                    elements[i].classList.remove('active');
-                }
-                this.classList.add('active');
-            };
-
-            for (var i = 0; i < elements.length; i++) {
-                elements[i].addEventListener('click', myFunction, false);
-            }
             
             var height = window.innerHeight;
+            console.log(height)
 
             $( ".main" ).scroll(function() {
-                if(document.getElementsByClassName('main')[0].scrollTop>height && document.getElementsByClassName('main')[0].scrollTop<height*2 && !$("#1").hasClass('active')){
+                console.log(document.getElementsByClassName('main')[0].scrollTop)
+                if(document.getElementsByClassName('main')[0].scrollTop>(height-20) && document.getElementsByClassName('main')[0].scrollTop<(height*2-20) && !$("#1").hasClass('active')){
                     $( "#1" ).addClass('active');
                     $( "#2" ).removeClass('active');
                     $( "#3" ).removeClass('active');
@@ -75,7 +58,7 @@
                     $("#gallery-container").removeClass("load");
                     $(".slideText").removeClass("load");
                 }
-                else if(document.getElementsByClassName('main')[0].scrollTop>height*2 && document.getElementsByClassName('main')[0].scrollTop<height*3 && !$("#2").hasClass('active')){
+                else if(document.getElementsByClassName('main')[0].scrollTop>(height*2-20) && document.getElementsByClassName('main')[0].scrollTop<(height*3-20) && !$("#2").hasClass('active')){
                     $( "#1" ).removeClass('active')
                     $( "#2" ).addClass('active')
                     $( "#3" ).removeClass('active')
@@ -83,7 +66,7 @@
                     $("#gallery-container").removeClass("load");
                     $(".slideText").removeClass("load");
                 }
-                else if(document.getElementsByClassName('main')[0].scrollTop>height*3 && document.getElementsByClassName('main')[0].scrollTop<height*4 && !$("#3").hasClass('active')){
+                else if(document.getElementsByClassName('main')[0].scrollTop>(height*3-20) && document.getElementsByClassName('main')[0].scrollTop<(height*4-20) && !$("#3").hasClass('active')){
                     $( "#1" ).removeClass('active');
                     $( "#2" ).removeClass('active');
                     $( "#3" ).addClass('active');
@@ -91,7 +74,7 @@
                     $("#gallery-container").addClass("load");
                     $(".slideText").removeClass("load");
                 }
-                else if(document.getElementsByClassName('main')[0].scrollTop>height*4 && document.getElementsByClassName('main')[0].scrollTop<height*5 && !$("#4").hasClass('active')){
+                else if(document.getElementsByClassName('main')[0].scrollTop>(height*4-20) && document.getElementsByClassName('main')[0].scrollTop<(height*5-20) && !$("#4").hasClass('active')){
                     $( "#1" ).removeClass('active');
                     $( "#2" ).removeClass('active');
                     $( "#3" ).removeClass('active');
@@ -285,6 +268,10 @@
         color:white;
     }
 
+    #galleryButton{
+        color:black;
+    }
+
     #galleryButton:hover{
         transform: scale(1.1);
         cursor: pointer;
@@ -444,7 +431,7 @@ li div{
         height: 24px
     }
 
-    #part3{
+    #teachers{
         background-color: white;
         display: flex;
         align-items: center;
@@ -513,14 +500,6 @@ li div{
             }
         });**/
     </script>
-    <script type='module'>
-        import jump from '/jump.module.js';
-        var button = document.getElementById('galleryButton');
-        button.addEventListener('click', ()=>{
-            $('#gallery-container').css('display', 'block')
-            jump('#gallery-container')
-        })
-    </script>
 </head>
 <body>
     <div id='sidebar'>
@@ -533,10 +512,10 @@ li div{
         <h4><br><br>Effects of COVID-19 and the Drought</h4>
 
         <ul>
-            <li><a href="#gallery-intro"><div id='1' class='nav active'></div></a></li>
-            <li><a href="#gallery-container"><div id='2' class='nav'></div></a></li>
-            <li><a href="#part3"><div id='3' class='nav'></div></a></li>
-            <li><a href="#gallery-intro"><div id='4' class='nav'></div></a></li>
+            <li><a href="#information"><div id='1' class='nav active'></div></a></li>
+            <li><a href="#gallery-intro"><div id='2' class='nav'></div></a></li>
+            <li><a href="#gallery-container"><div id='3' class='nav'></div></a></li>
+            <li><a href="#teachers"><div id='4' class='nav'></div></a></li>
             <li><a href="#gallery-intro"><div id='5' class='nav'></div></a></li>
             <li><a href="#gallery-intro"><div id='6' class='nav'></div></a></li>
         </ul>
@@ -574,7 +553,7 @@ li div{
                 <h2>An Update from the Founder</h2>
             </div>
             <div id='titleButtonContainer'>
-                <svg id='titleButton' width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <svg id='titleButton' width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                     <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                 </svg>
@@ -590,9 +569,11 @@ li div{
                 Discover their stories.
             </h1>
             <div id='galleryButtonContainer'>
-                <svg id='galleryButton' width="4.5em" height="4.5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
-                </svg>
+                <a href="#gallery-container">
+                    <svg id='galleryButton' width="4.5em" height="4.5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
+                    </svg>
+                </a>
             </div>
         </div>
         <div class='section' id='gallery-container'>
@@ -699,7 +680,7 @@ li div{
                 </div>
             </div>
         </div>
-        <div class='section' id='part3'>
+        <div class='section' id='teachers'>
             <div>
                 <div  class='slideText'>
                     <h2>What has TASSEL been doing?</h2>
