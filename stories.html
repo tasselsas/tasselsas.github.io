@@ -31,8 +31,8 @@
 
         function activateDonation(){
             $("#textone").addClass("load");
-            setTimeout(function(){ $("#texttwo").addClass("load"); }, 1500)
-            setTimeout(function(){ $("#donateButton").addClass("load"); }, 2500)
+            setTimeout(function(){ $("#texttwo").addClass("load"); }, 1200)
+            setTimeout(function(){ $("#donateButton").addClass("load"); }, 2200)
         }
 
         $( document ).ready(function() {
@@ -60,7 +60,6 @@
             }
             
             var height = window.innerHeight;
-            console.log(height)
 
             $( ".main" ).scroll(function() {
                 console.log(document.getElementsByClassName('main')[0].scrollTop)
@@ -71,6 +70,7 @@
                     $( "#4" ).removeClass('active');
                     $( "#5" ).removeClass('active');
                     $("#gallery-container").removeClass("load");
+                    $("#gallery-container").scrollTop(0);
                     $(".slideText").removeClass("load");
                 }
                 else if(document.getElementsByClassName('main')[0].scrollTop>(height*2-20) && document.getElementsByClassName('main')[0].scrollTop<(height*3-20) && !$("#2").hasClass('active')){
@@ -80,6 +80,7 @@
                     $( "#4" ).removeClass('active');
                     $( "#5" ).removeClass('active');
                     $("#gallery-container").removeClass("load");
+                    $("#gallery-container").scrollTop(0);
                     $(".slideText").removeClass("load");
                 }
                 else if(document.getElementsByClassName('main')[0].scrollTop>(height*3-20) && document.getElementsByClassName('main')[0].scrollTop<(height*4-20) && !$("#3").hasClass('active')){
@@ -98,6 +99,7 @@
                     $( "#4" ).addClass('active');
                     $( "#5" ).removeClass('active');
                     $("#gallery-container").removeClass("load");
+                    setTimeout(function(){ $("#gallery-container").scrollTop(0); }, 1500)
                     $(".slideText").addClass("load");
                 }
                 else if(document.getElementsByClassName('main')[0].scrollTop>(height*5-20) && document.getElementsByClassName('main')[0].scrollTop<(height*6-20) && !$("#5").hasClass('active')){
@@ -107,6 +109,7 @@
                     $( "#4" ).removeClass('active');
                     $( "#5" ).addClass('active');
                     $("#gallery-container").removeClass("load");
+                    $("#gallery-container").scrollTop(0);
                     $(".slideText").addClass("load");
                     activateDonation();
                 }
@@ -264,7 +267,7 @@
     .text{
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-    body::-webkit-scrollbar {
+    .main::-webkit-scrollbar, #gallery-container::-webkit-scrollbar {
         display: none;
     }
 
@@ -729,7 +732,7 @@ li div{
     </div>
     <div class='main'>
         <div class='section bg'>
-            <a href='https://www.tasselcambodia.org/what-we-do' target="_blank">
+            <a href='https://www.tasselcambodia.org/donate-1' target="_blank">
                 <div id='top-right' class='extLink'>
                     <h1 class='shrink'>
                         <svg id='plus-top-right' class='plus' width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -742,7 +745,7 @@ li div{
                     </h6>
                 </div>
             </a>
-            <a href='https://www.tasselcambodia.org/donate-1' target="_blank">
+            <a href='https://www.tasselcambodia.org/what-we-do' target="_blank">
                 <div id='top-left' class='extLink'>
                     <h1 class='shrink'>
                         <svg id='plus-top-left' class='plus' width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
