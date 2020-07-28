@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang=en>
 <head>
-    <title>TASSEL SAS Gala</title>
+    <title>TASSEL Stories</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="TASSEL 2020 Gala">
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -70,7 +70,8 @@
                     $( "#4" ).removeClass('active');
                     $( "#5" ).removeClass('active');
                     $("#gallery-container").removeClass("load");
-                    $("#gallery-container").scrollTop(0);
+                    setTimeout(function(){ $("#gallery-container").scrollTop(0); }, 1000)
+                    //$("#gallery-container").scrollTop(0);
                     $(".slideText").removeClass("load");
                 }
                 else if(document.getElementsByClassName('main')[0].scrollTop>(height*2-20) && document.getElementsByClassName('main')[0].scrollTop<(height*3-20) && !$("#2").hasClass('active')){
@@ -80,7 +81,7 @@
                     $( "#4" ).removeClass('active');
                     $( "#5" ).removeClass('active');
                     $("#gallery-container").removeClass("load");
-                    $("#gallery-container").scrollTop(0);
+                    setTimeout(function(){ $("#gallery-container").scrollTop(0); }, 1000)
                     $(".slideText").removeClass("load");
                 }
                 else if(document.getElementsByClassName('main')[0].scrollTop>(height*3-20) && document.getElementsByClassName('main')[0].scrollTop<(height*4-20) && !$("#3").hasClass('active')){
@@ -99,8 +100,11 @@
                     $( "#4" ).addClass('active');
                     $( "#5" ).removeClass('active');
                     $("#gallery-container").removeClass("load");
-                    setTimeout(function(){ $("#gallery-container").scrollTop(0); }, 1500)
+                    setTimeout(function(){ $("#gallery-container").scrollTop(0); }, 1000)
                     $(".slideText").addClass("load");
+                    $("#textone").removeClass("load");
+                    $("#texttwo").removeClass("load");
+                    $("#donateButton").removeClass("load");
                 }
                 else if(document.getElementsByClassName('main')[0].scrollTop>(height*5-20) && document.getElementsByClassName('main')[0].scrollTop<(height*6-20) && !$("#5").hasClass('active')){
                     $( "#1" ).removeClass('active');
@@ -109,8 +113,8 @@
                     $( "#4" ).removeClass('active');
                     $( "#5" ).addClass('active');
                     $("#gallery-container").removeClass("load");
-                    $("#gallery-container").scrollTop(0);
-                    $(".slideText").addClass("load");
+                    setTimeout(function(){ $("#gallery-container").scrollTop(0); }, 1000)
+                    $(".slideText").removeClass("load");
                     activateDonation();
                 }
             });
@@ -487,10 +491,9 @@
     }
 
     #donateContent{
-        
-        width: -webkit-calc(100% - 500px);
-        width:    -moz-calc(100% - 500px);
-        width:         calc(100% - 500px);
+        width:40%;
+        min-width:500px;
+        margin: 0 auto;
     }
 
     #textone, #texttwo{
@@ -503,7 +506,6 @@
     }
 
     #donateButton{
-        margin-left: 325px;
         margin-top: 30px;
         opacity:0;
         display:block;
@@ -540,12 +542,10 @@
     #donate h1{
         text-align:left;
         font-size: 60px;
-        margin-left: 320px;
     }
 
     #donate h5{
         text-align:left;
-        margin-left: 320px;
     }
 
 
@@ -613,7 +613,6 @@
     }
 
 li div{
-    border-radius: 2px;
   display: block;
   color: #000;
   background-color: #555;
@@ -654,7 +653,6 @@ li div{
     }
 
     #sidebar{
-        width: 230px;
         margin-left:15px;
         margin-top: 10px;
         height: 100vh;
@@ -713,6 +711,13 @@ li div{
     </script>
 </head>
 <body>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
     <div id='sidebar'>
         <h1 style='color:rgb(0, 0, 110)'>T</h1>
         <h1 style='color:rgb(0, 0, 110)'>A</h1>
@@ -913,13 +918,6 @@ li div{
                 <h5 id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
                 <h1 id='texttwo'>They need your help.</h1>
                 <span id='donateButton'><a href='https://www.tasselcambodia.org/donate-1' target="_blank"><button type="button" class="btn btn-lg btn-outline-dark mt-1">Donate</button></a></span>
-            </div>
-            <div id="loader-wrapper">
-                <div id="loader"></div>
-    
-                <div class="loader-section section-left"></div>
-                <div class="loader-section section-right"></div>
-    
             </div>
         </div>
     </div>
