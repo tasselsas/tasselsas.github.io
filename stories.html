@@ -744,6 +744,22 @@
 
     /* Responsive layout - makes a two column-layout instead of four columns */
     @media screen and (max-width: 900px) {
+        .bg {
+            /* The image used */
+            background-image: url("coverPhoto.webp");
+
+            /* Full height */
+            height: 100vh;
+            position: relative;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 20;
+            color: white;
+        }
+
         .column {
             flex: 50%;
             max-width: 50%;
