@@ -18,6 +18,7 @@
 
         function showInstruction(){
             $('#first').css({'display':'flex'});
+            $('.main').css({'overflow':'hidden'});
             $('#first h3').addClass('load');
             setTimeout(function(){ $('#first').css({'display':'none'});}, 2800);
             setTimeout(function(){ $('#first h3').removeClass('load');}, 2000);
@@ -160,20 +161,20 @@
     z-index: 1001;
 }
 
-    #loader:before {
-        content: "";
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        right: 5px;
-        bottom: 5px;
-        border-radius: 50%;
-        border: 3px solid transparent;
-        border-top-color: #bdaa00;
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #bdaa00;
 
-        -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
-        animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
-    }
+    -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
 
     #loader:after {
         content: "";
@@ -490,6 +491,8 @@
     .btn-outline-info.focus,.btn-outline-info:focus{
         box-shadow:0 0 0 .2rem rgba(240,235,216,0.5);
     }
+
+    .btn-outline-info.disabled,.btn-outline-info:disabled{color:#F0EBD8;background-color:transparent}.btn-outline-info:not(:disabled):not(.disabled).active,.btn-outline-info:not(:disabled):not(.disabled):active,.show>.btn-outline-info.dropdown-toggle{color:#fff;background-color:#F0EBD8;border-color:#F0EBD8}.btn-outline-info:not(:disabled):not(.disabled).active:focus,.btn-outline-info:not(:disabled):not(.disabled):active:focus,.show>.btn-outline-info.dropdown-toggle:focus{box-shadow:0 0 0 .2rem #F0EBD8}
 
     #gallery-intro{
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
