@@ -396,7 +396,7 @@
 
     .bg {
         /* The image used */
-        background-image: url("exhibit4.jpg");
+        background-image: url("cover.jpg");
 
         /* Full height */
         height: 100vh;
@@ -405,6 +405,7 @@
         /* Center and scale the image nicely */
         background-position: center;
         background-repeat: no-repeat;
+        background-size: cover;
         z-index: 20;
         color: white;
     }
@@ -745,13 +746,16 @@
     @media screen and (max-width: 900px) {
         .bg {
             /* The image used */
-            background-image: url("exhibit4.jpg");
+            background-image: url("cover.jpg");
 
             /* Full height */
             height: 100vh;
             position: relative;
 
             /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
             z-index: 20;
             color: white;
         }
