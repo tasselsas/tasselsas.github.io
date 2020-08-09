@@ -13,6 +13,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script type="text/javascript" src="jquery.nicescroll.js"></script>
     <script>
+
+        function start(){
+            $('.main').css('overflow-y', 'scroll');
+            document.getElementById('information').scrollIntoView();
+        }
+
         var assets = 0;
         var first = true;
 
@@ -31,12 +37,6 @@
             }
         }
 
-        $(function() {  
-            $("body").niceScroll({
-                scrollspeed: 50
-             });
-        });
-
         function activateDonation(){
             $("#textone").addClass("load");
             setTimeout(function(){ $("#texttwo").addClass("load"); }, 1200)
@@ -44,89 +44,36 @@
         }
 
         $( document ).ready(function() {
-            var links = document.getElementsByClassName('extLink');
+                $('.main').css('overflow-y', 'hidden');
 
-            var mouseOver = function(){
-                var shrink=this.getElementsByClassName('shrink')[0];
-                var expand=this.getElementsByClassName('expand')[0];
+                $('#backgroundVid').on('ended',function(){
+                    $('#backgroundVid').addClass('load');
+                    $('#typewriter1').addClass('load');
+                });
+                
 
-                shrink.style.display = 'none';
-                expand.style.display = 'inline';
-            }
+                var links = document.getElementsByClassName('extLink');
 
-            var mouseOut = function(){
-                var shrink=this.getElementsByClassName('shrink')[0];
-                var expand=this.getElementsByClassName('expand')[0];
+                var mouseOver = function(){
+                    var shrink=this.getElementsByClassName('shrink')[0];
+                    var expand=this.getElementsByClassName('expand')[0];
 
-                shrink.style.display = 'inline';
-                expand.style.display = 'none';
-            }
-
-            for (var i = 0; i < links.length; i++) {
-                links[i].addEventListener('mouseover', mouseOver, false);
-                links[i].addEventListener('mouseout', mouseOut, false);
-            }
-
-            $( ".main" ).scroll(function() {
-                var height = window.innerHeight;
-                if(document.getElementsByClassName('main')[0].scrollTop>(height-20) && document.getElementsByClassName('main')[0].scrollTop<(height*2-20) && !$("#1").hasClass('active')){
-                    $( "#1" ).addClass('active');
-                    $( "#2" ).removeClass('active');
-                    $( "#3" ).removeClass('active');
-                    $( "#4" ).removeClass('active');
-                    $( "#5" ).removeClass('active');
-                    $("#gallery-container").removeClass("load");
-                    setTimeout(function(){ $("#gallery-container").scrollTop(0); }, 1000)
-                    //$("#gallery-container").scrollTop(0);
-                    $(".slideText").removeClass("load");
+                    shrink.style.display = 'none';
+                    expand.style.display = 'inline';
                 }
-                else if(document.getElementsByClassName('main')[0].scrollTop>(height*2-20) && document.getElementsByClassName('main')[0].scrollTop<(height*3-20) && !$("#2").hasClass('active')){
-                    $( "#1" ).removeClass('active')
-                    $( "#2" ).addClass('active')
-                    $( "#3" ).removeClass('active')
-                    $( "#4" ).removeClass('active');
-                    $( "#5" ).removeClass('active');
-                    $("#gallery-container").removeClass("load");
-                    setTimeout(function(){ $("#gallery-container").scrollTop(0); }, 1000)
-                    $(".slideText").removeClass("load");
+
+                var mouseOut = function(){
+                    var shrink=this.getElementsByClassName('shrink')[0];
+                    var expand=this.getElementsByClassName('expand')[0];
+
+                    shrink.style.display = 'inline';
+                    expand.style.display = 'none';
                 }
-                else if(document.getElementsByClassName('main')[0].scrollTop>(height*3-20) && document.getElementsByClassName('main')[0].scrollTop<(height*4-20) && !$("#3").hasClass('active')){
-                    $( "#1" ).removeClass('active');
-                    $( "#2" ).removeClass('active');
-                    $( "#3" ).addClass('active');
-                    $( "#4" ).removeClass('active');
-                    $( "#5" ).removeClass('active');
-                    $("#gallery-container").addClass("load");
-                    if(first){
-                        showInstruction();
-                    }
-                    $(".slideText").removeClass("load");
+
+                for (var i = 0; i < links.length; i++) {
+                    links[i].addEventListener('mouseover', mouseOver, false);
+                    links[i].addEventListener('mouseout', mouseOut, false);
                 }
-                else if(document.getElementsByClassName('main')[0].scrollTop>(height*4-20) && document.getElementsByClassName('main')[0].scrollTop<(height*5-20) && !$("#4").hasClass('active')){
-                    $( "#1" ).removeClass('active');
-                    $( "#2" ).removeClass('active');
-                    $( "#3" ).removeClass('active');
-                    $( "#4" ).addClass('active');
-                    $( "#5" ).removeClass('active');
-                    $("#gallery-container").removeClass("load");
-                    setTimeout(function(){ $("#gallery-container").scrollTop(0); }, 1000)
-                    $(".slideText").addClass("load");
-                    $("#textone").removeClass("load");
-                    $("#texttwo").removeClass("load");
-                    $("#donateButton").removeClass("load");
-                }
-                else if(document.getElementsByClassName('main')[0].scrollTop>(height*5-20) && document.getElementsByClassName('main')[0].scrollTop<(height*5+20) && !$("#5").hasClass('active')){
-                    $( "#1" ).removeClass('active');
-                    $( "#2" ).removeClass('active');
-                    $( "#3" ).removeClass('active');
-                    $( "#4" ).removeClass('active');
-                    $( "#5" ).addClass('active');
-                    $("#gallery-container").removeClass("load");
-                    setTimeout(function(){ $("#gallery-container").scrollTop(0); }, 1000)
-                    $(".slideText").removeClass("load");
-                    activateDonation();
-                }
-            });
         });
     </script>
     <base target="_top">
@@ -437,7 +384,12 @@
     }
 
     #titleButton{
-        color:white;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        -webkit-transition: all 0.3s ease-in;
+        -moz-transition: all 0.3s ease-in;
+        -ms-transition: all 0.3s ease-in;
+         -o-transition: all 0.3s ease-in;
+            transition: all 0.3s ease-in;
     }
 
     #galleryButton{
@@ -454,7 +406,7 @@
         position: absolute;
         text-align: center;
         width: 100%;
-        bottom: 30px;
+        bottom: 120px;
     }
 
     #gallery-container{
@@ -741,13 +693,72 @@
         opacity:0;
     }
 
-    /* Responsive layout - makes a two column-layout instead of four columns */
+    #backgroundVid {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        opacity:1;
+        min-width: 100%;
+        min-height: 100%;
+        -moz-transition: opacity 0s ease-in;
+        -webkit-transition: opacity 0s ease-in;
+        -ms-transition: opacity 0s ease-in;
+        transition: opacity 0s ease-in;
+    }
+
+    #backgroundVid.load{
+        opacity:0;
+        -moz-transition: opacity 0.8s ease-in;
+        -webkit-transition: opacity 0.8s ease-in;
+        -ms-transition: opacity 0.8s ease-in;
+        transition: opacity 0.8s ease-in;
+    }
+
+    #typewriter1.load{
+        opacity:0;
+    }
+
+    #typewriter1{
+        font-family: monospace;
+        display:none;
+        position: absolute;
+        bottom:25px;
+        left: 80px;
+        -moz-transition: opacity 0.3s ease-in;
+        -webkit-transition: opacity 0.3s ease-in;
+        -ms-transition: opacity 0.3s ease-in;
+        transition: opacity 0.3s ease-in;
+    }
+
+    
+
+    .typewriter h1 {
+        color: black;
+        font-family: monospace;
+        font-size: 24px;
+        overflow: hidden;
+        border-right: .15em solid orange; 
+        white-space: nowrap; 
+        letter-spacing: .15em;
+        animation: 
+            typing 2.5s steps(29, end),
+            blink-caret .5s step-end infinite;
+    }
+
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: orange }
+    }
+
     @media screen and (max-width: 900px) {
         .bg {
-            /* The image used */
             background-image: url("cover.jpg");
 
-            /* Full height */
             height: 100vh;
             position: relative;
 
@@ -813,15 +824,134 @@
         }
     }
 
-    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
   </style>
-    <script>
-        /**document.addEventListener('scroll', function (event) {
-            if(document.documentElement.scrollTop<70&&document.documentElement.scrollTop>0){
-                $('#gallery-container').css('display', 'none')
+<script>
+    $( document ).ready(function() {
+        var w = $(window).width();
+        if(w<650){
+            $('#sidebar ul').css('display', 'none');
+            document.getElementById('teachers').scrollIntoView();
+            $('.slideText h2').text('Please use a computer or a tablet for the best viewing experience.');
+            $('.slideText h5').text('We thank you for your help, care, and support!')
+            $('.main').css('overflow-y', 'hidden');
+            $('body').addClass('loaded');
+        }
+    /**
+    let video = document.querySelector('video');
+    let observer = new IntersectionObserver((entries, observer) => { 
+        entries.forEach(entry => {
+            if(entry.intersectionRatio<0.5){
+                video.pause();
             }
-        });**/
-    </script>
+            else {
+                document.getElementById('backgroundVid').currentTime=0;
+                video.play();
+            }
+
+        });
+    }, {threshold: 0.5});
+    observer.observe(video) ;**/
+
+    const options = {
+        rootMargin: '0px',
+        threshold: 0.98
+    }
+        function activateZero(){
+            //$('#backgroundVid').removeClass('load');
+            $( "#1" ).removeClass('active');
+            $( "#2" ).removeClass('active');
+            $( "#3" ).removeClass('active');
+            $( "#4" ).removeClass('active');
+            $( "#5" ).removeClass('active');
+            //$('#typewriter1').removeClass('typewriter');
+            //$('#typewriter1').css('display','none');
+        }
+
+        function activateOne(){
+            $( "#1" ).addClass('active');
+            $( "#2" ).removeClass('active');
+            $( "#3" ).removeClass('active');
+            $( "#4" ).removeClass('active');
+            $( "#5" ).removeClass('active');
+            $("#gallery-container").removeClass("load");
+            //$('#typewriter1').removeClass('load');
+            //$("#gallery-container").scrollTop(0);
+            //$(".slideText").removeClass("load");
+            //$('#typewriter1').addClass('typewriter');
+            //$('#typewriter1').css('display','block');
+        }
+
+        function activateTwo(){
+            console.log("two")
+            $( "#1" ).removeClass('active');
+            $( "#2" ).addClass('active');
+            $( "#3" ).removeClass('active')
+            $( "#4" ).removeClass('active');
+            $( "#5" ).removeClass('active');
+            //$('#backgroundVid').removeClass('load');
+            $("#gallery-container").removeClass("load");
+            setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
+            $(".slideText").removeClass("load");
+            //$('#typewriter1').removeClass('typewriter');
+            //$('#typewriter1').css('display','none');
+        }
+
+        function activateThree(){
+            $( "#1" ).removeClass('active');
+            $( "#2" ).removeClass('active');
+            $( "#3" ).addClass('active');
+            $( "#4" ).removeClass('active');
+            $( "#5" ).removeClass('active');
+            $("#gallery-container").addClass("load");
+            /**if(first){
+                showInstruction();
+            }**/
+            $(".slideText").removeClass("load");
+        }
+
+        function activateFour(){
+            console.log('four')
+            $( "#1" ).removeClass('active');
+            $( "#2" ).removeClass('active');
+            $( "#3" ).removeClass('active');
+            $( "#4" ).addClass('active');
+            $( "#5" ).removeClass('active');
+            $("#gallery-container").removeClass("load");
+            setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
+            $(".slideText").addClass("load");
+            $("#textone").removeClass("load");
+            $("#texttwo").removeClass("load");
+            $("#donateButton").removeClass("load");
+        }
+
+        function activateFive(){
+            $( "#1" ).removeClass('active');
+            $( "#2" ).removeClass('active');
+            $( "#3" ).removeClass('active');
+            $( "#4" ).removeClass('active');
+            $( "#5" ).addClass('active');
+            $("#gallery-container").removeClass("load");
+            //$("#gallery-container").scrollTop(0);
+            $(".slideText").removeClass("load");
+            activateDonation();
+        }
+
+
+    const zero = document.querySelector('#intro');
+    const one = document.querySelector('#information');
+    const two = document.querySelector('#gallery-intro');
+    const three = document.querySelector('#gallery-container');
+    const four = document.querySelector('#teachers');
+    const five = document.querySelector('#donate');
+
+    new IntersectionObserver(activateZero, options).observe(zero);
+    new IntersectionObserver(activateOne, options).observe(one);
+    new IntersectionObserver(activateTwo, options).observe(two);
+    new IntersectionObserver(activateThree, options).observe(three);
+    new IntersectionObserver(activateFour, options).observe(four);
+    new IntersectionObserver(activateFive, options).observe(five);
+});
+</script>
 </head>
 <body>
     <div id='first' style='background-color: rgba(0, 0, 0, 0.6)'>
@@ -843,16 +973,16 @@
         <h1>TASSEL</h1>
 
         <ul>
-            <li><a href="#information"><div id='1' class='nav active'></div></a></li>
-            <li><a href="#gallery-intro"><div id='2' class='nav'></div></a></li>
-            <li><a href="#gallery-container"><div id='3' class='nav'></div></a></li>
-            <li><a href="#teachers"><div id='4' class='nav'></div></a></li>
-            <li><a href="#donate"><div id='5' class='nav'></div></a></li>
+            <li><a onclick="document.getElementById('information').scrollIntoView();"><div id='1' class='nav active'></div></a></li>
+            <li><a onclick="document.getElementById('gallery-intro').scrollIntoView();"><div id='2' class='nav'></div></a></li>
+            <li><a onclick="document.getElementById('gallery-container').scrollIntoView();"><div id='3' class='nav'></div></a></li>
+            <li><a onclick="document.getElementById('teachers').scrollIntoView();"><div id='4' class='nav'></div></a></li>
+            <li><a onclick="document.getElementById('donate').scrollIntoView();"><div id='5' class='nav'></div></a></li>
             <li><a href="#gallery-intro"><div id='6' class='nav'></div></a></li>
         </ul>
     </div>
     <div class='main'>
-        <div class='section bg'>
+        <div class='section bg' id='intro'>
             <a href='https://www.tasselcambodia.org/donate-1' target="_blank">
                 <div id='top-right' class='extLink'>
                     <h1 class='shrink'>
@@ -884,13 +1014,21 @@
                 <h2>Effects of COVID-19 and the Drought</h2>
             </div>
             <div id='titleButtonContainer'>
-                <svg id='titleButton' width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="#F0EBD8" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                    <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                </svg>
+                <a onclick='start()'>
+                    <button id='titleButton' type="button" class="btn btn-lg btn-outline-info mt-1">Click to Start</button>
+                </a>
             </div>
         </div>
         <div class='section' id='information' style='position: relative;'>
+            <!--
+            <video id="backgroundVid">
+                <source id='video' src="final.mp4" type="video/mp4">
+            </video>
+            <div id='typewriter1'>
+                <h1>
+                    Joji Tastugi - TASSEL Founder
+                </h1>
+            </div>-->
             <h3>
                 Information slide
             </h3>
@@ -900,7 +1038,7 @@
                 Discover their stories.
             </h1>
             <div id='galleryButtonContainer'>
-                <a href="#gallery-container">
+                <a onclick="document.getElementById('gallery-container').scrollIntoView();">
                     <svg id='galleryButton' width="4.5em" height="4.5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="#F0EBD8" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
                     </svg>
