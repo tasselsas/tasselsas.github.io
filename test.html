@@ -415,7 +415,7 @@
         text-align: right;
         height: 100vh;
         overflow-y: scroll;
-        background-color: #3E5C76;
+        /**background-color: #3E5C76;**/
         padding-bottom: 100px;
     }
     #gallery{
@@ -470,7 +470,7 @@
         height: 100vh;
         display: flex;
         align-items: center;
-        background-color: #1D2D44
+        /**background-color: #1D2D44**/
     }
     #gallery-intro div h1{
         font-size: 60px;
@@ -512,6 +512,18 @@
         align-items: center;
         justify-content: center;
     }
+    #information h3{
+        position: relative;
+        z-index: 5;
+    }
+
+    #infobackground{
+        background-image: linear-gradient(#0D1321, #1D2D44, #3E5C76, #748CAB, #F0EBD8);
+        height: 500vh;
+        position: absolute;
+        width: 100%;
+        top: 0;
+    }
 
     ul {
         list-style-type: none;
@@ -527,7 +539,7 @@
         display: flex;
         align-items: center;
         position: relative;
-        background-color: #F0E8BD;
+        /**background-color: #F0E8BD;**/
     }
 
     #donate h1{
@@ -643,7 +655,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        background-color: #748CAB;
+        /**background-color: #748CAB;**/
     }
 
     .expand{
@@ -1071,9 +1083,12 @@
                     Joji Tastugi - TASSEL Founder
                 </h1>
             </div>-->
+
             <h3>
                 Information slide
             </h3>
+            <div id='infobackground'>
+            </div>
         </div>
         <div class='section' id='gallery-intro' style='position: relative;'>
             <div style='width: 100%;'>
