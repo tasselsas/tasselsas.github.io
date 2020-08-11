@@ -412,23 +412,42 @@
     #gallery-container{
         padding-right: 15px;
         width: 100%;
-        margin-top: 90px;
         text-align: right;
         height: 100vh;
         overflow-y: scroll;
+        background-color: #3E5C76;
         padding-bottom: 100px;
+    }
+    #gallery{
         -webkit-transition: opacity 0.7s ease-in;
         -moz-transition: opacity 0.7s ease-in;
         -ms-transition: opacity 0.7s ease-in;
-         -o-transition: opacity 0.7s ease-in;
-            transition: opacity 0.7s ease-in;
+        -o-transition: opacity 0.7s ease-in;
+        transition: opacity 0.7s ease-in;
         opacity: 0;
     }
 
-    #first h3.load, #gallery-container.load,#textone.load, #texttwo.load, #donateButton.load,.slideText.load{
+    #first h3.load, #gallery.load,#textone.load, #texttwo.load, #donateButton.load,.slideText.load{
         opacity: 1;
         
     }
+
+
+    .btn-outline-primary{
+      color:#0D1321;
+      border-color:#0D1321;
+    }
+    .btn-outline-primary:hover{
+        color:#F0EBD8;
+        background-color:#0D1321;
+        border-color:#0D1321;
+    }
+    .btn-outline-primary.focus,.btn-outline-primary:focus{
+        box-shadow:0 0 0 .2rem rgba(13, 19, 33,0.5);
+    }
+
+    .btn-outline-primary.disabled,.btn-outline-primary:disabled{color:#0D1321;background-color:transparent}.btn-outline-primary:not(:disabled):not(.disabled).active,.btn-outline-primary:not(:disabled):not(.disabled):active,.show>.btn-outline-primary.dropdown-toggle{color:#fff;background-color:#0D1321;border-color:#0D1321}.btn-outline-primary:not(:disabled):not(.disabled).active:focus,.btn-outline-primary:not(:disabled):not(.disabled):active:focus,.show>.btn-outline-primary.dropdown-toggle:focus{box-shadow:0 0 0 .2rem #0D1321}
+
 
     .btn-outline-info{
       color:#F0EBD8;
@@ -451,6 +470,7 @@
         height: 100vh;
         display: flex;
         align-items: center;
+        background-color: #1D2D44
     }
     #gallery-intro div h1{
         font-size: 60px;
@@ -463,6 +483,7 @@
     #donateContent{
         width:40%;
         margin: 0 auto;
+        color: #0D1321;
     }
 
     #textone, #texttwo{
@@ -506,6 +527,7 @@
         display: flex;
         align-items: center;
         position: relative;
+        background-color: #F0E8BD;
     }
 
     #donate h1{
@@ -595,6 +617,10 @@
         transition: 0.4s;
     }
 
+    li div.change{
+        background-color: #0D1321;
+    }
+
     .modalimage{
         margin-bottom: 10px;
     }
@@ -617,6 +643,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        background-color: #748CAB;
     }
 
     .expand{
@@ -646,6 +673,10 @@
         top: 5px;
         left: 30px;
         font-size:30px;
+    }
+
+    #sidebar h1.change{
+        color:#0D1321;
     }
 
     .navText{
@@ -875,12 +906,14 @@
             $( "#3" ).removeClass('active');
             $( "#4" ).removeClass('active');
             $( "#5" ).removeClass('active');
-            $("#gallery-container").removeClass("load");
+            $("#gallery").removeClass("load");
             //$('#typewriter1').removeClass('load');
             //$("#gallery-container").scrollTop(0);
             //$(".slideText").removeClass("load");
             //$('#typewriter1').addClass('typewriter');
             //$('#typewriter1').css('display','block');
+            $('li div').removeClass('change');
+            $('#sidebar h1').removeClass('change');
         }
 
         function activateTwo(){
@@ -891,11 +924,13 @@
             $( "#4" ).removeClass('active');
             $( "#5" ).removeClass('active');
             //$('#backgroundVid').removeClass('load');
-            $("#gallery-container").removeClass("load");
+            $("#gallery").removeClass("load");
             setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
             $(".slideText").removeClass("load");
             //$('#typewriter1').removeClass('typewriter');
             //$('#typewriter1').css('display','none');
+            $('li div').removeClass('change');
+            $('#sidebar h1').removeClass('change');
         }
 
         function activateThree(){
@@ -904,11 +939,13 @@
             $( "#3" ).addClass('active');
             $( "#4" ).removeClass('active');
             $( "#5" ).removeClass('active');
-            $("#gallery-container").addClass("load");
+            $("#gallery").addClass("load");
             /**if(first){
                 showInstruction();
             }**/
             $(".slideText").removeClass("load");
+            $('li div').removeClass('change');
+            $('#sidebar h1').removeClass('change');
         }
 
         function activateFour(){
@@ -918,12 +955,14 @@
             $( "#3" ).removeClass('active');
             $( "#4" ).addClass('active');
             $( "#5" ).removeClass('active');
-            $("#gallery-container").removeClass("load");
+            $("#gallery").removeClass("load");
             setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
             $(".slideText").addClass("load");
             $("#textone").removeClass("load");
             $("#texttwo").removeClass("load");
             $("#donateButton").removeClass("load");
+            $('li div').removeClass('change');
+            $('#sidebar h1').removeClass('change');
         }
 
         function activateFive(){
@@ -931,10 +970,12 @@
             $( "#2" ).removeClass('active');
             $( "#3" ).removeClass('active');
             $( "#4" ).removeClass('active');
-            $( "#5" ).addClass('active');
-            $("#gallery-container").removeClass("load");
+            $("#gallery").removeClass("load");
             //$("#gallery-container").scrollTop(0);
             $(".slideText").removeClass("load");
+            $('li div').addClass('change');
+            $('#sidebar h1').addClass('change');
+            $( "#5" ).addClass('active');
             activateDonation();
         }
 
@@ -980,7 +1021,6 @@
             <li><a onclick="document.getElementById('gallery-container').scrollIntoView();"><div id='3' class='nav'></div></a></li>
             <li><a onclick="document.getElementById('teachers').scrollIntoView();"><div id='4' class='nav'></div></a></li>
             <li><a onclick="document.getElementById('donate').scrollIntoView();"><div id='5' class='nav'></div></a></li>
-            <li><a href="#gallery-intro"><div id='6' class='nav'></div></a></li>
         </ul>
     </div>
     <div class='main'>
@@ -1056,7 +1096,7 @@
             </div>
         </div>
         <div class='section' id='gallery-container'>
-            <div class="row">
+            <div class="row" id='gallery'>
                 <div class="column">
                     <div class='element' data-toggle="modal" data-target="#modal1">
                         <img class='image' src="exhibit1.jpg" onload='increment()'>
@@ -1181,7 +1221,7 @@
             <div id='donateContent'>
                 <h5 id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
                 <h1 id='texttwo'>They need your help.</h1>
-                <span id='donateButton'><a href='https://www.tasselcambodia.org/donate-1' target="_blank"><button type="button" class="btn btn-lg btn-outline-info mt-1">Donate</button></a></span>
+                <span id='donateButton'><a href='https://www.tasselcambodia.org/donate-1' target="_blank"><button type="button" class="btn btn-lg btn-outline-primary mt-1">Donate</button></a></span>
             </div>
         </div>
     </div>

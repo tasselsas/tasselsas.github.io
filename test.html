@@ -427,9 +427,8 @@
         opacity: 0;
     }
 
-    #first h3.load, #gallery.load,#textone.load, #texttwo.load, #donateButton.load,.slideText.load{
+    #first h3.load, #gallery.load, #textone.load, #texttwo.load, #donateButton.load,.slideText.load, #shun.load{
         opacity: 1;
-        
     }
 
 
@@ -484,6 +483,7 @@
         width:40%;
         margin: 0 auto;
         color: #0D1321;
+        position: relative;
     }
 
     #textone, #texttwo{
@@ -517,7 +517,7 @@
         z-index: 5;
     }
 
-    #infobackground{
+    #gradientbackground{
         background-image: linear-gradient(#0D1321, #1D2D44, #3E5C76, #748CAB, #F0EBD8);
         height: 500vh;
         position: absolute;
@@ -627,6 +627,7 @@
         margin-top: 5px;
         text-decoration: none;
         transition: 0.4s;
+        cursor:pointer;
     }
 
     li div.change{
@@ -749,6 +750,25 @@
         -webkit-transition: opacity 0s ease-in;
         -ms-transition: opacity 0s ease-in;
         transition: opacity 0s ease-in;
+    }
+
+    #villagers{
+        width: 70%;
+        position: absolute;
+        bottom: -10px;
+        right: 0;
+    }
+
+    #shun{
+        position: absolute;
+        bottom:0;
+        opacity: 0;
+        right: 40px;
+        width: 20%;
+        -moz-transition: opacity 0.8s ease-in;
+        -webkit-transition: opacity 0.8s ease-in;
+        -ms-transition: opacity 0.8s ease-in;
+        transition: opacity 0.8s ease-in;
     }
 
     #backgroundVid.load{
@@ -908,6 +928,7 @@
             $( "#3" ).removeClass('active');
             $( "#4" ).removeClass('active');
             $( "#5" ).removeClass('active');
+            $('#shun').removeClass('load');
             //$('#typewriter1').removeClass('typewriter');
             //$('#typewriter1').css('display','none');
         }
@@ -919,6 +940,7 @@
             $( "#4" ).removeClass('active');
             $( "#5" ).removeClass('active');
             $("#gallery").removeClass("load");
+            $('#shun').addClass('load');
             //$('#typewriter1').removeClass('load');
             //$("#gallery-container").scrollTop(0);
             //$(".slideText").removeClass("load");
@@ -935,9 +957,10 @@
             $( "#3" ).removeClass('active')
             $( "#4" ).removeClass('active');
             $( "#5" ).removeClass('active');
+            $('#shun').removeClass('load');
             //$('#backgroundVid').removeClass('load');
             $("#gallery").removeClass("load");
-            setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
+            //setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
             $(".slideText").removeClass("load");
             //$('#typewriter1').removeClass('typewriter');
             //$('#typewriter1').css('display','none');
@@ -952,6 +975,7 @@
             $( "#4" ).removeClass('active');
             $( "#5" ).removeClass('active');
             $("#gallery").addClass("load");
+            $('#shun').removeClass('load');
             /**if(first){
                 showInstruction();
             }**/
@@ -968,7 +992,8 @@
             $( "#4" ).addClass('active');
             $( "#5" ).removeClass('active');
             $("#gallery").removeClass("load");
-            setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
+            $('#shun').removeClass('load');
+            //setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
             $(".slideText").addClass("load");
             $("#textone").removeClass("load");
             $("#texttwo").removeClass("load");
@@ -982,10 +1007,14 @@
             $( "#2" ).removeClass('active');
             $( "#3" ).removeClass('active');
             $( "#4" ).removeClass('active');
+            $( "#1" ).addClass('change');
+            $( "#2" ).addClass('change');
+            $( "#3" ).addClass('change');
+            $( "#4" ).addClass('change');
+            $('#shun').removeClass('load');
             $("#gallery").removeClass("load");
             //$("#gallery-container").scrollTop(0);
             $(".slideText").removeClass("load");
-            $('li div').addClass('change');
             $('#sidebar h1').addClass('change');
             $( "#5" ).addClass('active');
             activateDonation();
@@ -1083,12 +1112,13 @@
                     Joji Tastugi - TASSEL Founder
                 </h1>
             </div>-->
+            <div id='gradientackground'>
+            </div>
+            <img id='shun' src='shun clear.png'>
 
             <h3>
                 Information slide
             </h3>
-            <div id='infobackground'>
-            </div>
         </div>
         <div class='section' id='gallery-intro' style='position: relative;'>
             <div style='width: 100%;'>
@@ -1215,7 +1245,7 @@
             </div>
         </div>
         <div class='section' id='teachers'>
-            <div>
+            <div style='z-index: 0;'>
                 <div class='slideText'>
                     <h2>What has TASSEL been doing?</h2>
                 </div>
@@ -1233,6 +1263,7 @@
             </div>
         </div>
         <div class='section' id='donate'>
+            <img id='villagers' src='villagers.png'>
             <div id='donateContent'>
                 <h5 id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
                 <h1 id='texttwo'>They need your help.</h1>
