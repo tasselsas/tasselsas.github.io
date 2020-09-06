@@ -32,7 +32,6 @@
 
         function increment(){
             assets+=1;
-            console.log(assets)
             if(assets>=30){
                 $('body').addClass('loaded');
             }
@@ -82,8 +81,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
   
         
-
-
 #loader-wrapper {
     position: fixed;
     top: 0;
@@ -240,7 +237,7 @@
         transform: translate3d(0, 0, 0);
     }
     .images {
-        background: url(navyslides.png);
+        background: url(navyslides.jpg);
         background-size: contain;
         position: absolute;
         left: 0;
@@ -430,8 +427,9 @@
         opacity: 0;
     }
 
-    #first h3.load, #gallery.load, #textone.load, #texttwo.load, #donateButton.load,.slideText.load, #shun.load{
+    #first h3.load, #gallery.load,#textone.load, #texttwo.load, #donateButton.load,.slideText.load{
         opacity: 1;
+        
     }
 
 
@@ -472,7 +470,7 @@
         height: 100vh;
         display: flex;
         align-items: center;
-        background-color: #1D2D44;
+        background-color: #1D2D44
     }
     #gallery-intro div h1{
         font-size: 60px;
@@ -483,10 +481,9 @@
     }
 
     #donateContent{
-        width:60%;
+        width:40%;
         margin: 0 auto;
         color: #0D1321;
-        position: relative;
     }
 
     #textone, #texttwo{
@@ -514,15 +511,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        /**background-color: #0D1321;**/
-        background-color: #0D1321;
-        overflow-y: scroll;
     }
-    #information h3{
-        position: relative;
-        z-index: 5;
-    }
-    
 
     ul {
         list-style-type: none;
@@ -626,7 +615,6 @@
         margin-top: 5px;
         text-decoration: none;
         transition: 0.4s;
-        cursor:pointer;
     }
 
     li div.change{
@@ -749,201 +737,6 @@
         -webkit-transition: opacity 0s ease-in;
         -ms-transition: opacity 0s ease-in;
         transition: opacity 0s ease-in;
-    }
-
-    #villagers{
-        width: 70%;
-        position: absolute;
-        bottom: -10px;
-        right: 0;
-    }
-
-    #shun{
-        position: absolute;
-        bottom:0;
-        opacity: 0;
-        right: 40px;
-        width: 20%;
-        -moz-transition: opacity 0.8s ease-in;
-        -webkit-transition: opacity 0.8s ease-in;
-        -ms-transition: opacity 0.8s ease-in;
-        transition: opacity 0.8s ease-in;
-    }
-
-    #timelinetitle{
-        position: absolute;
-        top: 30px;
-        line-height: 40px;
-    }
-    #timelinetitle::after{
-        content: '';
-        height: 2px;
-        width: 120%;
-        background-color: #7a8aa8;
-        position: absolute;
-        left: 50%;
-        margin-top: 60px;
-        margin-left: -60%;
-    }
-
-
-    .timelinemodal img{
-        width: 60%;
-        margin: 0 20%;
-    }
-
-    .timelinemodal h1{
-        text-align: center;
-        width: 100%;
-        color: rgb(255, 255, 145);
-    }
-
-    .timelinemodal h6{
-        width: 90%;
-        margin: 0 10%;
-        color: rgb(243, 243, 243);
-    }
-
-    #timeline{
-        top: 0;
-        margin: 0 auto;
-    }
-
-    #vertical {
-        content: '';
-        position: absolute;
-        width: 2px;
-        background-color: #7a8aa8;
-        top: 150px;
-        bottom: 0;
-        left: 50%;
-        height: 1600px;
-        margin-left: -1px;
-    }
-
-    #timeline::before{
-        content: '';
-        position: absolute;
-        width: 22px;
-        height: 22px;
-        background-color: #7a8aa8;
-        top: 150px;
-        left: 50%;
-        border-radius: 50%;
-        margin-left: -11px;
-    }
-    #timeline::after{
-        content: '';
-        position: absolute;
-        width: 22px;
-        height: 22px;
-        background-color: #7a8aa8;
-        top: 1750px;
-        left: 50%;
-        border-radius: 50%;
-        margin-left: -11px;
-        margin-bottom: 150px;
-    }
-
-    .container.left::before{
-        content: '';
-        position: absolute;
-        height: 2px;
-        width: 80px;
-        background-color: #7a8aa8;
-        margin-left: -80px;
-    }
-    .container.left::after{
-        content: '';
-        position: absolute;
-        height: 18px;
-        border-radius: 50%;
-        width: 18px;
-        left: 50%;
-        background-color: #7a8aa8;
-        margin-left: -84px;
-        margin-top: -9px;
-    }
-
-    .container.right::before{
-        content: '';
-        position: absolute;
-        height: 2px;
-        width: 80px;
-        background-color: #7a8aa8;
-    }
-    .container.right::after{
-        content: '';
-        position: absolute;
-        height: 18px;
-        border-radius: 50%;
-        width: 18px;
-        left: 50%;
-        background-color: #7a8aa8;
-        margin-left: 66px;
-        margin-top: -9px;
-    }
-
-    .container.left .content{
-        position: absolute;
-        margin-left: -470px;
-        margin-top: -370px;
-        height: 350px;
-        width: 350px;
-    }
-
-    .container.right .content{
-        position: absolute;
-        margin-left: 120px;
-        margin-top: -370px;
-        height: 350px;
-        width: 350px;
-    }
-
-    .content .header{
-        font-size: 36px;
-        line-height: 40px;
-        text-align: center;
-        color: rgb(255, 255, 145);
-    }
-
-    .timelinetext{
-        text-align: left;
-        color: rgb(248, 248, 248);
-    }
-
-    .content img{
-        width: 100%;
-        cursor: pointer;
-    }
-
-    .content img:hover {
-        transform: scale(1.03);
-        transition-duration: 0.1s;
-    }
-
-    #firstpanel::before, #firstpanel::after, #firstpanel .content{
-        top: 480px;
-    }
-
-    #secondpanel::before, #secondpanel::after, #secondpanel .content{
-        top: 600px;
-    }
-
-    #thirdpanel::before, #thirdpanel::after, #thirdpanel .content{
-        top: 1000px;
-    }
-
-    #fourthpanel::before, #fourthpanel::after, #fourthpanel .content{
-        top: 1120px;
-    }
-
-    #fifthpanel::before, #fifthpanel::after, #fifthpanel .content{
-        top: 1520px;
-    }
-
-    #sixthpanel::before, #sixthpanel::after, #sixthpanel .content{
-        top: 1640px;
     }
 
     #backgroundVid.load{
@@ -1094,7 +887,7 @@
 
     const options = {
         rootMargin: '0px',
-        threshold: 1
+        threshold: 0.98
     }
         function activateZero(){
             //$('#backgroundVid').removeClass('load');
@@ -1103,7 +896,6 @@
             $( "#3" ).removeClass('active');
             $( "#4" ).removeClass('active');
             $( "#5" ).removeClass('active');
-            $('#shun').removeClass('load');
             //$('#typewriter1').removeClass('typewriter');
             //$('#typewriter1').css('display','none');
         }
@@ -1115,7 +907,6 @@
             $( "#4" ).removeClass('active');
             $( "#5" ).removeClass('active');
             $("#gallery").removeClass("load");
-            $('#shun').addClass('load');
             //$('#typewriter1').removeClass('load');
             //$("#gallery-container").scrollTop(0);
             //$(".slideText").removeClass("load");
@@ -1132,10 +923,9 @@
             $( "#3" ).removeClass('active')
             $( "#4" ).removeClass('active');
             $( "#5" ).removeClass('active');
-            $('#shun').removeClass('load');
             //$('#backgroundVid').removeClass('load');
             $("#gallery").removeClass("load");
-            //setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
+            setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
             $(".slideText").removeClass("load");
             //$('#typewriter1').removeClass('typewriter');
             //$('#typewriter1').css('display','none');
@@ -1150,7 +940,6 @@
             $( "#4" ).removeClass('active');
             $( "#5" ).removeClass('active');
             $("#gallery").addClass("load");
-            $('#shun').removeClass('load');
             /**if(first){
                 showInstruction();
             }**/
@@ -1167,8 +956,7 @@
             $( "#4" ).addClass('active');
             $( "#5" ).removeClass('active');
             $("#gallery").removeClass("load");
-            $('#shun').removeClass('load');
-            //setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
+            setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
             $(".slideText").addClass("load");
             $("#textone").removeClass("load");
             $("#texttwo").removeClass("load");
@@ -1178,22 +966,16 @@
         }
 
         function activateFive(){
-            console.log('five');
             $( "#1" ).removeClass('active');
             $( "#2" ).removeClass('active');
             $( "#3" ).removeClass('active');
             $( "#4" ).removeClass('active');
-            $( "#1" ).addClass('change');
-            $( "#2" ).addClass('change');
-            $( "#3" ).addClass('change');
-            $( "#4" ).addClass('change');
-            $('#shun').removeClass('load');
             $("#gallery").removeClass("load");
             //$("#gallery-container").scrollTop(0);
             $(".slideText").removeClass("load");
+            $('li div').addClass('change');
             $('#sidebar h1').addClass('change');
             $( "#5" ).addClass('active');
-            setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 1000);
             activateDonation();
         }
 
@@ -1288,87 +1070,11 @@
                 <h1>
                     Joji Tastugi - TASSEL Founder
                 </h1>
-            </div>
-            <div id='gradientbackground'>
-            </div>
-            <img id='shun' src='shun clear.png'>
-
+            </div>-->
             <h3>
                 Information slide
             </h3>
-            <img id='timeline' src='Timeline.jpg'>-->
-            <h1 id='timelinetitle'>TASSEL CRISIS TIMELINE</h1>
-            <div id='timeline'>
-                <div id='vertical'></div>
-                <div class="container left" id='firstpanel'>
-                    <div class="content">
-                        <img src='timeline1.png' data-toggle="modal" data-target="#modal16">
-                        <h1 class='header'>
-                            APRIL 2019
-                        </h1>
-                        <h5 class='timelinetext'>
-                            Cambodia begins to suffer from a severe and prolonged drought.
-                        </h5>
-                    </div>
-                </div>
-                <div class="container right" id="secondpanel">
-                    <div class="content">
-                        <img src='timeline1.png' data-toggle="modal" data-target="#modal17">
-                        <h1 class='header'>
-                            DECEMBER 2019
-                        </h1>
-                        <h5 class='timelinetext'>
-                            The drought devastates agriculture and fisheries.
-                        </h5>
-                    </div>
-                </div>
-                <div class="container left" id="thirdpanel">
-                    <div class="content">
-                        <img src='timeline1.png' data-toggle="modal" data-target="#modal18">
-                        <h1 class='header'>
-                            JANUARY 2020
-                        </h1>
-                        <h5 class='timelinetext'>
-                            Cambodia reports first COVID-19 cases.
-                        </h5>
-                    </div>
-                </div>
-                <div class="container right" id="fourthpanel">
-                    <div class="content">
-                        <img src='timeline1.png' data-toggle="modal" data-target="#modal19">
-                        <h1 class='header'>
-                            MARCH 2020
-                        </h1>
-                        <h5 class='timelinetext'>
-                            The Cambodian government closes schools and country borders. Travel is restricted as COVID-19 cases rise.
-                        </h5>
-                    </div>
-                </div>
-                <div class="container left" id="fifthpanel">
-                    <div class="content">
-                        <img src='timeline1.png' data-toggle="modal" data-target="#modal20">
-                        <h1 class='header'>
-                            APRIL 2020 - PRESENT
-                        </h1>
-                        <h5 class='timelinetext'>
-                            Unemployment across the country soars.
-                        </h5>
-                    </div>
-                </div>
-                <div class="container right" id="sixthpanel">
-                    <div class="content">
-                        <img src='timeline1.png' data-toggle="modal" data-target="#modal21">
-                        <h1 class='header'>
-                            MAY 2020 - PRESENT
-                        </h1>
-                        <h5 class='timelinetext'>
-                            TASSEL provides aid to as many as possible.
-                        </h5>
-                    </div>
-                </div>
-            </div>
         </div>
-        <div style='height:100px;  background-image: linear-gradient(#0D1321, #1D2D44);'></div>
         <div class='section' id='gallery-intro' style='position: relative;'>
             <div style='width: 100%;'>
                 <h1>
@@ -1389,7 +1095,6 @@
                 </a>
             </div>
         </div>
-        <div style='height:100px;  background-image: linear-gradient(#1D2D44,#3E5C76);'></div>
         <div class='section' id='gallery-container'>
             <div class="row" id='gallery'>
                 <div class="column">
@@ -1494,9 +1199,8 @@
                 </div>
             </div>
         </div>
-        <div style='height:100px;  background-image: linear-gradient(#3E5C76,#748CAB);'></div>
         <div class='section' id='teachers'>
-            <div style='z-index: 0;'>
+            <div>
                 <div class='slideText'>
                     <h2>What has TASSEL been doing?</h2>
                 </div>
@@ -1513,9 +1217,7 @@
                 </div>
             </div>
         </div>
-        <div style='height:100px;  background-image: linear-gradient(#748CAB,#F0E8D8);'></div>
         <div class='section' id='donate'>
-            <img id='villagers' src='villagers.png'>
             <div id='donateContent'>
                 <h5 id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
                 <h1 id='texttwo'>They need your help.</h1>
@@ -1789,114 +1491,6 @@
                     <p>
                         Kakada is a 12-year old TASSEL student .  His mother killed herself,then his father abandoned him and his older siblings. He now lives with his 55-year old grandaunt who has a small shop; but because of COVID she earns only $1/day.  Kakada 's older brother was a factory worker in Thailand and used to send $40/month to support Kakada and his grandaunt.  But with COVID, the brother lost his job and cannot send any money.  Kakada's older sister is poor, married with children and also cannot support Kakada.  He and his grandaunt need help.
                     </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade timelinemodal" id="modal16" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" style='background-color: #0D1321;'>
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" style="color: white;">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src='timeline1.png' onload='increment()' onload='increment()'>
-                    <h1 class='text-center'>APRIL 2019</h1>
-                    <h6>
-                        Cambodia begins to suffer from a severe and prolonged drought.
-                    </h6>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade timelinemodal" id="modal17" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" style='background-color: #0D1321;'>
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" style="color: white;">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src='timeline1.png' onload='increment()' onload='increment()'>
-                    <h1 class='text-center'>DECEMBER 2019</h1>
-                    <h6>
-                        Cambodia begins to suffer from a severe and prolonged drought.
-                    </h6>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade timelinemodal" id="modal18" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" style='background-color: #0D1321;'>
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" style="color: white;">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src='timeline1.png' onload='increment()' onload='increment()'>
-                    <h1 class='text-center'>JANUARY 2020</h1>
-                    <h6>
-                        Cambodia begins to suffer from a severe and prolonged drought.
-                    </h6>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade timelinemodal" id="modal19" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" style='background-color: #0D1321;'>
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" style="color: white;">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src='timeline1.png' onload='increment()' onload='increment()'>
-                    <h1 class='text-center'>MARCH 2020</h1>
-                    <h6>
-                        Cambodia begins to suffer from a severe and prolonged drought.
-                    </h6>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade timelinemodal" id="modal20" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" style='background-color: #0D1321;'>
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" style="color: white;">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src='timeline1.png' onload='increment()' onload='increment()'>
-                    <h1 class='text-center'>APRIL 2020 - PRESENT</h1>
-                    <h6>
-                        Cambodia begins to suffer from a severe and prolonged drought.
-                    </h6>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade timelinemodal" id="modal21" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" style='background-color: #0D1321;'>
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" style="color: white;">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src='timeline1.png' onload='increment()' onload='increment()'>
-                    <h1 class='text-center'>MAY 2020 - PRESENT</h1>
-                    <h6>
-                        Cambodia begins to suffer from a severe and prolonged drought.
-                    </h6>
                 </div>
             </div>
         </div>
