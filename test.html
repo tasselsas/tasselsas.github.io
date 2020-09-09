@@ -15,7 +15,7 @@
     <script>
 
         function start(){
-            $('.main').css('overflow-y', 'scroll');
+            $('.phaseOne').css({'display':'flex'});
             document.getElementById('information').scrollIntoView();
         }
 
@@ -80,7 +80,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-
 
 #loader-wrapper {
     position: fixed;
@@ -429,6 +428,7 @@
         overflow-y: scroll;
         background-color: #3E5C76;
         padding-bottom: 100px;
+        display:none;
     }
     .mobile #gallery-container{
         padding-right: 15px;
@@ -483,7 +483,7 @@
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         width: 100%;
         height: 100vh;
-        display: flex;
+        display: none;
         align-items: center;
         background-color: #1D2D44;
     }
@@ -522,7 +522,7 @@
 
     #information {
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
         /**background-color: #0D1321;**/
@@ -546,7 +546,7 @@
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         width: 100%;
         height: 100vh;
-        display: flex;
+        display: none;
         align-items: center;
         position: relative;
         background-color: #F0E8BD;
@@ -663,7 +663,7 @@
     }
 
     #teachers{
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: flex-end;
         background-color: #748CAB;
@@ -785,7 +785,6 @@
         position: absolute;
         top: 30px;
         line-height: 40px;
-        border: green 1px solid;
     }
     #timelinetitle::after{
         content: '';
@@ -895,8 +894,6 @@
 
     .container.left .content{
         position: absolute;
-        height: 350px;
-        width: 350px;
         top: calc(50% + 59px);
         margin-left: -10px;
     }
@@ -1049,6 +1046,9 @@
             animation: slideshow 90s linear infinite;
         }
     }
+    .phaseOne {
+        display:none;
+    }
 
   </style>
 <script>
@@ -1089,7 +1089,7 @@
     
     const galleryOptions = {
         rootMargin: '0px',
-        threshold: 0.2
+        threshold: 0
     }
 
     const gallery = document.querySelector("#gallery");
@@ -1239,7 +1239,7 @@
             </a>
         </div>
     </div>
-    <div class='section' id='information' style='position: relative;'>
+    <div class='phaseOne section' id='information' style='position: relative;'>
         <!--
         <video id="backgroundVid">
             <source id='video' src="final.mp4" type="video/mp4">
@@ -1320,8 +1320,8 @@
             </div>-->
         </div>
     </div>
-    <div style='height:100px;  background-image: linear-gradient(#0D1321, #1D2D44);'></div>
-    <div class='section' id='gallery-intro' style='position: relative;'>
+    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#0D1321, #1D2D44);'></div>
+    <div class='phaseOne section' id='gallery-intro' style='position: relative;'>
         <div style='width: 100%;' id='gallery-intro-fade' class='fade-in'>
             <h1>
                 Discover their stories.
@@ -1334,15 +1334,15 @@
             </h4>
         </div>
         <div id='galleryButtonContainer'>
-            <a onclick="document.getElementById('gallery-container').scrollIntoView();">
+            <a onclick="$('.phaseTwo').css({'display':'flex'});document.getElementById('gallery-container').scrollIntoView();">
                 <svg id='galleryButton' width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="#F0EBD8" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
                 </svg>
             </a>
         </div>
     </div>
-    <div style='height:100px;  background-image: linear-gradient(#1D2D44,#3E5C76);'></div>
-    <div class='section' id='gallery-container'>
+    <div class='phaseTwo' style='display: none; height:100px;  background-image: linear-gradient(#1D2D44,#3E5C76);'></div>
+    <div class='phaseTwo section' id='gallery-container'>
         <div class="row fade-in" id='gallery'>
             <div class="column">
                 <div class='element' data-toggle="modal" data-target="#modal1">
@@ -1446,8 +1446,8 @@
             </div>
         </div>
     </div>
-    <div style='height:100px;  background-image: linear-gradient(#3E5C76,#748CAB);'></div>
-    <div class='section' id='teachers'>
+    <div class='phaseTwo' style='display: none; height:100px;  background-image: linear-gradient(#3E5C76,#748CAB);'></div>
+    <div class='phaseTwo section' id='teachers'>
         <div class='fade-in' id='teachers-fade' style='z-index: 0;'>
             <div class='slideText'>
                 <h2>What has TASSEL been doing?</h2>
@@ -1465,8 +1465,8 @@
             </div>
         </div>
     </div>
-    <div style='height:100px;  background-image: linear-gradient(#748CAB,#F0E8BD);'></div>
-    <div class='section' id='donate'>
+    <div class='phaseTwo' style='display: none; height:100px;  background-image: linear-gradient(#748CAB,#F0E8BD);'></div>
+    <div class='phaseTwo section' id='donate'>
         <img id='villagers' src='villagers.png'>
         <div class='fade-in' id='donateContent'>
             <h5 id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
