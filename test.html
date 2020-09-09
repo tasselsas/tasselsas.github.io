@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html lang=en>
 <head>
@@ -283,7 +284,6 @@
         color: white;
         float:right;
         margin-right: 5%;
-        opacity:0;
         -webkit-transition: opacity 0.8s ease-in;
         -moz-transition: opacity 0.8s ease-in;
         -ms-transition: opacity 0.8s ease-in;
@@ -299,12 +299,20 @@
     }
 
     body {
-        -ms-overflow-style: none;  
-        scroll-behavior: smooth;
+        -ms-overflow-style: none; 
     }
 
     html{
-        scroll-snap-type: y mandatory;
+        scroll-snap-type: y mandatory; 
+        scroll-behavior: smooth;
+    }
+
+    .fade-in{
+        opacity: 0;
+        transition: opacity 750ms ease-in-out;
+    }
+    .fade-in.appear{
+        opacity:1;
     }
 
     body, html{
@@ -437,11 +445,6 @@
         -ms-transition: opacity 0.7s ease-in;
         -o-transition: opacity 0.7s ease-in;
         transition: opacity 0.7s ease-in;
-        opacity: 0;
-    }
-
-    #first h3.load, #gallery.load, #textone.load, #texttwo.load, #donateButton.load,.slideText.load, #shun.load{
-        opacity: 1;
     }
 
 
@@ -500,7 +503,6 @@
     }
 
     #textone, #texttwo{
-        opacity:0;
         -webkit-transition: opacity 0.8s ease-in;
         -moz-transition: opacity 0.8s ease-in;
         -ms-transition: opacity 0.8s ease-in;
@@ -510,7 +512,6 @@
 
     #donateButton{
         margin-top: 20px;
-        opacity:0;
         display:block;
         -webkit-transition: opacity 0.5s ease-in;
         -moz-transition: opacity 0.5s ease-in;
@@ -1083,137 +1084,94 @@
 
     const options = {
         rootMargin: '0px',
-        threshold: 0.9
+        threshold: 0.8
     }
-        function activateZero(){
-            //$('#backgroundVid').removeClass('load');
-            $( "#1" ).removeClass('active');
-            $( "#2" ).removeClass('active');
-            $( "#3" ).removeClass('active');
-            $( "#4" ).removeClass('active');
-            $( "#5" ).removeClass('active');
-            $('#shun').removeClass('load');
-            //$('#typewriter1').removeClass('typewriter');
-            //$('#typewriter1').css('display','none');
-        }
-
-        function activateOne(){
-            console.log('one');
-            $( "#1" ).addClass('active');
-            $( "#2" ).removeClass('active');
-            $( "#3" ).removeClass('active');
-            $( "#4" ).removeClass('active');
-            $( "#5" ).removeClass('active');
-            $("#gallery").removeClass("load");
-            $('#shun').addClass('load');
-            //$('#typewriter1').removeClass('load');
-            //$("#gallery-container").scrollTop(0);
-            //$(".slideText").removeClass("load");
-            //$('#typewriter1').addClass('typewriter');
-            //$('#typewriter1').css('display','block');
-            $('li div').removeClass('change');
-            $('#sidebar h1').removeClass('change');
-        }
-
-        function activateTwo(){
-            console.log("two")
-            $( "#1" ).removeClass('active');
-            $( "#2" ).addClass('active');
-            $( "#3" ).removeClass('active')
-            $( "#4" ).removeClass('active');
-            $( "#5" ).removeClass('active');
-            $('#shun').removeClass('load');
-            //$('#backgroundVid').removeClass('load');
-            $("#gallery").removeClass("load");
-            //setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
-            $(".slideText").removeClass("load");
-            //$('#typewriter1').removeClass('typewriter');
-            //$('#typewriter1').css('display','none');
-            $('li div').removeClass('change');
-            $('#sidebar h1').removeClass('change');
-        }
-
-        function activateThree(){
-            console.log('three');
-            $( "#1" ).removeClass('active');
-            $( "#2" ).removeClass('active');
-            $( "#3" ).addClass('active');
-            $( "#4" ).removeClass('active');
-            $( "#5" ).removeClass('active');
-            $("#gallery").addClass("load");
-            $('#shun').removeClass('load');
-            /**if(first){
-                showInstruction();
-            }**/
-            $(".slideText").removeClass("load");
-            $('li div').removeClass('change');
-            $('#sidebar h1').removeClass('change');
-        }
-
-        function activateFour(){
-            console.log('four')
-            $( "#1" ).removeClass('active');
-            $( "#2" ).removeClass('active');
-            $( "#3" ).removeClass('active');
-            $( "#4" ).addClass('active');
-            $( "#5" ).removeClass('active');
-            $("#gallery").removeClass("load");
-            $('#shun').removeClass('load');
-            //setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
-            $(".slideText").addClass("load");
-            $("#textone").removeClass("load");
-            $("#texttwo").removeClass("load");
-            $("#donateButton").removeClass("load");
-            $('li div').removeClass('change');
-            $('#sidebar h1').removeClass('change');
-        }
-
-        function activateFive(){
-            console.log('five');
-            $( "#1" ).removeClass('active');
-            $( "#2" ).removeClass('active');
-            $( "#3" ).removeClass('active');
-            $( "#4" ).removeClass('active');
-            $( "#1" ).addClass('change');
-            $( "#2" ).addClass('change');
-            $( "#3" ).addClass('change');
-            $( "#4" ).addClass('change');
-            $('#shun').removeClass('load');
-            $("#gallery").removeClass("load");
-            //$("#gallery-container").scrollTop(0);
-            $(".slideText").removeClass("load");
-            $('#sidebar h1').addClass('change');
-            $( "#5" ).addClass('active');
-            setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 1000);
-            activateDonation();
-        }
-
-    const element = document.querySelector("html");
-
-    var mobile = element.classList.contains("mobile");
-
-    const optionsMobile = {
+    
+    const galleryOptions = {
+        rootMargin: '0px',
         threshold: 0.2
     }
 
-    const zero = document.querySelector('#intro');
-    const one = document.querySelector('#information');
-    const two = document.querySelector('#gallery-intro');
-    const three = document.querySelector('#gallery-container');
-    const four = document.querySelector('#teachers');
-    const five = document.querySelector('#donate');
+    const gallery = document.querySelector("#gallery");
 
-    new IntersectionObserver(activateZero, options).observe(zero);
-    new IntersectionObserver(activateOne, options).observe(one);
-    new IntersectionObserver(activateTwo, options).observe(two);
-    if(mobile){
-        new IntersectionObserver(activateThree, optionsMobile).observe(three);
-    }
-    else{
-        new IntersectionObserver(activateThree, options).observe(three);
-    }
-    new IntersectionObserver(activateFour, options).observe(four);
-    new IntersectionObserver(activateFive, options).observe(five);
+    const appearGallery = new IntersectionObserver(function(entries, appearGallery){
+        entries.forEach(entry => {
+            if(!entry.isIntersecting){
+                entry.target.classList.remove('appear');
+                return;
+            }
+            else{
+                entry.target.classList.add('appear');
+                $( "#1" ).removeClass('active');
+                $( "#2" ).removeClass('active');
+                $( "#3" ).addClass('active');
+                $( "#4" ).removeClass('active');
+                $( "#5" ).removeClass('active');
+            }
+        })
+    }, galleryOptions);
+
+    appearGallery.observe(gallery);
+    
+
+    const faders = document.querySelectorAll(".fade-in");
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+        entries.forEach(entry => {
+            if(!entry.isIntersecting){
+                entry.target.classList.remove('appear');
+                return;
+            }
+            else{
+                entry.target.classList.add('appear');
+                if(entry.target.id=='timeline'){
+                    $( "#1" ).addClass('active');
+                    $( "#2" ).removeClass('active');
+                    $( "#3" ).removeClass('active');
+                    $( "#4" ).removeClass('active');
+                    $( "#5" ).removeClass('active');
+                }
+                if(entry.target.id=='gallery-intro-fade'){
+                    $( "#1" ).removeClass('active');
+                    $( "#2" ).addClass('active');
+                    $( "#3" ).removeClass('active');
+                    $( "#4" ).removeClass('active');
+                    $( "#5" ).removeClass('active');
+                }
+                if(entry.target.id=='teachers-fade'){
+                    $( "#1" ).removeClass('active');
+                    $( "#2" ).removeClass('active');
+                    $( "#3" ).removeClass('active');
+                    $( "#4" ).addClass('active');
+                    $( "#5" ).removeClass('active');
+                }
+                if(entry.target.id=='donateContent'){
+                    $('#sidebar h1').addClass('change');
+                    $( "#1" ).addClass('change');
+                    $( "#2" ).addClass('change');
+                    $( "#3" ).addClass('change');
+                    $( "#4" ).addClass('change');
+
+                    $( "#1" ).removeClass('active');
+                    $( "#2" ).removeClass('active');
+                    $( "#3" ).removeClass('active');
+                    $( "#4" ).removeClass('active');
+                    $( "#5" ).addClass('active');
+                }
+                else{
+                    $('#sidebar h1').removeClass('change');
+                    $( "#1" ).removeClass('change');
+                    $( "#2" ).removeClass('change');
+                    $( "#3" ).removeClass('change');
+                    $( "#4" ).removeClass('change');
+                }
+            }
+        })
+    }, options)
+
+    faders.forEach(fader =>{
+        appearOnScroll.observe(fader);
+    })
 });
 </script>
 </head>
@@ -1299,7 +1257,7 @@
             Information slide
         </h3>
         <img id='timeline' src='Timeline.jpg'>-->
-        <h1 id='timelinetitle'>TASSEL CRISIS TIMELINE</h1>
+        <h1 class='fade-in' id='timelinetitle'>TASSEL CRISIS TIMELINE</h1>
         <div id='timeline'>
             <div id='vertical'></div>
             <div class="container left" id='firstpanel'>
@@ -1364,7 +1322,7 @@
     </div>
     <div style='height:100px;  background-image: linear-gradient(#0D1321, #1D2D44);'></div>
     <div class='section' id='gallery-intro' style='position: relative;'>
-        <div style='width: 100%;'>
+        <div style='width: 100%;' id='gallery-intro-fade' class='fade-in'>
             <h1>
                 Discover their stories.
             </h1>
@@ -1385,7 +1343,7 @@
     </div>
     <div style='height:100px;  background-image: linear-gradient(#1D2D44,#3E5C76);'></div>
     <div class='section' id='gallery-container'>
-        <div class="row" id='gallery'>
+        <div class="row fade-in" id='gallery'>
             <div class="column">
                 <div class='element' data-toggle="modal" data-target="#modal1">
                     <img class='image' src="exhibit1.jpg" onload='increment()'>
@@ -1490,15 +1448,15 @@
     </div>
     <div style='height:100px;  background-image: linear-gradient(#3E5C76,#748CAB);'></div>
     <div class='section' id='teachers'>
-        <div style='z-index: 0;'>
+        <div class='fade-in' id='teachers-fade' style='z-index: 0;'>
             <div class='slideText'>
                 <h2>What has TASSEL been doing?</h2>
             </div>
-            <div class="slideshow">
+            <div class="fade-in slideshow">
                 <div class="images">
                 </div>
             </div>
-            <div class='slideText' style='margin-top: 20px;'>
+            <div class='fade-in slideText' style='margin-top: 20px;'>
                 <h5>
                     Although we are unable to teach due to the COVID-19 virus, our teachers are visiting families every day, identifying
                     needs, delivering food, taking the sick to hospitals, and delivering the message
@@ -1507,10 +1465,10 @@
             </div>
         </div>
     </div>
-    <div style='height:100px;  background-image: linear-gradient(#748CAB,#F0E8D8);'></div>
+    <div style='height:100px;  background-image: linear-gradient(#748CAB,#F0E8BD);'></div>
     <div class='section' id='donate'>
         <img id='villagers' src='villagers.png'>
-        <div id='donateContent'>
+        <div class='fade-in' id='donateContent'>
             <h5 id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
             <h1 id='texttwo'>They need your help.</h1>
             <span id='donateButton'><a href='https://www.tasselcambodia.org/donate-1' target="_blank"><button type="button" class="btn btn-lg btn-outline-primary mt-1">Donate</button></a></span>
