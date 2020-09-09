@@ -219,14 +219,13 @@
   
     *{
         box-sizing: border-box;
-        scroll-snap-type: y mandatory;
-        scroll-behavior: smooth;
     }
+
 
     .text{
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-    .main::-webkit-scrollbar, #gallery-container::-webkit-scrollbar {
+    #gallery-container::-webkit-scrollbar {
         display: none;
     }
 
@@ -260,17 +259,10 @@
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
 
-    .main {
-        scroll-snap-type: y mandatory;
-        height: 100vh;
-        overflow-y: scroll;
-        scroll-behavior: smooth;
-    }
-
-    .mobile.main{
+    html.mobile{
         scroll-snap-type: none;
     }
-    
+
     #titletext{
         width: 600px;
         position: absolute;
@@ -308,7 +300,11 @@
 
     body {
         -ms-overflow-style: none;  
-        scrollbar-width: none; 
+        scroll-behavior: smooth;
+    }
+
+    html{
+        scroll-snap-type: y mandatory;
     }
 
     body, html{
@@ -423,6 +419,15 @@
         text-align: right;
         height: 100vh;
         overflow-y: scroll;
+        background-color: #3E5C76;
+        padding-bottom: 100px;
+    }
+    .mobile #gallery-container{
+        padding-right: 15px;
+        width: 100%;
+        text-align: right;
+        height: auto;
+        overflow-y: visible;
         background-color: #3E5C76;
         padding-bottom: 100px;
     }
@@ -1050,7 +1055,7 @@
         
         var w = $(window).width();
         if(w<650){
-            $('body').addClass('mobile');
+            $('html').addClass('mobile');
             /**
             $('#sidebar ul').css('display', 'none');
             document.getElementById('teachers').scrollIntoView();
@@ -1078,7 +1083,7 @@
 
     const options = {
         rootMargin: '0px',
-        threshold: 1
+        threshold: 0.6
     }
         function activateZero(){
             //$('#backgroundVid').removeClass('load');
