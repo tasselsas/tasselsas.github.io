@@ -79,8 +79,7 @@
     <base target="_top">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-  
-        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
 
 #loader-wrapper {
@@ -258,6 +257,10 @@
 
     .modal-content{
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .mobile.main{
+        scroll-snap-type: none;
     }
 
     .main {
@@ -774,6 +777,7 @@
         position: absolute;
         top: 30px;
         line-height: 40px;
+        border: green 1px solid;
     }
     #timelinetitle::after{
         content: '';
@@ -805,53 +809,51 @@
     }
 
     #timeline{
-        top: 0;
-        margin: 0 auto;
+        height: calc(100% - 90px);
+        width: 100%;
+        position: absolute;
+        bottom: 0;
     }
 
     #vertical {
         content: '';
-        position: absolute;
-        width: 2px;
+        position: relative;
+        width: 90%;
         background-color: #7a8aa8;
-        top: 150px;
-        bottom: 0;
+        top: 50%;
         left: 50%;
-        height: 1600px;
-        margin-left: -1px;
+        margin-left: -45%;
+        height: 2px;
+        margin-top: -1px;
     }
 
-    #timeline::before{
+    #vertical::before{
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        top:-11px;
+        background-color: #7a8aa8;
+        border-radius: 50%;
+    }
+    #vertical::after{
         content: '';
         position: absolute;
         width: 22px;
         height: 22px;
         background-color: #7a8aa8;
-        top: 150px;
-        left: 50%;
+        top: -11px;
+        right:0px;
         border-radius: 50%;
-        margin-left: -11px;
     }
-    #timeline::after{
-        content: '';
-        position: absolute;
-        width: 22px;
-        height: 22px;
-        background-color: #7a8aa8;
-        top: 1750px;
-        left: 50%;
-        border-radius: 50%;
-        margin-left: -11px;
-        margin-bottom: 150px;
-    }
-
     .container.left::before{
         content: '';
         position: absolute;
-        height: 2px;
-        width: 80px;
+        height: 40px;
+        width: 2px;
+        top:0;
         background-color: #7a8aa8;
-        margin-left: -80px;
+        top: 50%;
     }
     .container.left::after{
         content: '';
@@ -859,18 +861,18 @@
         height: 18px;
         border-radius: 50%;
         width: 18px;
-        left: 50%;
+        margin-left: -9px;
         background-color: #7a8aa8;
-        margin-left: -84px;
-        margin-top: -9px;
+        top: calc(50% + 40px);
     }
 
     .container.right::before{
         content: '';
         position: absolute;
-        height: 2px;
-        width: 80px;
+        height: 40px;
+        width: 2px;
         background-color: #7a8aa8;
+        top: 50%;
     }
     .container.right::after{
         content: '';
@@ -880,16 +882,15 @@
         width: 18px;
         left: 50%;
         background-color: #7a8aa8;
-        margin-left: 66px;
-        margin-top: -9px;
+        top: calc(50%+49px);
     }
 
     .container.left .content{
         position: absolute;
-        margin-left: -470px;
-        margin-top: -370px;
         height: 350px;
         width: 350px;
+        top: calc(50% + 59px);
+        margin-left: -10px;
     }
 
     .container.right .content{
@@ -898,12 +899,13 @@
         margin-top: -370px;
         height: 350px;
         width: 350px;
+        top: 50%;
     }
 
     .content .header{
         font-size: 36px;
         line-height: 40px;
-        text-align: center;
+        text-align: left;
         color: rgb(255, 255, 145);
     }
 
@@ -913,37 +915,13 @@
     }
 
     .content img{
-        width: 100%;
+        height: 200px;
         cursor: pointer;
     }
 
     .content img:hover {
         transform: scale(1.03);
         transition-duration: 0.1s;
-    }
-
-    #firstpanel::before, #firstpanel::after, #firstpanel .content{
-        top: 480px;
-    }
-
-    #secondpanel::before, #secondpanel::after, #secondpanel .content{
-        top: 600px;
-    }
-
-    #thirdpanel::before, #thirdpanel::after, #thirdpanel .content{
-        top: 1000px;
-    }
-
-    #fourthpanel::before, #fourthpanel::after, #fourthpanel .content{
-        top: 1120px;
-    }
-
-    #fifthpanel::before, #fifthpanel::after, #fifthpanel .content{
-        top: 1520px;
-    }
-
-    #sixthpanel::before, #sixthpanel::after, #sixthpanel .content{
-        top: 1640px;
     }
 
     #backgroundVid.load{
@@ -1067,6 +1045,7 @@
   </style>
 <script>
     $( document ).ready(function() {
+        /**
         var w = $(window).width();
         if(w<650){
             $('#sidebar ul').css('display', 'none');
@@ -1076,7 +1055,6 @@
             $('.main').css('overflow-y', 'hidden');
             $('body').addClass('loaded');
         }
-    /**
     let video = document.querySelector('video');
     let observer = new IntersectionObserver((entries, observer) => { 
         entries.forEach(entry => {
@@ -1302,18 +1280,14 @@
                 <div id='vertical'></div>
                 <div class="container left" id='firstpanel'>
                     <div class="content">
-                        <img src='timeline1.png' data-toggle="modal" data-target="#modal16">
                         <h1 class='header'>
                             APRIL 2019
                         </h1>
-                        <h5 class='timelinetext'>
-                            Cambodia begins to suffer from a severe and prolonged drought.
-                        </h5>
+                        <img src='APRIL 2019 WEBSITE-01.png'>
                     </div>
                 </div>
-                <div class="container right" id="secondpanel">
+                <!--<div class="container right" id="secondpanel">
                     <div class="content">
-                        <img src='timeline1.png' data-toggle="modal" data-target="#modal17">
                         <h1 class='header'>
                             DECEMBER 2019
                         </h1>
@@ -1324,7 +1298,6 @@
                 </div>
                 <div class="container left" id="thirdpanel">
                     <div class="content">
-                        <img src='timeline1.png' data-toggle="modal" data-target="#modal18">
                         <h1 class='header'>
                             JANUARY 2020
                         </h1>
@@ -1335,7 +1308,6 @@
                 </div>
                 <div class="container right" id="fourthpanel">
                     <div class="content">
-                        <img src='timeline1.png' data-toggle="modal" data-target="#modal19">
                         <h1 class='header'>
                             MARCH 2020
                         </h1>
@@ -1346,7 +1318,6 @@
                 </div>
                 <div class="container left" id="fifthpanel">
                     <div class="content">
-                        <img src='timeline1.png' data-toggle="modal" data-target="#modal20">
                         <h1 class='header'>
                             APRIL 2020 - PRESENT
                         </h1>
@@ -1357,7 +1328,6 @@
                 </div>
                 <div class="container right" id="sixthpanel">
                     <div class="content">
-                        <img src='timeline1.png' data-toggle="modal" data-target="#modal21">
                         <h1 class='header'>
                             MAY 2020 - PRESENT
                         </h1>
@@ -1365,7 +1335,7 @@
                             TASSEL provides aid to as many as possible.
                         </h5>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
         <div style='height:100px;  background-image: linear-gradient(#0D1321, #1D2D44);'></div>
