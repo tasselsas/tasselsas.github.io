@@ -1083,7 +1083,7 @@
 
     const options = {
         rootMargin: '0px',
-        threshold: 0.6
+        threshold: 0.9
     }
         function activateZero(){
             //$('#backgroundVid').removeClass('load');
@@ -1098,6 +1098,7 @@
         }
 
         function activateOne(){
+            console.log('one');
             $( "#1" ).addClass('active');
             $( "#2" ).removeClass('active');
             $( "#3" ).removeClass('active');
@@ -1133,6 +1134,7 @@
         }
 
         function activateThree(){
+            console.log('three');
             $( "#1" ).removeClass('active');
             $( "#2" ).removeClass('active');
             $( "#3" ).addClass('active');
@@ -1186,6 +1188,13 @@
             activateDonation();
         }
 
+    const element = document.querySelector("html");
+
+    var mobile = element.classList.contains("mobile");
+
+    const optionsMobile = {
+        threshold: 0.2
+    }
 
     const zero = document.querySelector('#intro');
     const one = document.querySelector('#information');
@@ -1197,7 +1206,12 @@
     new IntersectionObserver(activateZero, options).observe(zero);
     new IntersectionObserver(activateOne, options).observe(one);
     new IntersectionObserver(activateTwo, options).observe(two);
-    new IntersectionObserver(activateThree, options).observe(three);
+    if(mobile){
+        new IntersectionObserver(activateThree, optionsMobile).observe(three);
+    }
+    else{
+        new IntersectionObserver(activateThree, options).observe(three);
+    }
     new IntersectionObserver(activateFour, options).observe(four);
     new IntersectionObserver(activateFive, options).observe(five);
 });
