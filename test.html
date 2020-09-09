@@ -220,6 +220,8 @@
   
     *{
         box-sizing: border-box;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
     }
 
     .text{
@@ -1045,16 +1047,20 @@
   </style>
 <script>
     $( document ).ready(function() {
-        /**
+        
         var w = $(window).width();
         if(w<650){
+            $('body').addClass('mobile');
+            /**
             $('#sidebar ul').css('display', 'none');
             document.getElementById('teachers').scrollIntoView();
             $('.slideText h2').text('Please use a computer or a tablet for the best viewing experience.');
             $('.slideText h5').text('We thank you for your help, care, and support!')
             $('.main').css('overflow-y', 'hidden');
             $('body').addClass('loaded');
+            **/
         }
+        /**
     let video = document.querySelector('video');
     let observer = new IntersectionObserver((entries, observer) => { 
         entries.forEach(entry => {
@@ -1219,278 +1225,276 @@
             <li><a onclick="document.getElementById('donate').scrollIntoView();"><div id='5' class='nav'></div></a></li>
         </ul>
     </div>
-    <div class='main'>
-        <div class='section bg' id='intro'>
-            <a href='https://www.tasselcambodia.org/donate-1' target="_blank">
-                <div id='top-right' class='extLink'>
-                    <h1 class='shrink'>
-                        <svg id='plus-top-right' class='plus' width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
-                            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
-                        </svg>
-                    </h1>
-                    <h6 class='expand' style='position: absolute; right: 20px; top: 20px;'>
-                        Donate
-                    </h6>
-                </div>
-            </a>
-            <a href='https://www.tasselcambodia.org/what-we-do' target="_blank">
-                <div id='top-left' class='extLink'>
-                    <h1 class='shrink'>
-                        <svg id='plus-top-left' class='plus' width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
-                            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
-                        </svg>
-                    </h1>
-                    <h6 class='expand' style='position: absolute; left: 10px; top: 15px;'>
-                        About TASSEL
-                    </h6>
-                </div>
-            </a>
-            <div id='titletext'>
-                <h1>TASSEL 2020</h1>
-                <h2>Effects of COVID-19 and the Drought</h2>
-            </div>
-            <div id='titleButtonContainer'>
-                <a onclick='start()'>
-                    <button id='titleButton' type="button" class="btn btn-lg btn-outline-info mt-1">Click to Start</button>
-                </a>
-            </div>
-        </div>
-        <div class='section' id='information' style='position: relative;'>
-            <!--
-            <video id="backgroundVid">
-                <source id='video' src="final.mp4" type="video/mp4">
-            </video>
-            <div id='typewriter1'>
-                <h1>
-                    Joji Tastugi - TASSEL Founder
+    <div class='section bg' id='intro'>
+        <a href='https://www.tasselcambodia.org/donate-1' target="_blank">
+            <div id='top-right' class='extLink'>
+                <h1 class='shrink'>
+                    <svg id='plus-top-right' class='plus' width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+                        <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+                    </svg>
                 </h1>
+                <h6 class='expand' style='position: absolute; right: 20px; top: 20px;'>
+                    Donate
+                </h6>
             </div>
-            <div id='gradientbackground'>
+        </a>
+        <a href='https://www.tasselcambodia.org/what-we-do' target="_blank">
+            <div id='top-left' class='extLink'>
+                <h1 class='shrink'>
+                    <svg id='plus-top-left' class='plus' width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+                        <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+                    </svg>
+                </h1>
+                <h6 class='expand' style='position: absolute; left: 10px; top: 15px;'>
+                    About TASSEL
+                </h6>
             </div>
-            <img id='shun' src='shun clear.png'>
+        </a>
+        <div id='titletext'>
+            <h1>TASSEL 2020</h1>
+            <h2>Effects of COVID-19 and the Drought</h2>
+        </div>
+        <div id='titleButtonContainer'>
+            <a onclick='start()'>
+                <button id='titleButton' type="button" class="btn btn-lg btn-outline-info mt-1">Click to Start</button>
+            </a>
+        </div>
+    </div>
+    <div class='section' id='information' style='position: relative;'>
+        <!--
+        <video id="backgroundVid">
+            <source id='video' src="final.mp4" type="video/mp4">
+        </video>
+        <div id='typewriter1'>
+            <h1>
+                Joji Tastugi - TASSEL Founder
+            </h1>
+        </div>
+        <div id='gradientbackground'>
+        </div>
+        <img id='shun' src='shun clear.png'>
 
-            <h3>
-                Information slide
-            </h3>
-            <img id='timeline' src='Timeline.jpg'>-->
-            <h1 id='timelinetitle'>TASSEL CRISIS TIMELINE</h1>
-            <div id='timeline'>
-                <div id='vertical'></div>
-                <div class="container left" id='firstpanel'>
-                    <div class="content">
-                        <h1 class='header'>
-                            APRIL 2019
-                        </h1>
-                        <img src='APRIL 2019 WEBSITE-01.png'>
-                    </div>
-                </div>
-                <!--<div class="container right" id="secondpanel">
-                    <div class="content">
-                        <h1 class='header'>
-                            DECEMBER 2019
-                        </h1>
-                        <h5 class='timelinetext'>
-                            The drought devastates agriculture and fisheries.
-                        </h5>
-                    </div>
-                </div>
-                <div class="container left" id="thirdpanel">
-                    <div class="content">
-                        <h1 class='header'>
-                            JANUARY 2020
-                        </h1>
-                        <h5 class='timelinetext'>
-                            Cambodia reports first COVID-19 cases.
-                        </h5>
-                    </div>
-                </div>
-                <div class="container right" id="fourthpanel">
-                    <div class="content">
-                        <h1 class='header'>
-                            MARCH 2020
-                        </h1>
-                        <h5 class='timelinetext'>
-                            The Cambodian government closes schools and country borders. Travel is restricted as COVID-19 cases rise.
-                        </h5>
-                    </div>
-                </div>
-                <div class="container left" id="fifthpanel">
-                    <div class="content">
-                        <h1 class='header'>
-                            APRIL 2020 - PRESENT
-                        </h1>
-                        <h5 class='timelinetext'>
-                            Unemployment across the country soars.
-                        </h5>
-                    </div>
-                </div>
-                <div class="container right" id="sixthpanel">
-                    <div class="content">
-                        <h1 class='header'>
-                            MAY 2020 - PRESENT
-                        </h1>
-                        <h5 class='timelinetext'>
-                            TASSEL provides aid to as many as possible.
-                        </h5>
-                    </div>
-                </div>-->
-            </div>
-        </div>
-        <div style='height:100px;  background-image: linear-gradient(#0D1321, #1D2D44);'></div>
-        <div class='section' id='gallery-intro' style='position: relative;'>
-            <div style='width: 100%;'>
-                <h1>
-                    Discover their stories.
-                </h1>
-                <h4>
-                    Click on each panel to find out more. 
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hand-index-thumb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M6.75 1a.75.75 0 0 0-.75.75V9.5a.5.5 0 0 1-.854.354l-2.41-2.411a.517.517 0 0 0-.809.631l2.512 4.185 1.232 2.465a.5.5 0 0 0 .447.276h6.302a.5.5 0 0 0 .434-.252l1.395-2.442a2.5 2.5 0 0 0 .317-.991l.272-2.715a1 1 0 0 0-.995-1.1H13.5v1a.5.5 0 1 1-1 0V7.154a4.208 4.208 0 0 0-.2-.26c-.187-.222-.368-.383-.486-.43-.124-.05-.392-.063-.708-.039a4.844 4.844 0 0 0-.106.01V8a.5.5 0 1 1-1 0V5.986c0-.167-.073-.272-.15-.314a1.657 1.657 0 0 0-.448-.182c-.179-.035-.5-.04-.816-.027l-.086.004V8a.5.5 0 1 1-1 0V1.75A.75.75 0 0 0 6.75 1zM8.5 4.466V1.75a1.75 1.75 0 1 0-3.5 0v6.543L3.443 6.736A1.517 1.517 0 0 0 1.07 8.588l2.491 4.153 1.215 2.43A1.5 1.5 0 0 0 6.118 16h6.302a1.5 1.5 0 0 0 1.302-.756l1.395-2.441a3.5 3.5 0 0 0 .444-1.389l.272-2.715a2 2 0 0 0-1.99-2.199h-.582a5.114 5.114 0 0 0-.195-.248c-.191-.229-.51-.568-.88-.716-.364-.146-.846-.132-1.158-.108l-.132.012a1.26 1.26 0 0 0-.56-.642 2.634 2.634 0 0 0-.738-.288c-.31-.062-.739-.058-1.05-.046l-.048.002zm2.094 2.025z"/>
-                    </svg>
-                </h4>
-            </div>
-            <div id='galleryButtonContainer'>
-                <a onclick="document.getElementById('gallery-container').scrollIntoView();">
-                    <svg id='galleryButton' width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="#F0EBD8" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-        <div style='height:100px;  background-image: linear-gradient(#1D2D44,#3E5C76);'></div>
-        <div class='section' id='gallery-container'>
-            <div class="row" id='gallery'>
-                <div class="column">
-                    <div class='element' data-toggle="modal" data-target="#modal1">
-                        <img class='image' src="exhibit1.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">
-                                <p>Sokheng</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal2">
-                        <img class='image' src="exhibit2.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Vann</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal3">
-                        <img class='image' src="exhibit3.jpeg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Piseth</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal4">
-                        <img class='image' src="exhibit4.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Sophea</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class='element' data-toggle="modal" data-target="#modal5">
-                        <img class='image' src="exhibit5.JPG" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Sina</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal6">
-                        <img class='image' src="exhibit6.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Chantha</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal7">
-                        <img class='image' src="exhibit7.jpeg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Komsot and Kreynich</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal8">
-                        <img class='image' src="exhibit8.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Dary</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class='element' data-toggle="modal" data-target="#modal9">
-                        <img class='image' src="exhibit9.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Thors</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal10">
-                        <img class='image' src="exhibit10.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Sreyna</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal11">
-                        <img class='image' src="exhibit11.PNG" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Sovath</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class='element' data-toggle="modal" data-target="#modal12">
-                        <img class='image' src="exhibit12.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Reaksa</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal13">
-                        <img class='image' src="exhibit13.jpeg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Vicheka</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal14">
-                        <img class='image' src="exhibit14.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Paneth</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal15">
-                        <img class='image' src="exhibit15.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Kakada</div>
-                        </div>
-                    </div>
+        <h3>
+            Information slide
+        </h3>
+        <img id='timeline' src='Timeline.jpg'>-->
+        <h1 id='timelinetitle'>TASSEL CRISIS TIMELINE</h1>
+        <div id='timeline'>
+            <div id='vertical'></div>
+            <div class="container left" id='firstpanel'>
+                <div class="content">
+                    <h1 class='header'>
+                        APRIL 2019
+                    </h1>
+                    <img src='APRIL 2019 WEBSITE-01.png'>
                 </div>
             </div>
-        </div>
-        <div style='height:100px;  background-image: linear-gradient(#3E5C76,#748CAB);'></div>
-        <div class='section' id='teachers'>
-            <div style='z-index: 0;'>
-                <div class='slideText'>
-                    <h2>What has TASSEL been doing?</h2>
-                </div>
-                <div class="slideshow">
-                    <div class="images">
-                    </div>
-                </div>
-                <div class='slideText' style='margin-top: 20px;'>
-                    <h5>
-                        Although we are unable to teach due to the COVID-19 virus, our teachers are visiting families every day, identifying
-                        needs, delivering food, taking the sick to hospitals, and delivering the message
-                        of love from you. As the need for help, love, and support increases day by day, they have been working tirelessly to ensure that those needs are met.
+            <!--<div class="container right" id="secondpanel">
+                <div class="content">
+                    <h1 class='header'>
+                        DECEMBER 2019
+                    </h1>
+                    <h5 class='timelinetext'>
+                        The drought devastates agriculture and fisheries.
                     </h5>
                 </div>
             </div>
-        </div>
-        <div style='height:100px;  background-image: linear-gradient(#748CAB,#F0E8D8);'></div>
-        <div class='section' id='donate'>
-            <img id='villagers' src='villagers.png'>
-            <div id='donateContent'>
-                <h5 id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
-                <h1 id='texttwo'>They need your help.</h1>
-                <span id='donateButton'><a href='https://www.tasselcambodia.org/donate-1' target="_blank"><button type="button" class="btn btn-lg btn-outline-primary mt-1">Donate</button></a></span>
+            <div class="container left" id="thirdpanel">
+                <div class="content">
+                    <h1 class='header'>
+                        JANUARY 2020
+                    </h1>
+                    <h5 class='timelinetext'>
+                        Cambodia reports first COVID-19 cases.
+                    </h5>
+                </div>
             </div>
+            <div class="container right" id="fourthpanel">
+                <div class="content">
+                    <h1 class='header'>
+                        MARCH 2020
+                    </h1>
+                    <h5 class='timelinetext'>
+                        The Cambodian government closes schools and country borders. Travel is restricted as COVID-19 cases rise.
+                    </h5>
+                </div>
+            </div>
+            <div class="container left" id="fifthpanel">
+                <div class="content">
+                    <h1 class='header'>
+                        APRIL 2020 - PRESENT
+                    </h1>
+                    <h5 class='timelinetext'>
+                        Unemployment across the country soars.
+                    </h5>
+                </div>
+            </div>
+            <div class="container right" id="sixthpanel">
+                <div class="content">
+                    <h1 class='header'>
+                        MAY 2020 - PRESENT
+                    </h1>
+                    <h5 class='timelinetext'>
+                        TASSEL provides aid to as many as possible.
+                    </h5>
+                </div>
+            </div>-->
+        </div>
+    </div>
+    <div style='height:100px;  background-image: linear-gradient(#0D1321, #1D2D44);'></div>
+    <div class='section' id='gallery-intro' style='position: relative;'>
+        <div style='width: 100%;'>
+            <h1>
+                Discover their stories.
+            </h1>
+            <h4>
+                Click on each panel to find out more. 
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hand-index-thumb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M6.75 1a.75.75 0 0 0-.75.75V9.5a.5.5 0 0 1-.854.354l-2.41-2.411a.517.517 0 0 0-.809.631l2.512 4.185 1.232 2.465a.5.5 0 0 0 .447.276h6.302a.5.5 0 0 0 .434-.252l1.395-2.442a2.5 2.5 0 0 0 .317-.991l.272-2.715a1 1 0 0 0-.995-1.1H13.5v1a.5.5 0 1 1-1 0V7.154a4.208 4.208 0 0 0-.2-.26c-.187-.222-.368-.383-.486-.43-.124-.05-.392-.063-.708-.039a4.844 4.844 0 0 0-.106.01V8a.5.5 0 1 1-1 0V5.986c0-.167-.073-.272-.15-.314a1.657 1.657 0 0 0-.448-.182c-.179-.035-.5-.04-.816-.027l-.086.004V8a.5.5 0 1 1-1 0V1.75A.75.75 0 0 0 6.75 1zM8.5 4.466V1.75a1.75 1.75 0 1 0-3.5 0v6.543L3.443 6.736A1.517 1.517 0 0 0 1.07 8.588l2.491 4.153 1.215 2.43A1.5 1.5 0 0 0 6.118 16h6.302a1.5 1.5 0 0 0 1.302-.756l1.395-2.441a3.5 3.5 0 0 0 .444-1.389l.272-2.715a2 2 0 0 0-1.99-2.199h-.582a5.114 5.114 0 0 0-.195-.248c-.191-.229-.51-.568-.88-.716-.364-.146-.846-.132-1.158-.108l-.132.012a1.26 1.26 0 0 0-.56-.642 2.634 2.634 0 0 0-.738-.288c-.31-.062-.739-.058-1.05-.046l-.048.002zm2.094 2.025z"/>
+                </svg>
+            </h4>
+        </div>
+        <div id='galleryButtonContainer'>
+            <a onclick="document.getElementById('gallery-container').scrollIntoView();">
+                <svg id='galleryButton' width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="#F0EBD8" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div style='height:100px;  background-image: linear-gradient(#1D2D44,#3E5C76);'></div>
+    <div class='section' id='gallery-container'>
+        <div class="row" id='gallery'>
+            <div class="column">
+                <div class='element' data-toggle="modal" data-target="#modal1">
+                    <img class='image' src="exhibit1.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">
+                            <p>Sokheng</p>
+                        </div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal2">
+                    <img class='image' src="exhibit2.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Vann</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal3">
+                    <img class='image' src="exhibit3.jpeg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Piseth</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal4">
+                    <img class='image' src="exhibit4.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Sophea</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class='element' data-toggle="modal" data-target="#modal5">
+                    <img class='image' src="exhibit5.JPG" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Sina</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal6">
+                    <img class='image' src="exhibit6.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Chantha</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal7">
+                    <img class='image' src="exhibit7.jpeg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Komsot and Kreynich</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal8">
+                    <img class='image' src="exhibit8.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Dary</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class='element' data-toggle="modal" data-target="#modal9">
+                    <img class='image' src="exhibit9.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Thors</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal10">
+                    <img class='image' src="exhibit10.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Sreyna</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal11">
+                    <img class='image' src="exhibit11.PNG" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Sovath</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class='element' data-toggle="modal" data-target="#modal12">
+                    <img class='image' src="exhibit12.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Reaksa</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal13">
+                    <img class='image' src="exhibit13.jpeg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Vicheka</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal14">
+                    <img class='image' src="exhibit14.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Paneth</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal15">
+                    <img class='image' src="exhibit15.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Kakada</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style='height:100px;  background-image: linear-gradient(#3E5C76,#748CAB);'></div>
+    <div class='section' id='teachers'>
+        <div style='z-index: 0;'>
+            <div class='slideText'>
+                <h2>What has TASSEL been doing?</h2>
+            </div>
+            <div class="slideshow">
+                <div class="images">
+                </div>
+            </div>
+            <div class='slideText' style='margin-top: 20px;'>
+                <h5>
+                    Although we are unable to teach due to the COVID-19 virus, our teachers are visiting families every day, identifying
+                    needs, delivering food, taking the sick to hospitals, and delivering the message
+                    of love from you. As the need for help, love, and support increases day by day, they have been working tirelessly to ensure that those needs are met.
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div style='height:100px;  background-image: linear-gradient(#748CAB,#F0E8D8);'></div>
+    <div class='section' id='donate'>
+        <img id='villagers' src='villagers.png'>
+        <div id='donateContent'>
+            <h5 id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
+            <h1 id='texttwo'>They need your help.</h1>
+            <span id='donateButton'><a href='https://www.tasselcambodia.org/donate-1' target="_blank"><button type="button" class="btn btn-lg btn-outline-primary mt-1">Donate</button></a></span>
         </div>
     </div>
 </body>
