@@ -31,7 +31,6 @@
 
         function increment(){
             assets+=1;
-            console.log(assets)
             if(assets>=30){
                 $('body').addClass('loaded');
             }
@@ -261,16 +260,17 @@
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
 
-    .mobile.main{
-        scroll-snap-type: none;
-    }
-
     .main {
         scroll-snap-type: y mandatory;
         height: 100vh;
         overflow-y: scroll;
         scroll-behavior: smooth;
     }
+
+    .mobile.main{
+        scroll-snap-type: none;
+    }
+    
     #titletext{
         width: 600px;
         position: absolute;
