@@ -491,12 +491,16 @@
         align-items: center;
         background-color: #1D2D44;
     }
+    #gallery-intro div{
+        z-index: 100;
+    }
     #gallery-intro div h1{
         font-size: 60px;
     }
     #gallery-intro div h1,#gallery-intro div h4{
         text-align:left;
         margin-left: 20%;
+        z-index: 100;
     }
 
     #donateContent{
@@ -764,6 +768,14 @@
         -webkit-transition: opacity 0s ease-in;
         -ms-transition: opacity 0s ease-in;
         transition: opacity 0s ease-in;
+    }
+
+    #gallery-intro img{
+        position: absolute;
+        bottom: 0;
+        right: 15%;
+        height: 60%;
+        z-index: 1;
     }
 
     #villagers{
@@ -1336,6 +1348,7 @@
                 </svg>
             </h4>
         </div>
+        <img src='shun clear.png'>
         <div id='galleryButtonContainer'>
             <a onclick="$('.phaseTwo').css({'display':'flex'});document.getElementById('gallery-container').scrollIntoView();">
                 <svg id='galleryButton' width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="#F0EBD8" xmlns="http://www.w3.org/2000/svg">
