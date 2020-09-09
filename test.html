@@ -305,12 +305,16 @@
         scroll-snap-type: y mandatory; 
         scroll-behavior: smooth;
     }
+    .fade-in-gallery{
+        opacity: 0;
+        transition: opacity 750ms ease-in-out;
+    }
 
     .fade-in{
         opacity: 0;
         transition: opacity 750ms ease-in-out;
     }
-    .fade-in.appear{
+    .fade-in.appear, .fade-in-gallery.appear{
         opacity:1;
     }
 
@@ -1098,7 +1102,6 @@
         entries.forEach(entry => {
             if(!entry.isIntersecting){
                 entry.target.classList.remove('appear');
-                return;
             }
             else{
                 entry.target.classList.add('appear');
@@ -1343,7 +1346,7 @@
     </div>
     <div class='phaseTwo' style='display: none; height:100px;  background-image: linear-gradient(#1D2D44,#3E5C76);'></div>
     <div class='phaseTwo section' id='gallery-container'>
-        <div class="row fade-in" id='gallery'>
+        <div class="row fade-in-gallery" id='gallery'>
             <div class="column">
                 <div class='element' data-toggle="modal" data-target="#modal1">
                     <img class='image' src="exhibit1.jpg" onload='increment()'>
