@@ -497,7 +497,7 @@
     #gallery-intro div h1{
         font-size: 60px;
     }
-    #gallery-intro div h1,#gallery-intro div h4{
+    #gallery-intro div h1,#gallery-intro div h4, #gallery-intro div h2{
         text-align:left;
         margin-left: 20%;
         z-index: 100;
@@ -773,8 +773,8 @@
     #gallery-intro img{
         position: absolute;
         bottom: 0;
-        right: 15%;
-        height: 60%;
+        right: 10%;
+        height: 80%;
         z-index: 1;
     }
 
@@ -1039,10 +1039,18 @@
         #donateContent h5{
             font-size: 18px;
         }
-        #gallery-intro div h1,#gallery-intro div h4{
+        #gallery-intro div h1,#gallery-intro div h2{
             font-size: 30px;
             text-align:center;
             margin: 0 auto;
+        }
+        #gallery-intro div h4{
+            font-size: 24px;
+            text-align:center;
+            margin: 0 auto;
+        }
+        #gallery-intro img{
+            opacity: 0.8;
         }
         #titletext{
             width: 60%;
@@ -1273,7 +1281,7 @@
         </h3>
         <img id='timeline' src='Timeline.jpg'>-->
         <h1 class='fade-in' id='timelinetitle'>TASSEL CRISIS TIMELINE</h1>
-        <div id='timeline'>
+        <div class='fade-in' id='timeline'>
             <div id='vertical'></div>
             <div class="container left" id='firstpanel'>
                 <div class="content">
@@ -1338,8 +1346,11 @@
     <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#0D1321, #1D2D44);'></div>
     <div class='phaseOne section' id='gallery-intro' style='position: relative;'>
         <div style='width: 100%;' id='gallery-intro-fade' class='fade-in'>
+            <h2>
+                How have Cambodians been affected?
+            </h2>
             <h1>
-                Discover their stories.
+                Discover our families' stories.
             </h1>
             <h4>
                 Click on each panel to find out more. 
@@ -1348,7 +1359,7 @@
                 </svg>
             </h4>
         </div>
-        <img src='shun clear.png'>
+        <img class='fade-in' src='shun clear.png'>
         <div id='galleryButtonContainer'>
             <a onclick="$('.phaseTwo').css({'display':'flex'});document.getElementById('gallery-container').scrollIntoView();">
                 <svg id='galleryButton' width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="#F0EBD8" xmlns="http://www.w3.org/2000/svg">
