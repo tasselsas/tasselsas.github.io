@@ -16,7 +16,7 @@
 
         function start(){
             $('.phaseOne').css({'display':'flex'});
-            document.getElementById('information').scrollIntoView();
+            setTimeout(function(){ document.getElementById('timeline-intro').scrollIntoView(); }, 50);
         }
 
         var assets = 0;
@@ -264,15 +264,12 @@
     }
 
     #titletext{
-        width: 600px;
+        width: 500px;
         position: absolute;
         top: 50%;
         left: 50%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-    }
-
-    #titletext h1, #titletext h2{
         text-align: left;
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
@@ -283,11 +280,22 @@
         color: white;
         float:right;
         margin-right: 5%;
-        -webkit-transition: opacity 0.8s ease-in;
-        -moz-transition: opacity 0.8s ease-in;
-        -ms-transition: opacity 0.8s ease-in;
-        -o-transition: opacity 0.8s ease-in;
-        transition: opacity 0.8s ease-in;
+    }
+
+    .slideTex{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        width: 75%;
+        color: white;
+        float:right;
+        margin-right: 5%;
+    }
+
+    .slideText{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        width: 75%;
+        color: white;
+        float:right;
+        margin-right: 5%;
     }
 
     .section {
@@ -304,7 +312,10 @@
     html{
         scroll-snap-type: y mandatory; 
         scroll-behavior: smooth;
+        font-size: 25px;
     }
+
+
     .fade-in-gallery{
         opacity: 0;
         transition: opacity 750ms ease-in-out;
@@ -491,16 +502,62 @@
         align-items: center;
         background-color: #1D2D44;
     }
+
     #gallery-intro div{
         z-index: 100;
     }
-    #gallery-intro div h1{
-        font-size: 60px;
+
+    .modal-header{
+        font-size: 0.8em;
     }
-    #gallery-intro div h1,#gallery-intro div h4, #gallery-intro div h2{
+
+    .modal-title{
+        font-size: 1.6em;
+    }
+
+    .close{
+        font-size: 1.8em
+    }
+
+    .modal-content{
+        font-size: 0.6em;
+    }
+
+    .texth1{
+        font-size: 1.8em;
+    }
+
+    .texth2{
+        font-size: 1.6em;
+    }
+
+    .texth3{
+        font-size: 1.3em;
+    }
+
+    .texth4{
+        font-size: 1em;
+    }
+
+    .texth5{
+        font-size: 0.8em;
+    }
+
+    .texth6{
+        font-size: 0.6em;
+    }
+
+    #gallery-intro div h4, #gallery-intro div h2{
         text-align:left;
         margin-left: 20%;
         z-index: 100;
+    }
+    #gallery-intro div h2{
+        line-height: 1.6em;
+    }
+
+    #gallery-intro div h4{
+        line-height: 1.4em;
     }
 
     #donateContent{
@@ -516,6 +573,7 @@
         -ms-transition: opacity 0.8s ease-in;
          -o-transition: opacity 0.8s ease-in;
             transition: opacity 0.8s ease-in;
+        line-height: 1.5em;
     }
 
     #donateButton{
@@ -533,7 +591,6 @@
         display: none;
         align-items: center;
         justify-content: center;
-        /**background-color: #0D1321;**/
         background-color: #0D1321;
         overflow-y: scroll;
     }
@@ -541,7 +598,6 @@
         position: relative;
         z-index: 5;
     }
-    
 
     ul {
         list-style-type: none;
@@ -558,15 +614,33 @@
         align-items: center;
         position: relative;
         background-color: #F0E8BD;
+        text-align:left;
     }
 
-    #donate h1{
-        text-align:left;
-        font-size: 60px;
+    #introContainer{
+        width: 100%;
+        height: 100%;
+        position: relative;
     }
 
-    #donate h5{
-        text-align:left;
+    #introText{
+        position: absolute;
+        width: 70ch;
+        left: 50%;
+        margin-left: -35ch;
+        top: 40%;
+    }
+
+    #introText h3, #introText h5{
+        line-height: 1.6em;
+    }
+
+    #introContainer img{
+        width: 100%;
+        height: auto;
+        opacity: 0.3;
+        position: absolute;
+        bottom: 0;
     }
 
 
@@ -649,7 +723,11 @@
     }
 
     li div.change{
-        background-color: #0D1321;
+        background-color: #041641;
+    }
+
+    #timeline-intro{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
 
     .modalimage{
@@ -783,6 +861,7 @@
         position: absolute;
         bottom: 0px;
         right: 0;
+        opacity: 0.8;
     }
 
     #shun{
@@ -811,6 +890,21 @@
         left: 50%;
         margin-top: 60px;
         margin-left: -60%;
+    }
+
+    .storymodal p{
+        width: 96%;
+        margin: 0 2%;
+        color: rgb(243, 243, 243);
+    }
+
+    .storymodal .modal-header, .storymodal span{
+        color: rgb(243, 243, 243); 
+    }
+
+    .storymodal img{
+        width: 80%;
+        margin: 0 10% 20px;
     }
 
 
@@ -908,6 +1002,9 @@
         top: calc(50%+49px);
     }
 
+    .slideText h5{
+        line-height: 1.5em;
+    }
     .container.left .content{
         position: absolute;
         top: calc(50% + 59px);
@@ -995,6 +1092,11 @@
     }
 
     @media screen and (max-width: 900px) {
+        html{
+            scroll-snap-type: y mandatory; 
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
         .bg {
             background-image: url("cover.jpg");
 
@@ -1020,12 +1122,6 @@
             width: 80%;
             margin-left: 20%;
         }
-        .slideText h2{
-            font-size:25px;
-        }
-        .slideText h5{
-            font-size:15px;
-        }
         .slideshow {
             height: 230px;
         }
@@ -1039,13 +1135,7 @@
         #donateContent h5{
             font-size: 18px;
         }
-        #gallery-intro div h1,#gallery-intro div h2{
-            font-size: 30px;
-            text-align:center;
-            margin: 0 auto;
-        }
-        #gallery-intro div h4{
-            font-size: 24px;
+        #gallery-intro div h4,#gallery-intro div h2{
             text-align:center;
             margin: 0 auto;
         }
@@ -1226,40 +1316,27 @@
         </ul>
     </div>
     <div class='section bg' id='intro'>
-        <a href='https://www.tasselcambodia.org/donate-1' target="_blank">
-            <div id='top-right' class='extLink'>
-                <h1 class='shrink'>
-                    <svg id='plus-top-right' class='plus' width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
-                        <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
-                    </svg>
-                </h1>
-                <h6 class='expand' style='position: absolute; right: 20px; top: 20px;'>
-                    Donate
-                </h6>
-            </div>
-        </a>
-        <a href='https://www.tasselcambodia.org/what-we-do' target="_blank">
-            <div id='top-left' class='extLink'>
-                <h1 class='shrink'>
-                    <svg id='plus-top-left' class='plus' width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
-                        <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
-                    </svg>
-                </h1>
-                <h6 class='expand' style='position: absolute; left: 10px; top: 15px;'>
-                    About TASSEL
-                </h6>
-            </div>
-        </a>
         <div id='titletext'>
-            <h1>TASSEL 2020</h1>
-            <h2>Effects of COVID-19 and the Drought</h2>
+            <h1 class='texth1'>TASSEL 2020</h1>
+            <h4 class='texth4'>Effects of COVID-19 and the Drought</h4>
         </div>
         <div id='titleButtonContainer'>
             <a onclick='start()'>
-                <button id='titleButton' type="button" class="btn btn-lg btn-outline-info mt-1">Click to Start</button>
+                <button id='titleButton' type="button" class="btn btn-lg btn-outline-info mt-1 texth4">Click to Start</button>
             </a>
+        </div>
+    </div>
+    <div class='phaseOne section' id='timeline-intro'>
+        <div id='introContainer'>
+            <div id='introText' class='fade-in'>
+                <h3 class='texth3'>
+                    The ongoing drought and the COVID-19 pandemic have revealed an urgent need to provide for the Cambodians.
+                </h3>
+                <h5 class='texth5'>
+                    The following report details key events over the past two years that have led up to the current situation, as well as how TASSEL families have been affected.
+                </h5>
+            </div>
+                <img src='intro.PNG'>
         </div>
     </div>
     <div class='phaseOne section' id='information' style='position: relative;'>
@@ -1280,12 +1357,12 @@
             Information slide
         </h3>
         <img id='timeline' src='Timeline.jpg'>-->
-        <h1 class='fade-in' id='timelinetitle'>TASSEL CRISIS TIMELINE</h1>
+        <h1 class='fade-in texth2' id='timelinetitle'>TASSEL CRISIS TIMELINE</h1>
         <div class='fade-in' id='timeline'>
             <div id='vertical'></div>
             <div class="container left" id='firstpanel'>
                 <div class="content">
-                    <h1 class='header'>
+                    <h1 class='header texth3'>
                         APRIL 2019
                     </h1>
                     <img src='APRIL 2019 WEBSITE-01.png'>
@@ -1346,13 +1423,10 @@
     <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#0D1321, #1D2D44);'></div>
     <div class='phaseOne section' id='gallery-intro' style='position: relative;'>
         <div style='width: 100%;' id='gallery-intro-fade' class='fade-in'>
-            <h2>
+            <h2 class='texth2'>
                 How have Cambodians been affected?
             </h2>
-            <h1>
-                Discover our families' stories.
-            </h1>
-            <h4>
+            <h4 class='texth4'>
                 Click on each panel to find out more. 
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hand-index-thumb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M6.75 1a.75.75 0 0 0-.75.75V9.5a.5.5 0 0 1-.854.354l-2.41-2.411a.517.517 0 0 0-.809.631l2.512 4.185 1.232 2.465a.5.5 0 0 0 .447.276h6.302a.5.5 0 0 0 .434-.252l1.395-2.442a2.5 2.5 0 0 0 .317-.991l.272-2.715a1 1 0 0 0-.995-1.1H13.5v1a.5.5 0 1 1-1 0V7.154a4.208 4.208 0 0 0-.2-.26c-.187-.222-.368-.383-.486-.43-.124-.05-.392-.063-.708-.039a4.844 4.844 0 0 0-.106.01V8a.5.5 0 1 1-1 0V5.986c0-.167-.073-.272-.15-.314a1.657 1.657 0 0 0-.448-.182c-.179-.035-.5-.04-.816-.027l-.086.004V8a.5.5 0 1 1-1 0V1.75A.75.75 0 0 0 6.75 1zM8.5 4.466V1.75a1.75 1.75 0 1 0-3.5 0v6.543L3.443 6.736A1.517 1.517 0 0 0 1.07 8.588l2.491 4.153 1.215 2.43A1.5 1.5 0 0 0 6.118 16h6.302a1.5 1.5 0 0 0 1.302-.756l1.395-2.441a3.5 3.5 0 0 0 .444-1.389l.272-2.715a2 2 0 0 0-1.99-2.199h-.582a5.114 5.114 0 0 0-.195-.248c-.191-.229-.51-.568-.88-.716-.364-.146-.846-.132-1.158-.108l-.132.012a1.26 1.26 0 0 0-.56-.642 2.634 2.634 0 0 0-.738-.288c-.31-.062-.739-.058-1.05-.046l-.048.002zm2.094 2.025z"/>
@@ -1361,15 +1435,15 @@
         </div>
         <img class='fade-in' src='shun clear.png'>
         <div id='galleryButtonContainer'>
-            <a onclick="$('.phaseTwo').css({'display':'flex'});document.getElementById('gallery-container').scrollIntoView();">
+            <a onclick="document.getElementById('gallery-container').scrollIntoView();">
                 <svg id='galleryButton' width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="#F0EBD8" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
                 </svg>
             </a>
         </div>
     </div>
-    <div class='phaseTwo' style='display: none; height:100px;  background-image: linear-gradient(#1D2D44,#3E5C76);'></div>
-    <div class='phaseTwo section' id='gallery-container'>
+    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#1D2D44,#3E5C76);'></div>
+    <div class='phaseOne section' id='gallery-container'>
         <div class="row fade-in-gallery" id='gallery'>
             <div class="column">
                 <div class='element' data-toggle="modal" data-target="#modal1">
@@ -1473,18 +1547,18 @@
             </div>
         </div>
     </div>
-    <div class='phaseTwo' style='display: none; height:100px;  background-image: linear-gradient(#3E5C76,#748CAB);'></div>
-    <div class='phaseTwo section' id='teachers'>
+    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#3E5C76,#748CAB);'></div>
+    <div class='phaseOne section' id='teachers'>
         <div class='fade-in' id='teachers-fade' style='z-index: 0;'>
             <div class='slideText'>
-                <h2>What has TASSEL been doing?</h2>
+                <h2 class='texth2'>What has TASSEL been doing?</h2>
             </div>
             <div class="fade-in slideshow">
                 <div class="images">
                 </div>
             </div>
             <div class='fade-in slideText' style='margin-top: 20px;'>
-                <h5>
+                <h5 class='texth5'>
                     Although we are unable to teach due to the COVID-19 virus, our teachers are visiting families every day, identifying
                     needs, delivering food, taking the sick to hospitals, and delivering the message
                     of love from you. As the need for help, love, and support increases day by day, they have been working tirelessly to ensure that those needs are met.
@@ -1492,19 +1566,19 @@
             </div>
         </div>
     </div>
-    <div class='phaseTwo' style='display: none; height:100px;  background-image: linear-gradient(#748CAB,#F0E8BD);'></div>
-    <div class='phaseTwo section' id='donate'>
+    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#748CAB,#F0E8BD);'></div>
+    <div class='phaseOne section' id='donate'>
         <img id='villagers' src='villagers.png'>
         <div class='fade-in' id='donateContent'>
-            <h5 id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
-            <h1 id='texttwo'>They need your help.</h1>
-            <span id='donateButton'><a href='https://www.tasselcambodia.org/donate-1' target="_blank"><button type="button" class="btn btn-lg btn-outline-primary mt-1">Donate</button></a></span>
+            <h5 class='texth5' id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
+            <h2 class='texth2' id='texttwo'>They need your help.</h2>
+            <span id='donateButton'><a href='https://www.tasselcambodia.org/donate-1' target="_blank"><button type="button" class="btn btn-lg btn-outline-primary mt-1 texth6">Donate</button></a></span>
         </div>
     </div>
 </body>
-    <div class="modal fade" id="modal1" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal1" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Sokheng</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1520,9 +1594,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal2" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal2" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Vann</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1538,9 +1612,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal3" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal3" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Piseth</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1555,9 +1629,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal4" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal4" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Sophea</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1573,9 +1647,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal5" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal5" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Sina</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1591,9 +1665,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal6" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal6" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Chantha</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1609,9 +1683,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal7" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal7" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Grandpa Komsot and Grandma Sreynich</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1627,9 +1701,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal8" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal8" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Dary and Dara</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1645,9 +1719,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal9" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal9" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Thors</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1663,9 +1737,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal10" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal10" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Sreyna</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1681,9 +1755,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal11" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal11" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Sovath</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1699,9 +1773,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal12" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal12" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Reaksa</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1717,9 +1791,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal13" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal13" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Vicheka</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1735,9 +1809,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal14" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal14" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Paneth</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1753,9 +1827,9 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal15" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal15" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Kakada</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
