@@ -345,6 +345,7 @@
         flex: 25%;
         max-width: 25%;
         padding: 0 4px;
+        margin-bottom: 40px;
     }
 
     .column .element {
@@ -441,7 +442,7 @@
         text-align: right;
         height: 100vh;
         overflow-y: scroll;
-        background-color: #3E5C76;
+        background-color: #597491;
         padding-bottom: 100px;
         display:none;
     }
@@ -451,7 +452,7 @@
         text-align: right;
         height: auto;
         overflow-y: visible;
-        background-color: #3E5C76;
+        background-color: #597491;
         padding-bottom: 100px;
     }
     #gallery{
@@ -500,7 +501,7 @@
         height: 100vh;
         display: none;
         align-items: center;
-        background-color: #1D2D44;
+        background-color: #3E5C76;
     }
 
     #gallery-intro div{
@@ -591,7 +592,7 @@
         display: none;
         align-items: center;
         justify-content: center;
-        background-color: #0D1321;
+        background-color: #1D2D44;
         overflow-y: scroll;
     }
     #information h3{
@@ -623,21 +624,21 @@
         position: relative;
     }
 
-    #introText{
+    #introContainer div{
         position: absolute;
-        width: 70ch;
+        width: 70%;
         left: 50%;
-        margin-left: -35ch;
+        margin-left: -35%;
         top: 40%;
     }
 
-    #introText h3, #introText h5{
+    #introContainer div h3, #introContainer div h5{
         line-height: 1.6em;
     }
 
     #introContainer img{
+        min-width: 1000px;
         width: 100%;
-        height: auto;
         opacity: 0.3;
         position: absolute;
         bottom: 0;
@@ -1326,7 +1327,7 @@
             </a>
         </div>
     </div>
-    <div class='phaseOne section' id='timeline-intro'>
+    <div class='phaseOne section' id='timeline-intro' style='overflow: hidden;'>
         <div id='introContainer'>
             <div id='introText' class='fade-in'>
                 <h3 class='texth3'>
@@ -1336,9 +1337,10 @@
                     The following report details key events over the past two years that have led up to the current situation, as well as how TASSEL families have been affected.
                 </h5>
             </div>
-                <img src='intro.PNG'>
+            <img src='intro.PNG'>
         </div>
     </div>
+    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#0D1321,#1D2D44);'></div>
     <div class='phaseOne section' id='information' style='position: relative;'>
         <!--
         <video id="backgroundVid">
@@ -1420,7 +1422,7 @@
             </div>-->
         </div>
     </div>
-    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#0D1321, #1D2D44);'></div>
+    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#1D2D44, #3E5C76);'></div>
     <div class='phaseOne section' id='gallery-intro' style='position: relative;'>
         <div style='width: 100%;' id='gallery-intro-fade' class='fade-in'>
             <h2 class='texth2'>
@@ -1442,7 +1444,7 @@
             </a>
         </div>
     </div>
-    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#1D2D44,#3E5C76);'></div>
+    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#3E5C76,#597491);'></div>
     <div class='phaseOne section' id='gallery-container'>
         <div class="row fade-in-gallery" id='gallery'>
             <div class="column">
@@ -1547,7 +1549,7 @@
             </div>
         </div>
     </div>
-    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#3E5C76,#748CAB);'></div>
+    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#597491,#748CAB);'></div>
     <div class='phaseOne section' id='teachers'>
         <div class='fade-in' id='teachers-fade' style='z-index: 0;'>
             <div class='slideText'>
@@ -1572,7 +1574,7 @@
         <div class='fade-in' id='donateContent'>
             <h5 class='texth5' id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
             <h2 class='texth2' id='texttwo'>They need your help.</h2>
-            <span id='donateButton'><a href='https://www.tasselcambodia.org/donate-1' target="_blank"><button type="button" class="btn btn-lg btn-outline-primary mt-1 texth6">Donate</button></a></span>
+            <span id='donateButton'><a href='https://www.tasselcambodia.org/donate-1' target="_blank"><button type="button" class="btn btn-lg btn-outline-primary mt-1 texth5">Donate</button></a></span>
         </div>
     </div>
 </body>
@@ -1588,7 +1590,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit1.jpg' onload='increment()'>
                     <p>
-                        Sokheng is eight years old.  He lives with his younger brother and parents.  His parents grow corn and other crops on their farm to eat and sell.  But this year due to the drought they have given up on their farm and now survive by catching fish and picking leaves along the river.   The entire family also spends almost all day at the river digging for precious gems.  If they are lucky they may find one piece of ruby to sell for $300 but like many other diggers they may dig all year  and not find anything. They clearly do not have enough to eat.
+                        Sokheng is eight years old. He lives with his younger brother and parents.  His parents grow corn and other crops on their farm to eat and sell.  But this year due to the drought they have given up on their farm and now survive by catching fish and picking leaves along the river. The entire family also spends almost all day at the river digging for precious gems.  If they are lucky they may find one piece of ruby to sell for $300 but like many other diggers they may dig all year  and not find anything. They clearly do not have enough to eat, and are struggling to make ends meet.
                     </p>
                 </div>
             </div>
@@ -1606,7 +1608,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit2.jpg' onload='increment()'>
                     <p>
-                        Vann is a 53-year old farmer.  Because of the drought he started to hunt for wild pigs, deer, and porcupines at night.  Three weeks before our teachers found him, he had stepped on a landmine and lost his right foot while hunting.  He told our teachers that after stepping on the landmine he crawled all night until he was discovered by a neighbor.  The neighbor told us that when he found Vann crawling, Vann was holding on to an axe because there were tigers in the area.  Vann has two children and a wife who will soon give birth to their third child.
+                        Vann is a 53-year old farmer. Because of the drought, he started to hunt for wild pigs, deer, and porcupines at night. Three weeks before our teachers found him, he had stepped on a landmine and lost his right foot while hunting. He told our teachers that, after stepping on the landmine, he crawled all night until he was discovered by a neighbor. The neighbor told us that when he found Vann crawling, Vann was holding on to an axe because there were tigers in the area. Vann has two children and a wife who will soon give birth to their third child.
                     </p>
                 </div>
             </div>
@@ -1624,7 +1626,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit3.jpeg' onload='increment()'>
                     <p>
-                        Piseth is a seven-year old boy. Last year his father was travelling on a cart which lost balance and flipped over.  His father died.  His mother then ran away. Piseth now lives with his grandparents.The grandmother normally supports the family by picking and selling leaves but with the drought there are no leaves to sell.  She now goes door-to-door to neighbors' houses to help clean dishes in exchange of food.                    </p>
+                        Piseth is a seven-year old boy. Last year, his father was travelling on a cart that lost its balance and flipped over. His father died.  His mother then ran away. Piseth now lives with his grandparents.The grandmother normally supports the family by picking and selling leaves but with the drought, there are no leaves to sell. She now goes door-to-door to neighbors' houses to help clean dishes in exchange for food.</p>
                 </div>
             </div>
         </div>
@@ -1641,7 +1643,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit4.jpg' onload='increment()'>
                     <p>
-                        Sophea is a 14-year girl who, together with her 18-year old brother, Daruk, attend TASSEL.  Their parents used to live two hours away near theThai border and travel illegally into Thailand daily to earn income as fruit pickers.  However, with the border closing due to COVID, both parents lost their jobs and are back in their village, living with Sophea, Daruk and their grandmother. Daruk found a job as a cart loading laborer but his $60/month income is not enough to support a family of five.
+                        Sophea is a 14-year girl who, together with her 18-year old brother, Daruk, attend TASSEL. Their parents used to live two hours away near the Thai border and travel illegally into Thailand daily to earn income as fruit pickers. However, with the border closing due to COVID, both parents lost their jobs and are back in their village, living with Sophea, Daruk and their grandmother. Daruk found a job as a cart loading laborer but his $60/month of income is not enough to support a family of five.
                     </p>
                 </div>
             </div>
@@ -1659,7 +1661,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit5.JPG' onload='increment()'>
                     <p>
-                        Sina is a 14-year old TASSEL student who lives with her mother, cousin, grandmother and 10-year old cousin.  Her father abandoned the family before Sina was born.    The family lives in a rental room where they pay $12.50/month to their landlord.   Sina's mother normally earns money playing a Khmer musical instrument during the wedding season and working in restaurants during the off-season.  But due to COVID she lost both jobs.  They are in distress.
+                        Sina is a 14-year old TASSEL student who lives with her mother, cousin, grandmother and 10-year old cousin. Her father abandoned the family before Sina was born. The family lives in a rental room where they pay $12.50/month to their landlord. Sina's mother used to earn money by playing a Khmer musical instrument during the wedding season and working in restaurants during the off-season, but lost both jobs due to the pandemic. They are in great distress as a result of their financial instability.
                     </p>
                 </div>
             </div>
@@ -1677,7 +1679,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='modal6.jpg' onload='increment()'>
                     <p>
-                        Chantha, a 12-year old TASSEL student lives with her parents, a 5-year old sister and a 3-year old brother. The family lives near a town where Chantha's parents are employed at a restaurant -- her mother as a dishwasher ,and her father as a security guard.   Both parents' jobs were reduced to half-time due to COVID and their combiined income has been cut to $100/month which is not enough for a family of five to survive.
+                        Chantha, a 12-year old TASSEL student lives with her parents, a 5-year old sister and a 3-year old brother. The family lives near a town where Chantha's parents are employed at a restaurant: her mother as a dishwasher, and her father as a security guard. Both parents' jobs were reduced to half-time due to COVID-19 and their combiined income has been cut to $100/month which is not enough for a family of five to survive.
                     </p>
                 </div>
             </div>
@@ -1695,7 +1697,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit7.jpeg' onload='increment()'>
                     <p>
-                        Grandpa Komsot is 71 and lives with his wife,  Grandma Sreynich.  Grandma Sreynich has a mental disorder.  In 1985 while working as a woodcutter in the mountains, Grandpa Komsot stepped on a landmine and lost his left foot.  They have three sons who are all poor.  The eldest used to send $15/month but can no longer help due to COVID.  The second son is disabled after falling from the second floor as a construction worker and has not been supporting them.  The third son also has not been helping them after running away from debt collectors.   Grandma Sreynich used to earn $4/month picking and selling recylcable cans and bottles; but with COVID the Thai border has closed and the recyclables cannot be sold.  Other villagers pity them and have been helping them, but the villagers are also in trouble due to COVID and the drought.
+                        Grandpa Komsot is 71 and lives with his wife, Grandma Sreynich. Grandma Sreynich has a mental disorder. In 1985, while working as a woodcutter in the mountains, Grandpa Komsot stepped on a landmine and lost his left foot. They have three sons who are all poor. The eldest used to send $15/month but can no longer help due to COVID-19.  The second son is disabled after falling from the second floor as a construction worker and has not been able to support them. The third son also has not been helping them after running away from debt collectors. Grandma Sreynich used to earn $4/month by picking and selling recylcable cans and bottles, but with COVID-19, the Thai border has closed and the recyclables cannot be sold. Other villagers pity them and have been helping them, but the villagers are also in trouble due to COVID-19 and the drought.
                     </p>
                 </div>
             </div>
@@ -1713,7 +1715,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit8.jpg' onload='increment()'>
                     <p>
-                        Dary (13) and brother Dara (15) are strong students at TASSEL.  They, along with four other siblings are supported by parents who sell incense at the local pagoda.  But due to COVID,  most worshippers do not go to the pagoda and  their parents' income has dropped dramatically.  The father now travels on a very old motorcycle to other villages and spmetimes even to other provicnes to find people to buy the inceses   But even so, their income is 70% lower than compared to that of pre-COVID days. The family of eight does not have enough to eat.
+                        Dary (13) and brother Dara (15) are strong students at TASSEL. They, along with four other siblings, are supported by parents who sell incense at the local pagoda. However, due to COVID-19, most worshippers stopped attending the pagoda and their parents' income has dropped dramatically. The father now travels on a very old motorcycle to other villages and spmetimes even to other provicnes to find people to buy the inceses, but even so, their income is 70% lower than compared to that of pre-COVID days. The family of eight does not have enough to eat.
                     </p>
                 </div>
             </div>
@@ -1731,7 +1733,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit9.jpg' onload='increment()'>
                     <p>
-                        Thors (14)  and his sister (6)  live with their grandmother and cousins.  Thors' parents are laborers in Thailand but with the border closed due to COVID, the parents have had to return to their village in Cambodia and are jobless.  The parents try hard by growing vegetables behind their house but they cannot grow enough.
+                        Thors (14) and his sister (6) live with their grandmother and cousins. Thors' parents are laborers in Thailand but with the border closed due to COVID-19, the parents have had to return to their village in Cambodia and are now jobless. The parents are persevering by growing vegetables behind their house, but they have not been able grow enough to support the family.
                     </p>
                 </div>
             </div>
@@ -1749,7 +1751,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit10.jpg' onload='increment()'>
                     <p>
-                        Sreyna is 7. Her father was a construction worker in Thailand but lost his job due to the border closing after COVID.  Her mother picked and sold leaves but due to the drought she cannot pick enough.  Sreyna, her six siblings aged 1, 3, 10, 12, and 16 and parents do not have enough.  The mother was crying when our teachers found them.
+                        Sreyna is 7. Her father was a construction worker in Thailand but lost his job due to the border closing after the virus outbreak. Her mother picked and sold leaves but due to the drought, she has not been able to generate enough income. Sreyna, her parents, and her six siblings do not have enough. The mother was crying when our teachers found them.
                     </p>
                 </div>
             </div>
@@ -1767,7 +1769,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='modal11.PNG' onload='increment()'>
                     <p>
-                        Sovath is 53 years old.  He and his wife have five children aged 4, 6, 10, 13, and 15.  They earn $90/month finding firewood in the forest to sell. Now with COVID and the drought, finding and selling firewood have become competitive.  Sovath and his wife now go into areas where others won't go --areas where the landmines have not been cleared.  Most do not go into such areas because of the obvious danger but Sovath and his wife say they must go to avoid starvation.  The $90/month was already too little for them to get enough nutrition and now they must even face daily danger.
+                        Sovath is 53 years old. He and his wife have five children aged 4, 6, 10, 13, and 15. They earn $90/month finding firewood in the forest to sell. Now with COVID-19 and the drought, finding and selling firewood have become more competitive. Sovath and his wife now must go into areas where others won't go––areas where the landmines have not yet been cleared. Most do not go into such areas because of the obvious dangers, but Sovath and his wife say that they must go to avoid starvation.
                     </p>
                 </div>
             </div>
@@ -1785,7 +1787,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit12.jpg' onload='increment()'>
                     <p>
-                        Reaksa is 10.  He is often sick and the parents sold the family land so that he can get medical help.   His 16-year old sister was a laborer in Thailand but because of COVID the border has closed and she is now back, unemployed, and lives with the rest of the family.  Reaksa lives also with  a 12-year old sister, an 8-year old sister, an 81-year old grandmother and his parents.  The parents are farmers but with the drought  they have almost no income.  On the day our teachers met this family, Reaksa had just found some bees.  He and his family had never caught bees before but were happy that they had found something to eat.
+                        Reaksa is ten years old. He is often sick and the parents sold the family land so that he can get medical help. His 16-year old sister was a laborer in Thailand but because of COVID-19, the border has closed and she is now back, unemployed, and lives with the rest of the family. Reaksa lives also with a 12-year old sister, an 8-year old sister, an 81-year old grandmother, and his parents. The parents are farmers but with the drought, they have almost no income. On the day our teachers met this family, Reaksa had just found some bees. He and his family had never caught bees before but were happy that they had found something to eat.
                     </p>
                 </div>
             </div>
@@ -1803,7 +1805,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit13.jpeg' onload='increment()'>
                     <p>
-                        Vicheka is a twelve-year old boy.  He has two older sisters aged 14, and 17.  Vicheka's parents are sick so the older sisters earn money for the family by cutting grass and also puling casssavas.  The sisters' combined income is $60/month in normal times but with COVID and the drought, their income is now almost zero.  They live in a house on their neighbor's land.  The house has no walls and no protection from the rain, sun and wind. They are surviving by finding leaves to eat.
+                        Vicheka is a twelve year old boy. He has two older sisters aged 14 and 17. Vicheka's parents are sick so the older sisters earn money for the family by cutting grass and also puling casssavas. The sisters' combined income was $60/month, but with COVID-19 and the drought, their income is now almost zero. They live in a house on their neighbor's land. The house has no walls and no protection from the rain, sun and wind. They are surviving by finding leaves to eat.
                     </p>
                 </div>
             </div>
@@ -1821,7 +1823,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='modal14.jpg' onload='increment()'>
                     <p>
-                        Paneth lives with his younger brother and parents in the forest. Because his family has always been poor he has been working since he was small and although he is 13, he is still in the 3rd grade.  With COVID his parents lost  their jobs  as mango pickers since the Thai  mango market, closed. Three days before our teachers found this family, the parents were in the forest trying to find mushrooms to eat.  During that time, Paneth was at an abandoned mango farm picking manoges for his younger brother when a cobra bit him.   A neighbor saw this and killed the cobra.  Although three days had passed since the incident, the family did not have the $20 to transport him to a city hospital so Paneth was still untreated.  Our teachers found and paid for transportation to bring him to a city hospital four hours away where he was then hospitalized and treated.  He has since been discharged and is now okay.  But the family still does not have enough food.
+                        Paneth lives with his younger brother and parents in the forest. Because his family has always been poor, he has been working since he was small and although he is 13, he is still in the 3rd grade. Due to COVID-19, his parents lost their jobs as mango pickers following the closure of the Thai mango market. Three days before our teachers found this family, the parents were in the forest trying to find mushrooms to eat. Paneth was at an abandoned mango farm picking manoges for his younger brother when a cobra bit him. A neighbor saw this and killed the cobra. Although three days had passed since the incident, the family did not have the $20 to transport him to a city hospital so Paneth was still untreated.  Our teachers found and paid for transportation to bring him to a city hospital four hours away where he was then hospitalized and treated. He has since been discharged and is now healthy, but the family still does not have enough food.
                     </p>
                 </div>
             </div>
@@ -1839,7 +1841,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit15.jpg' onload='increment()' onload='increment()'>
                     <p>
-                        Kakada is a 12-year old TASSEL student .  His mother killed herself,then his father abandoned him and his older siblings. He now lives with his 55-year old grandaunt who has a small shop; but because of COVID she earns only $1/day.  Kakada 's older brother was a factory worker in Thailand and used to send $40/month to support Kakada and his grandaunt.  But with COVID, the brother lost his job and cannot send any money.  Kakada's older sister is poor, married with children and also cannot support Kakada.  He and his grandaunt need help.
+                        Kakada is a 12-year old TASSEL student. His mother killed herself, then his father abandoned him and his older siblings. He now lives with his 55 year old grandaunt who has a small shop, but because of COVID-19 she earns only $1/day. Kakada's older brother was a factory worker in Thailand and used to send $40/month to support Kakada and his grandaunt. However, due to the virus outbreak, the brother lost his job and is unable to send any money. Kakada's older sister is poor, married with children and also cannot support Kakada.
                     </p>
                 </div>
             </div>
