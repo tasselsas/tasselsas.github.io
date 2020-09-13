@@ -872,24 +872,13 @@
         z-index: 1;
     }
 
-    #villagers{
-        width: 70%;
+    #donate img{
+        width: 50%;
         position: absolute;
         bottom: 0px;
         right: 0;
         opacity: 0.8;
-    }
-
-    #shun{
-        position: absolute;
-        bottom:0;
-        opacity: 0;
-        right: 40px;
-        width: 20%;
-        -moz-transition: opacity 0.8s ease-in;
-        -webkit-transition: opacity 0.8s ease-in;
-        -ms-transition: opacity 0.8s ease-in;
-        transition: opacity 0.8s ease-in;
+        min-width: 300px;
     }
 
     #timelinetitle{
@@ -902,12 +891,12 @@
     #timelinetitle::after{
         content: '';
         height: 2px;
-        width: 120%;
+        width: 102%;
         background-color: #7a8aa8;
         position: absolute;
         left: 50%;
-        margin-top: 60px;
-        margin-left: -60%;
+        margin-top: 40px;
+        margin-left: -51%;
     }
 
     .storymodal p{
@@ -934,197 +923,137 @@
     .timelinemodal h6{
         color: rgb(243, 243, 243);
     }
+    @media screen and (max-width: 700px) {
+        #firstpanel::before, #firstpanel::after, #firstpanel .content{
+            top: 400px;
+        }
+        #secondpanel::before, #secondpanel::after, #secondpanel .content{
+            top: 700px;
+        }
 
+        #thirdpanel::before, #thirdpanel::after, #thirdpanel .content{
+            top: 1000px;
+        }
+
+        #fourthpanel::before, #fourthpanel::after, #fourthpanel .content{
+            top: 1300px;
+        }
+
+        #fifthpanel::before, #fifthpanel::after, #fifthpanel .content{
+            top: 1600px;
+        }
+
+        #sixthpanel::before, #sixthpanel::after, #sixthpanel .content{
+            top: 1900px;
+        }
+    }
+    
     #timeline{
-        height: calc(100% - 90px);
-        width: 100%;
-        position: absolute;
-        bottom: 0;
+        top: 0;
+        margin: 0 auto;
+        height: 2100px;
+        width: 30px;
+    }
+
+    #information{
+        overflow:visible;
+        height: 2200px;
     }
 
     #vertical {
         content: '';
-        position: relative;
-        width: 90%;
+        position: absolute;
+        width: 2px;
         background-color: #7a8aa8;
-        top: 50%;
-        left: 50%;
-        margin-left: -45%;
-        height: 2px;
-        margin-top: -1px;
+        top: 150px;
+        left:70px;
+        bottom: 0;
+        height: 1900px;
+        margin-left: -1px;
     }
 
     #vertical::before{
         content: '';
         position: absolute;
-        width: 16px;
-        height: 16px;
-        top:-8px;
+        width: 22px;
+        height: 22px;
         background-color: #7a8aa8;
+        top: 0px;
+        left: 50%;
         border-radius: 50%;
+        margin-left: -11px;
     }
     #vertical::after{
         content: '';
         position: absolute;
-        width: 16px;
-        height: 16px;
+        width: 22px;
+        height: 22px;
         background-color: #7a8aa8;
-        top: -8px;
-        right:0px;
+        top: 1900px;
+        left: 50%;
         border-radius: 50%;
-    }
-    .container.under::before{
-        content: '';
-        position: absolute;
-        height: 40px;
-        width: 2px;
-        top:0;
-        background-color: #7a8aa8;
-        top: 50%;
-    }
-    .container.under::after{
-        content: '';
-        position: absolute;
-        height: 12px;
-        border-radius: 50%;
-        width: 12px;
-        margin-left: -6px;
-        background-color: #7a8aa8;
-        top: calc(50% + 40px);
+        margin-left: -11px;
+        margin-bottom: 150px;
     }
 
-    .container.above::before{
-        content: '';
+
+    .container::before{
+        content:'';
+        height: 2px;
+        width: 40px;
         position: absolute;
-        height: 40px;
-        width: 2px;
-        top:0;
         background-color: #7a8aa8;
-        top: 50%;
-        margin-top: -40px;
+        margin-top: 0px;
+        left: 70px;
     }
-    .container.above::after{
+    .container::after{
         content: '';
         position: absolute;
-        height: 10px;
+        height: 18px;
         border-radius: 50%;
-        width: 10px;
-        margin-left: -5px;
+        width: 18px;
         background-color: #7a8aa8;
-        top: calc(50% - 45px);
+        left: 110px;
+        margin-left: -9px;
+        margin-top: -9px;
     }
 
-    .slideText h5{
-        line-height: 1.5em;
-    }
-    .container.under .content{
+    .container .content{
         position: absolute;
-        width: 200px;
-        height: 280px;
-        top: calc(50% + 59px);
-        margin-left: -100px;
+        margin-left: 0px;
+        margin-top: calc(-40% - 0.75em);
+        width: 40%;
+        min-width: 200px;
+        min-height: 200px;
+        left: 50%;
+        margin-left: -20%;
+        bottom: 0;
+        text-align: center;
     }
 
-    .container.above .content{
-        position: absolute;
-        width: 200px;
-        height: 280px;
-        top: calc(50% - 325px);
-        margin-left: -100px;
+    .timelinetext{
+        text-align: left;
+        color: rgb(248, 248, 248);
     }
 
     .content .header{
-        font-size: 1em;
-        line-height: 40px;
-        width: 260px;
-        margin-left: -30px;
-        text-align: center;
-        color: rgb(255, 255, 145);
+        width: 40%;
         font-family: 'Poppins', sans-serif;
+        color: rgb(255, 255, 145);
         font-weight:600;
+        width: 100%;
+        font-size: 20px;
     }
 
     .content img{
-        height: 200px;
-        width: 200px;
+        width: 100%;
+        height: auto;
         cursor: pointer;
     }
 
     .content img:hover {
-        transform: scale(1.05);
-        transition-duration: 0.0.8s;
-    }
-
-    #firstpanel .content, #firstpanel::after, #firstpanel::before{
-        left:15%;
-    }
-
-    #secondpanel .content, #secondpanel::after, #secondpanel::before{
-        left:29%;
-    }
-
-    #thirdpanel .content, #thirdpanel::after, #thirdpanel::before{
-        left:43%;
-    }
-
-    #fourthpanel .content, #fourthpanel::after, #fourthpanel::before{
-        left:57%;
-    }
-
-    #fifthpanel .content, #fifthpanel::after, #fifthpanel::before{
-        left:71%;
-    }
-
-    #sixthpanel .content, #sixthpanel::after, #sixthpanel::before{
-        left:85%;
-    }
-
-    #backgroundVid.load{
-        opacity:0;
-        -moz-transition: opacity 0.8s ease-in;
-        -webkit-transition: opacity 0.8s ease-in;
-        -ms-transition: opacity 0.8s ease-in;
-        transition: opacity 0.8s ease-in;
-    }
-
-    #typewriter1.load{
-        opacity:0;
-    }
-
-    #typewriter1{
-        font-family: monospace;
-        display:none;
-        position: absolute;
-        bottom:25px;
-        left: 80px;
-        -moz-transition: opacity 0.3s ease-in;
-        -webkit-transition: opacity 0.3s ease-in;
-        -ms-transition: opacity 0.3s ease-in;
-        transition: opacity 0.3s ease-in;
-    }
-
-
-    .typewriter h1 {
-        color: black;
-        font-family: monospace;
-        font-size: 24px;
-        overflow: hidden;
-        border-right: .15em solid orange; 
-        white-space: nowrap; 
-        letter-spacing: .15em;
-        animation: 
-            typing 2.5s steps(29, end),
-            blink-caret .5s step-end infinite;
-    }
-
-    @keyframes typing {
-        from { width: 0 }
-        to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-        from, to { border-color: transparent }
-        50% { border-color: orange }
+        transform: scale(1.03);
+        transition-duration: 0.1s;
     }
 
     @media screen and (max-width: 900px) {
@@ -1186,16 +1115,168 @@
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
         }
-        #titletext h1{
-            font-size: 30px;
-        }
-        #titletext h2{
-            font-size: 22px;
-        }
         .images {
             animation: slideshow 90s linear infinite;
         }
+
+        #donate img{
+            bottom: 15%;
+        }
     }
+
+    @media only screen and (min-width: 700px) {
+        #information{
+            overflow: visible;
+            height: 100vh;
+            position: relative;
+        }
+
+        #timelinetitle{
+            position: absolute;
+            top: 30px;
+            line-height: 40px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+        }
+        #timelinetitle::after{
+            content: '';
+            height: 2px;
+            width: 120%;
+            background-color: #7a8aa8;
+            position: relative;
+            left: 50%;
+            top: auto;
+            margin-top: 60px;
+            margin-left: -60%;
+        }
+
+        #timeline{
+            height: calc(100% - 90px);
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            top: auto;
+        }
+
+        #vertical {
+            content: '';
+            position: relative;
+            width: 90%;
+            background-color: #7a8aa8;
+            top: 50%;
+            left: 50%;
+            margin-left: -45%;
+            height: 2px;
+            margin-top: -1px;
+        }
+
+
+        #vertical::before{
+            width: 16px;
+            height: 16px;
+            top:-8px;
+            left: 0px;
+        }
+        #vertical::after{
+            width: 16px;
+            height: 16px;
+            top: -8px;
+            right: 0px;
+            left: auto;
+        }
+
+        .container.above::before{
+            content: '';
+            position: absolute;
+            height: 40px;
+            width: 2px;
+            background-color: #7a8aa8;
+            top: 50%;
+            margin-top: -40px;
+            left: auto;
+        }
+        .container.above::after{
+            height: 10px;
+            border-radius: 50%;
+            width: 10px;
+            margin-left: -4px;
+            background-color: #7a8aa8;
+            top: calc(50% - 45px);
+            margin-top: 0px;
+            left: auto;
+        }
+
+        .container.above .content{
+            width: 200px;
+            height: 280px;
+            top: calc(50% - 325px);
+            margin-left: -100px;
+            margin-top: 0;
+            left: auto;
+        }
+
+        .container.under::before{
+            content: '';
+            position: absolute;
+            height: 40px;
+            width: 2px;
+            background-color: #7a8aa8;
+            top: 50%;
+            margin-top: 0;
+            left: auto;
+        }
+        .container.under::after{
+            height: 10px;
+            border-radius: 50%;
+            width: 10px;
+            margin-left: -6px;
+            background-color: #7a8aa8;
+            top: calc(50% + 40px);
+            margin-top: 0px;
+            left: auto;
+        }
+
+        .container.under .content{
+            width: 200px;
+            height: 280px;
+            top: calc(50% + 59px);
+            margin-left: -100px;
+            margin-top: 0;
+            left: auto;
+        }
+
+        .content img{
+            height: 200px;
+            width: 200px;
+            cursor: pointer;
+        }
+
+        #firstpanel .content, #firstpanel::after, #firstpanel::before{
+            left:15%;
+        }
+
+        #secondpanel .content, #secondpanel::after, #secondpanel::before{
+            left:29%;
+        }
+
+        #thirdpanel .content, #thirdpanel::after, #thirdpanel::before{
+            left:43%;
+        }
+
+        #fourthpanel .content, #fourthpanel::after, #fourthpanel::before{
+            left:57%;
+        }
+
+        #fifthpanel .content, #fifthpanel::after, #fifthpanel::before{
+            left:71%;
+        }
+
+        #sixthpanel .content, #sixthpanel::after, #sixthpanel::before{
+            left:85%;
+        }
+
+    }
+
     .phaseOne {
         display:none;
     }
@@ -1273,26 +1354,37 @@
             }
             else{
                 entry.target.classList.add('appear');
-                if(entry.target.id=='timeline'){
+                if(entry.target.id=='introText'){
                     $( "#1" ).addClass('active');
                     $( "#2" ).removeClass('active');
                     $( "#3" ).removeClass('active');
                     $( "#4" ).removeClass('active');
                     $( "#5" ).removeClass('active');
+                    $( "#6" ).removeClass('active');
                 }
-                if(entry.target.id=='gallery-intro-fade'){
+                if(entry.target.id=='timelinetitle'){
                     $( "#1" ).removeClass('active');
                     $( "#2" ).addClass('active');
                     $( "#3" ).removeClass('active');
                     $( "#4" ).removeClass('active');
+                    $( "#5" ).removeClass('active');
+                    $( "#6" ).removeClass('active');
+                }
+                if(entry.target.id=='gallery-intro-fade'){
+                    $( "#1" ).removeClass('active');
+                    $( "#2" ).removeClass('active');
+                    $( "#3" ).addClass('active');
+                    $( "#4" ).removeClass('active');
+                    $( "#5" ).removeClass('active');
                     $( "#5" ).removeClass('active');
                 }
                 if(entry.target.id=='teachers-fade'){
                     $( "#1" ).removeClass('active');
                     $( "#2" ).removeClass('active');
                     $( "#3" ).removeClass('active');
-                    $( "#4" ).addClass('active');
-                    $( "#5" ).removeClass('active');
+                    $( "#4" ).removeClass('active');
+                    $( "#5" ).addClass('active');
+                    $( "#6" ).removeClass('active');
                 }
                 if(entry.target.id=='donateContent'){
                     $('#sidebar h1').addClass('change');
@@ -1300,12 +1392,14 @@
                     $( "#2" ).addClass('change');
                     $( "#3" ).addClass('change');
                     $( "#4" ).addClass('change');
+                    $( "#5" ).addClass('change');
 
                     $( "#1" ).removeClass('active');
                     $( "#2" ).removeClass('active');
                     $( "#3" ).removeClass('active');
                     $( "#4" ).removeClass('active');
-                    $( "#5" ).addClass('active');
+                    $( "#5" ).removeClass('active');
+                    $( "#6" ).addClass('active');
                 }
                 else{
                     $('#sidebar h1').removeClass('change');
@@ -1313,6 +1407,7 @@
                     $( "#2" ).removeClass('change');
                     $( "#3" ).removeClass('change');
                     $( "#4" ).removeClass('change');
+                    $( "#5" ).removeClass('change');
                 }
             }
         })
@@ -1344,11 +1439,12 @@
         <h1>TASSEL</h1>
 
         <ul>
-            <li><a onclick="document.getElementById('information').scrollIntoView();"><div id='1' class='nav active'></div></a></li>
-            <li><a onclick="document.getElementById('gallery-intro').scrollIntoView();"><div id='2' class='nav'></div></a></li>
-            <li><a onclick="document.getElementById('gallery-container').scrollIntoView();"><div id='3' class='nav'></div></a></li>
-            <li><a onclick="document.getElementById('teachers').scrollIntoView();"><div id='4' class='nav'></div></a></li>
-            <li><a onclick="document.getElementById('donate').scrollIntoView();"><div id='5' class='nav'></div></a></li>
+            <li><a onclick="document.getElementById('timeline-intro').scrollIntoView();"><div id='1' class='nav active'></div></a></li>
+            <li><a onclick="document.getElementById('information').scrollIntoView();"><div id='2' class='nav'></div></a></li>
+            <li><a onclick="document.getElementById('gallery-intro').scrollIntoView();"><div id='3' class='nav'></div></a></li>
+            <li><a onclick="document.getElementById('gallery-container').scrollIntoView();"><div id='4' class='nav'></div></a></li>
+            <li><a onclick="document.getElementById('teachers').scrollIntoView();"><div id='5' class='nav'></div></a></li>
+            <li><a onclick="document.getElementById('donate').scrollIntoView();"><div id='6' class='nav'></div></a></li>
         </ul>
     </div>
     <div class='section bg' id='intro'>
@@ -1395,7 +1491,7 @@
         </h3>
         <img id='timeline' src='Timeline.jpg'>-->
         <h1 class='fade-in texth2' id='timelinetitle'>TASSEL CRISIS TIMELINE</h1>
-        <div class='fade-in' id='timeline'>
+        <div id='timeline'>
             <div id='vertical'></div>
             <div class="container above" id='firstpanel' data-toggle="modal" data-target="#modal16">
                 <div class="content">
@@ -1595,7 +1691,7 @@
     </div>
     <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#748CAB,#F0E8BD);'></div>
     <div class='phaseOne section' id='donate'>
-        <img id='villagers' src='villagers.png'>
+        <img src='villagers.png'>
         <div class='fade-in' id='donateContent'>
             <h5 class='texth5' id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
             <h2 class='texth2' id='texttwo'>They need your help.</h2>
@@ -1881,17 +1977,17 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img style='width: 20%; margin-top: 20px; float: left;' src='april 2019– timeline.png'>
-                    <h1 style='width: 70%; float: right;' class='text-center texth2 poppinsHeavy'>APRIL 2019</h1>
-                    <h6 style='width: 70%; float: right;' class='texth3 text-center poppinsLight'>
+                    <img style='width: 20%; min-width: 110px; margin-right: 10px; margin-top: 20px; float: left;' src='april 2019– timeline.png'>
+                    <h1 class='text-center texth2 poppinsHeavy'>APRIL 2019</h1>
+                    <h6 class='texth3 text-center poppinsLight'>
                         Cambodia begins to suffer from a severe and prolonged drought.
                     </h6>
-                    <h6 style='width: 70%; float: right;' class='texth3 text-center spacing'>
+                    <h6 class='texth3 text-center spacing'>
                         Monsoon rains fail to come, and foreign company dam construction disrupts water supplies from farms and fisheries. Food insecurity heightens as supplies of
                         rice and fish, two main food staples of
                         Cambodia, are threatened.
                     </h6>
-                    <h6 style='width: 70%; float: right;' class='texth3 text-center spacing'>
+                    <h6 class='texth3 text-center spacing'>
                         Many families are forced to scavenge
                         for food. Most only find leaves; one
                         TASSEL student reports trying to eat
@@ -1910,18 +2006,19 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img style='width: 50%; margin-top: 20px; float: right;' src='december 2019– timeline.png'>
-                    <h1 style='width: 50%; float: left;' class='text-center texth2 poppinsHeavy'>DECEMBER 2019</h1>
-                    <h6 style='width: 50%; float: left; margin-bottom: 0.4em' class='texth3 text-center poppinsLight'>
+                    <img style='width: 48%; margin-left: 2%; min-width: 180px; margin-top: 20px; float: right;' src='december 2019– timeline.png'>
+                    <h1 class='text-center texth2 poppinsHeavy'>DECEMBER 2019</h1>
+                    <h6 style='margin-bottom: 0.4em' class='texth3 text-center poppinsLight'>
                         The drought devastates farms and fisheries.
                     </h6>
-                    <h6 style='width: 50%; float: left;' class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
+                    <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
                         Around 45,000 hectares (think 45,000 baseball fields) for rice paddies are damaged. 
-
-More than 60% of TASSEL families and farmers and many in Kampong Puoy (one of TASSEL's sponsored villages) are fishermen. 
-
-Farmers in TASSEL areas report poor crop yield, and fishermen report a 60% loss of fish in rivers and lakes, sending thousands of families deeper into poverty. 
-
+                    </h6>
+                    <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
+                        More than 60% of TASSEL families and farmers and many in Kampong Puoy (one of TASSEL's sponsored villages) are fishermen.                         
+                    </h6>
+                    <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
+                        Farmers in TASSEL areas report poor crop yield, and fishermen report a 60% loss of fish in rivers and lakes, sending thousands of families deeper into poverty. 
                     </h6>
                 </div>
             </div>
@@ -1936,7 +2033,7 @@ Farmers in TASSEL areas report poor crop yield, and fishermen report a 60% loss 
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img style='width: 30%; float: left;' src='january 2020– timeline.png'>
+                    <img style='width: 30%; min-width: 100px; float: left;' src='january 2020– timeline.png'>
                     <h1 class='text-center texth2 poppinsHeavy'>JANUARY 2020</h1>
                     <h6 class='texth3 text-center poppinsLight' style='margin-bottom: 0.4em'>
                         Cambodia reports first COVID-19 cases.
@@ -1970,7 +2067,7 @@ country.
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img style='width: 40%; float:right;' src='march 2020– timeline.png'>
+                    <img style='width: 40%; min-width: 140px; margin-left: 10px; float:right;' src='march 2020– timeline.png'>
                     <h1 class='text-center texth2 poppinsHeavy'>MARCH 2020</h1>
                     <h6 class='texth3 poppinsLight' style='margin-bottom: 0.4em'>
                         The Cambodian government closes schools and prohibits most gatherings. Travel is also restricted as COVID-19 cases rise. 
@@ -2022,21 +2119,21 @@ Farmers are forced to borrow loans to make ends meet, and many are left with hug
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img style='width: 50%; float:left;' src='may 2020– timeline.png'>
+                    <img style='width: 40%; margin-bottom: 24px; min-width: 120px; float:left;' src='may 2020– timeline.png'>
                     <h1 class='text-center texth2 poppinsHeavy'>MAY 2020 - PRESENT</h1>
-                    <h6 class='texth3 text-center poppinsLight' style='width: 48%; float: right; margin-bottom: 0.4em'>
+                    <h6 class='texth3 text-center poppinsLight' style='margin-bottom: 0.4em'>
                         TASSEL provides aid to as many as possible. 
                     </h6>
-                    <h6 class='texth3 text-center spacing' style='width: 48%; float: right; margin-bottom: 0.2em'>
-TASSEL teachers visit all 2,476 TASSEL children and their families to understand the effects of COVID-19 and the drought on their lifestyles. 
-
-The teachers also visit families in their hometowns. 2/3, or about 2000 out of 3000, of the families
-visited were deemed in need of emergency
-support. Through your help, TASSEL was able to
-provide food and care to every single one of
-them during the summer months! However, the
-drought and pandemic are not over yet. 
-
+                    <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
+TASSEL teachers visit all 2,476 TASSEL children and their families to understand the effects of COVID-19 and the drought on their lives. 
+                    </h6>
+                    <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
+                        The teachers also visit families in their hometowns. About 2000 out of 3000 of the families
+                        visited were deemed in need of emergency
+                        support. Through your help, TASSEL was able to
+                        provide food and care to every single one of
+                        them over the summer. However, the
+                        drought and pandemic are not over yet. 
                     </h6>
                 </div>
             </div>

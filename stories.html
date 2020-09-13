@@ -11,12 +11,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="jquery.nicescroll.js"></script>
     <script>
 
         function start(){
-            $('.main').css('overflow-y', 'scroll');
-            document.getElementById('information').scrollIntoView();
+            $('.phaseOne').css({'display':'flex'});
+            setTimeout(function(){ document.getElementById('timeline-intro').scrollIntoView(); }, 50);
         }
 
         var assets = 0;
@@ -78,9 +77,9 @@
     </script>
     <base target="_top">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-  
-        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+
 #loader-wrapper {
     position: fixed;
     top: 0;
@@ -221,10 +220,11 @@
         box-sizing: border-box;
     }
 
+
     .text{
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-    .main::-webkit-scrollbar, #gallery-container::-webkit-scrollbar {
+    #gallery-container::-webkit-scrollbar {
         display: none;
     }
 
@@ -237,7 +237,7 @@
         transform: translate3d(0, 0, 0);
     }
     .images {
-        background: url(navyslides.jpg);
+        background: url(navyslides.png);
         background-size: contain;
         position: absolute;
         left: 0;
@@ -258,22 +258,31 @@
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
 
-    .main {
-        scroll-snap-type: y mandatory;
-        height: 100vh;
-        overflow-y: scroll;
-        scroll-behavior: smooth;
+    html.mobile{
+        scroll-snap-type: none;
     }
+
+    .poppinsHeavy{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+
+    .poppinsLight{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+    }
+
+    .spacing{
+        line-height: 1.3em;
+    }
+
     #titletext{
-        width: 600px;
+        width: 500px;
         position: absolute;
         top: 50%;
         left: 50%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-    }
-
-    #titletext h1, #titletext h2{
         text-align: left;
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
@@ -281,14 +290,25 @@
     .slideText{
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         width: 75%;
+        color: white;
         float:right;
         margin-right: 5%;
-        opacity:0;
-        -webkit-transition: opacity 0.8s ease-in;
-        -moz-transition: opacity 0.8s ease-in;
-        -ms-transition: opacity 0.8s ease-in;
-        -o-transition: opacity 0.8s ease-in;
-        transition: opacity 0.8s ease-in;
+    }
+
+    .slideTex{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        width: 75%;
+        color: white;
+        float:right;
+        margin-right: 5%;
+    }
+
+    .slideText{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        width: 75%;
+        color: white;
+        float:right;
+        margin-right: 5%;
     }
 
     .section {
@@ -299,8 +319,27 @@
     }
 
     body {
-        -ms-overflow-style: none;  
-        scrollbar-width: none; 
+        -ms-overflow-style: none; 
+    }
+
+    html{
+        scroll-snap-type: y mandatory; 
+        scroll-behavior: smooth;
+        font-size: 25px;
+    }
+
+
+    .fade-in-gallery{
+        opacity: 0;
+        transition: opacity 750ms ease-in-out;
+    }
+
+    .fade-in{
+        opacity: 0;
+        transition: opacity 750ms ease-in-out;
+    }
+    .fade-in.appear, .fade-in-gallery.appear{
+        opacity:1;
     }
 
     body, html{
@@ -319,6 +358,7 @@
         flex: 25%;
         max-width: 25%;
         padding: 0 4px;
+        margin-bottom: 40px;
     }
 
     .column .element {
@@ -415,7 +455,17 @@
         text-align: right;
         height: 100vh;
         overflow-y: scroll;
-        background-color: #3E5C76;
+        background-color: #597491;
+        padding-bottom: 100px;
+        display:none;
+    }
+    .mobile #gallery-container{
+        padding-right: 15px;
+        width: 100%;
+        text-align: right;
+        height: auto;
+        overflow-y: visible;
+        background-color: #597491;
         padding-bottom: 100px;
     }
     #gallery{
@@ -424,12 +474,6 @@
         -ms-transition: opacity 0.7s ease-in;
         -o-transition: opacity 0.7s ease-in;
         transition: opacity 0.7s ease-in;
-        opacity: 0;
-    }
-
-    #first h3.load, #gallery.load,#textone.load, #texttwo.load, #donateButton.load,.slideText.load{
-        opacity: 1;
-        
     }
 
 
@@ -468,36 +512,86 @@
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         width: 100%;
         height: 100vh;
-        display: flex;
+        display: none;
         align-items: center;
-        background-color: #1D2D44
+        background-color: #3E5C76;
     }
-    #gallery-intro div h1{
-        font-size: 60px;
+
+    #gallery-intro div{
+        z-index: 100;
     }
-    #gallery-intro div h1,#gallery-intro div h4{
+
+    .modal-header{
+        font-size: 0.8em;
+    }
+
+    .modal-title{
+        font-size: 1.6em;
+    }
+
+    .close{
+        font-size: 1.8em
+    }
+
+    .modal-content{
+        font-size: 0.6em;
+    }
+
+    .texth1{
+        font-size: 1.8em;
+    }
+
+    .texth2{
+        font-size: 1.6em;
+    }
+
+    .texth3{
+        font-size: 1.3em;
+    }
+
+    .texth4{
+        font-size: 1em;
+    }
+
+    .texth5{
+        font-size: 0.8em;
+    }
+
+    .texth6{
+        font-size: 0.6em;
+    }
+
+    #gallery-intro div h4, #gallery-intro div h2{
         text-align:left;
         margin-left: 20%;
+        z-index: 100;
+    }
+    #gallery-intro div h2{
+        line-height: 1.6em;
+    }
+
+    #gallery-intro div h4{
+        line-height: 1.4em;
     }
 
     #donateContent{
-        width:40%;
+        width:60%;
         margin: 0 auto;
         color: #0D1321;
+        position: relative;
     }
 
     #textone, #texttwo{
-        opacity:0;
         -webkit-transition: opacity 0.8s ease-in;
         -moz-transition: opacity 0.8s ease-in;
         -ms-transition: opacity 0.8s ease-in;
          -o-transition: opacity 0.8s ease-in;
             transition: opacity 0.8s ease-in;
+        line-height: 1.5em;
     }
 
     #donateButton{
         margin-top: 20px;
-        opacity:0;
         display:block;
         -webkit-transition: opacity 0.5s ease-in;
         -moz-transition: opacity 0.5s ease-in;
@@ -508,9 +602,15 @@
 
     #information {
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
+        background-color: #1D2D44;
+        overflow-y: scroll;
+    }
+    #information h3{
+        position: relative;
+        z-index: 5;
     }
 
     ul {
@@ -524,19 +624,37 @@
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         width: 100%;
         height: 100vh;
-        display: flex;
+        display: none;
         align-items: center;
         position: relative;
         background-color: #F0E8BD;
+        text-align:left;
     }
 
-    #donate h1{
-        text-align:left;
-        font-size: 60px;
+    #introContainer{
+        width: 100%;
+        height: 100%;
+        position: relative;
     }
 
-    #donate h5{
-        text-align:left;
+    #introContainer div{
+        position: absolute;
+        width: 70%;
+        left: 50%;
+        margin-left: -35%;
+        top: 40%;
+    }
+
+    #introContainer div h3, #introContainer div h5{
+        line-height: 1.6em;
+    }
+
+    #introContainer img{
+        min-width: 1000px;
+        width: 100%;
+        opacity: 0.3;
+        position: absolute;
+        bottom: 0;
     }
 
 
@@ -615,10 +733,15 @@
         margin-top: 5px;
         text-decoration: none;
         transition: 0.4s;
+        cursor:pointer;
     }
 
     li div.change{
-        background-color: #0D1321;
+        background-color: #041641;
+    }
+
+    #timeline-intro{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
 
     .modalimage{
@@ -640,7 +763,7 @@
     }
 
     #teachers{
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: flex-end;
         background-color: #748CAB;
@@ -673,6 +796,7 @@
         top: 5px;
         left: 30px;
         font-size:30px;
+        font-weight: 600;
     }
 
     #sidebar h1.change{
@@ -739,6 +863,221 @@
         transition: opacity 0s ease-in;
     }
 
+    #gallery-intro img{
+        position: absolute;
+        bottom: 0;
+        right: 10%;
+        height: 80%;
+        z-index: 1;
+    }
+
+    #villagers{
+        width: 70%;
+        position: absolute;
+        bottom: 0px;
+        right: 0;
+        opacity: 0.8;
+    }
+
+    #shun{
+        position: absolute;
+        bottom:0;
+        opacity: 0;
+        right: 40px;
+        width: 20%;
+        -moz-transition: opacity 0.8s ease-in;
+        -webkit-transition: opacity 0.8s ease-in;
+        -ms-transition: opacity 0.8s ease-in;
+        transition: opacity 0.8s ease-in;
+    }
+
+    #timelinetitle{
+        position: absolute;
+        top: 30px;
+        line-height: 40px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+    }
+    #timelinetitle::after{
+        content: '';
+        height: 2px;
+        width: 120%;
+        background-color: #7a8aa8;
+        position: absolute;
+        left: 50%;
+        margin-top: 60px;
+        margin-left: -60%;
+    }
+
+    .storymodal p{
+        width: 96%;
+        margin: 0 2%;
+        color: rgb(243, 243, 243);
+    }
+
+    .storymodal .modal-header, .storymodal span{
+        color: rgb(243, 243, 243); 
+    }
+
+    .storymodal img{
+        width: 80%;
+        margin: 0 10% 20px;
+    }
+
+    .timelinemodal h1{
+        text-align: center;
+        width: 100%;
+        color: rgb(255, 255, 145);
+    }
+
+    .timelinemodal h6{
+        color: rgb(243, 243, 243);
+    }
+
+    #timeline{
+        height: calc(100% - 90px);
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+
+    #vertical {
+        content: '';
+        position: relative;
+        width: 90%;
+        background-color: #7a8aa8;
+        top: 50%;
+        left: 50%;
+        margin-left: -45%;
+        height: 2px;
+        margin-top: -1px;
+    }
+
+    #vertical::before{
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top:-8px;
+        background-color: #7a8aa8;
+        border-radius: 50%;
+    }
+    #vertical::after{
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background-color: #7a8aa8;
+        top: -8px;
+        right:0px;
+        border-radius: 50%;
+    }
+    .container.under::before{
+        content: '';
+        position: absolute;
+        height: 40px;
+        width: 2px;
+        top:0;
+        background-color: #7a8aa8;
+        top: 50%;
+    }
+    .container.under::after{
+        content: '';
+        position: absolute;
+        height: 12px;
+        border-radius: 50%;
+        width: 12px;
+        margin-left: -6px;
+        background-color: #7a8aa8;
+        top: calc(50% + 40px);
+    }
+
+    .container.above::before{
+        content: '';
+        position: absolute;
+        height: 40px;
+        width: 2px;
+        top:0;
+        background-color: #7a8aa8;
+        top: 50%;
+        margin-top: -40px;
+    }
+    .container.above::after{
+        content: '';
+        position: absolute;
+        height: 10px;
+        border-radius: 50%;
+        width: 10px;
+        margin-left: -5px;
+        background-color: #7a8aa8;
+        top: calc(50% - 45px);
+    }
+
+    .slideText h5{
+        line-height: 1.5em;
+    }
+    .container.under .content{
+        position: absolute;
+        width: 200px;
+        height: 280px;
+        top: calc(50% + 59px);
+        margin-left: -100px;
+    }
+
+    .container.above .content{
+        position: absolute;
+        width: 200px;
+        height: 280px;
+        top: calc(50% - 325px);
+        margin-left: -100px;
+    }
+
+    .content .header{
+        font-size: 1em;
+        line-height: 40px;
+        width: 260px;
+        margin-left: -30px;
+        text-align: center;
+        color: rgb(255, 255, 145);
+        font-family: 'Poppins', sans-serif;
+        font-weight:600;
+    }
+
+    .content img{
+        height: 200px;
+        width: 200px;
+        cursor: pointer;
+    }
+
+    .content img:hover {
+        transform: scale(1.05);
+        transition-duration: 0.0.8s;
+    }
+
+    #firstpanel .content, #firstpanel::after, #firstpanel::before{
+        left:15%;
+    }
+
+    #secondpanel .content, #secondpanel::after, #secondpanel::before{
+        left:29%;
+    }
+
+    #thirdpanel .content, #thirdpanel::after, #thirdpanel::before{
+        left:43%;
+    }
+
+    #fourthpanel .content, #fourthpanel::after, #fourthpanel::before{
+        left:57%;
+    }
+
+    #fifthpanel .content, #fifthpanel::after, #fifthpanel::before{
+        left:71%;
+    }
+
+    #sixthpanel .content, #sixthpanel::after, #sixthpanel::before{
+        left:85%;
+    }
+
     #backgroundVid.load{
         opacity:0;
         -moz-transition: opacity 0.8s ease-in;
@@ -763,7 +1102,6 @@
         transition: opacity 0.3s ease-in;
     }
 
-    
 
     .typewriter h1 {
         color: black;
@@ -789,6 +1127,11 @@
     }
 
     @media screen and (max-width: 900px) {
+        html{
+            scroll-snap-type: y mandatory; 
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
         .bg {
             background-image: url("cover.jpg");
 
@@ -814,12 +1157,6 @@
             width: 80%;
             margin-left: 20%;
         }
-        .slideText h2{
-            font-size:25px;
-        }
-        .slideText h5{
-            font-size:15px;
-        }
         .slideshow {
             height: 230px;
         }
@@ -833,10 +1170,12 @@
         #donateContent h5{
             font-size: 18px;
         }
-        #gallery-intro div h1,#gallery-intro div h4{
-            font-size: 30px;
+        #gallery-intro div h4,#gallery-intro div h2{
             text-align:center;
             margin: 0 auto;
+        }
+        #gallery-intro img{
+            opacity: 0.8;
         }
         #titletext{
             width: 60%;
@@ -856,20 +1195,27 @@
             animation: slideshow 90s linear infinite;
         }
     }
+    .phaseOne {
+        display:none;
+    }
 
   </style>
 <script>
     $( document ).ready(function() {
+        
         var w = $(window).width();
         if(w<650){
+            $('html').addClass('mobile');
+            /**
             $('#sidebar ul').css('display', 'none');
             document.getElementById('teachers').scrollIntoView();
             $('.slideText h2').text('Please use a computer or a tablet for the best viewing experience.');
             $('.slideText h5').text('We thank you for your help, care, and support!')
             $('.main').css('overflow-y', 'hidden');
             $('body').addClass('loaded');
+            **/
         }
-    /**
+        /**
     let video = document.querySelector('video');
     let observer = new IntersectionObserver((entries, observer) => { 
         entries.forEach(entry => {
@@ -880,119 +1226,99 @@
                 document.getElementById('backgroundVid').currentTime=0;
                 video.play();
             }
-
         });
     }, {threshold: 0.5});
     observer.observe(video) ;**/
 
     const options = {
         rootMargin: '0px',
-        threshold: 0.98
+        threshold: 0.8
     }
-        function activateZero(){
-            //$('#backgroundVid').removeClass('load');
-            $( "#1" ).removeClass('active');
-            $( "#2" ).removeClass('active');
-            $( "#3" ).removeClass('active');
-            $( "#4" ).removeClass('active');
-            $( "#5" ).removeClass('active');
-            //$('#typewriter1').removeClass('typewriter');
-            //$('#typewriter1').css('display','none');
-        }
+    
+    const galleryOptions = {
+        rootMargin: '0px',
+        threshold: 0
+    }
 
-        function activateOne(){
-            $( "#1" ).addClass('active');
-            $( "#2" ).removeClass('active');
-            $( "#3" ).removeClass('active');
-            $( "#4" ).removeClass('active');
-            $( "#5" ).removeClass('active');
-            $("#gallery").removeClass("load");
-            //$('#typewriter1').removeClass('load');
-            //$("#gallery-container").scrollTop(0);
-            //$(".slideText").removeClass("load");
-            //$('#typewriter1').addClass('typewriter');
-            //$('#typewriter1').css('display','block');
-            $('li div').removeClass('change');
-            $('#sidebar h1').removeClass('change');
-        }
+    const gallery = document.querySelector("#gallery");
 
-        function activateTwo(){
-            console.log("two")
-            $( "#1" ).removeClass('active');
-            $( "#2" ).addClass('active');
-            $( "#3" ).removeClass('active')
-            $( "#4" ).removeClass('active');
-            $( "#5" ).removeClass('active');
-            //$('#backgroundVid').removeClass('load');
-            $("#gallery").removeClass("load");
-            setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
-            $(".slideText").removeClass("load");
-            //$('#typewriter1').removeClass('typewriter');
-            //$('#typewriter1').css('display','none');
-            $('li div').removeClass('change');
-            $('#sidebar h1').removeClass('change');
-        }
+    const appearGallery = new IntersectionObserver(function(entries, appearGallery){
+        entries.forEach(entry => {
+            if(!entry.isIntersecting){
+                entry.target.classList.remove('appear');
+            }
+            else{
+                entry.target.classList.add('appear');
+                $( "#1" ).removeClass('active');
+                $( "#2" ).removeClass('active');
+                $( "#3" ).addClass('active');
+                $( "#4" ).removeClass('active');
+                $( "#5" ).removeClass('active');
+            }
+        })
+    }, galleryOptions);
 
-        function activateThree(){
-            $( "#1" ).removeClass('active');
-            $( "#2" ).removeClass('active');
-            $( "#3" ).addClass('active');
-            $( "#4" ).removeClass('active');
-            $( "#5" ).removeClass('active');
-            $("#gallery").addClass("load");
-            /**if(first){
-                showInstruction();
-            }**/
-            $(".slideText").removeClass("load");
-            $('li div').removeClass('change');
-            $('#sidebar h1').removeClass('change');
-        }
+    appearGallery.observe(gallery);
+    
 
-        function activateFour(){
-            console.log('four')
-            $( "#1" ).removeClass('active');
-            $( "#2" ).removeClass('active');
-            $( "#3" ).removeClass('active');
-            $( "#4" ).addClass('active');
-            $( "#5" ).removeClass('active');
-            $("#gallery").removeClass("load");
-            setTimeout(function(){ $("#gallery-container").scrollTop(0);}, 700);
-            $(".slideText").addClass("load");
-            $("#textone").removeClass("load");
-            $("#texttwo").removeClass("load");
-            $("#donateButton").removeClass("load");
-            $('li div').removeClass('change');
-            $('#sidebar h1').removeClass('change');
-        }
+    const faders = document.querySelectorAll(".fade-in");
 
-        function activateFive(){
-            $( "#1" ).removeClass('active');
-            $( "#2" ).removeClass('active');
-            $( "#3" ).removeClass('active');
-            $( "#4" ).removeClass('active');
-            $("#gallery").removeClass("load");
-            //$("#gallery-container").scrollTop(0);
-            $(".slideText").removeClass("load");
-            $('li div').addClass('change');
-            $('#sidebar h1').addClass('change');
-            $( "#5" ).addClass('active');
-            activateDonation();
-        }
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+        entries.forEach(entry => {
+            if(!entry.isIntersecting){
+                entry.target.classList.remove('appear');
+                return;
+            }
+            else{
+                entry.target.classList.add('appear');
+                if(entry.target.id=='timeline'){
+                    $( "#1" ).addClass('active');
+                    $( "#2" ).removeClass('active');
+                    $( "#3" ).removeClass('active');
+                    $( "#4" ).removeClass('active');
+                    $( "#5" ).removeClass('active');
+                }
+                if(entry.target.id=='gallery-intro-fade'){
+                    $( "#1" ).removeClass('active');
+                    $( "#2" ).addClass('active');
+                    $( "#3" ).removeClass('active');
+                    $( "#4" ).removeClass('active');
+                    $( "#5" ).removeClass('active');
+                }
+                if(entry.target.id=='teachers-fade'){
+                    $( "#1" ).removeClass('active');
+                    $( "#2" ).removeClass('active');
+                    $( "#3" ).removeClass('active');
+                    $( "#4" ).addClass('active');
+                    $( "#5" ).removeClass('active');
+                }
+                if(entry.target.id=='donateContent'){
+                    $('#sidebar h1').addClass('change');
+                    $( "#1" ).addClass('change');
+                    $( "#2" ).addClass('change');
+                    $( "#3" ).addClass('change');
+                    $( "#4" ).addClass('change');
 
+                    $( "#1" ).removeClass('active');
+                    $( "#2" ).removeClass('active');
+                    $( "#3" ).removeClass('active');
+                    $( "#4" ).removeClass('active');
+                    $( "#5" ).addClass('active');
+                }
+                else{
+                    $('#sidebar h1').removeClass('change');
+                    $( "#1" ).removeClass('change');
+                    $( "#2" ).removeClass('change');
+                    $( "#3" ).removeClass('change');
+                    $( "#4" ).removeClass('change');
+                }
+            }
+        })
+    }, options)
 
-    const zero = document.querySelector('#intro');
-    const one = document.querySelector('#information');
-    const two = document.querySelector('#gallery-intro');
-    const three = document.querySelector('#gallery-container');
-    const four = document.querySelector('#teachers');
-    const five = document.querySelector('#donate');
-
-    new IntersectionObserver(activateZero, options).observe(zero);
-    new IntersectionObserver(activateOne, options).observe(one);
-    new IntersectionObserver(activateTwo, options).observe(two);
-    new IntersectionObserver(activateThree, options).observe(three);
-    new IntersectionObserver(activateFour, options).observe(four);
-    new IntersectionObserver(activateFive, options).observe(five);
+    faders.forEach(fader =>{
+        appearOnScroll.observe(fader);
+    })
 });
 </script>
 </head>
@@ -1023,212 +1349,260 @@
             <li><a onclick="document.getElementById('donate').scrollIntoView();"><div id='5' class='nav'></div></a></li>
         </ul>
     </div>
-    <div class='main'>
-        <div class='section bg' id='intro'>
-            <a href='https://www.tasselcambodia.org/donate-1' target="_blank">
-                <div id='top-right' class='extLink'>
-                    <h1 class='shrink'>
-                        <svg id='plus-top-right' class='plus' width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
-                            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
-                        </svg>
-                    </h1>
-                    <h6 class='expand' style='position: absolute; right: 20px; top: 20px;'>
-                        Donate
-                    </h6>
-                </div>
-            </a>
-            <a href='https://www.tasselcambodia.org/what-we-do' target="_blank">
-                <div id='top-left' class='extLink'>
-                    <h1 class='shrink'>
-                        <svg id='plus-top-left' class='plus' width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
-                            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
-                        </svg>
-                    </h1>
-                    <h6 class='expand' style='position: absolute; left: 10px; top: 15px;'>
-                        About TASSEL
-                    </h6>
-                </div>
-            </a>
-            <div id='titletext'>
-                <h1>TASSEL 2020</h1>
-                <h2>Effects of COVID-19 and the Drought</h2>
-            </div>
-            <div id='titleButtonContainer'>
-                <a onclick='start()'>
-                    <button id='titleButton' type="button" class="btn btn-lg btn-outline-info mt-1">Click to Start</button>
-                </a>
-            </div>
+    <div class='section bg' id='intro'>
+        <div id='titletext'>
+            <h1 class='texth1'>TASSEL 2020</h1>
+            <h4 class='texth4'>Effects of COVID-19 and the Drought</h4>
         </div>
-        <div class='section' id='information' style='position: relative;'>
-            <!--
-            <video id="backgroundVid">
-                <source id='video' src="final.mp4" type="video/mp4">
-            </video>
-            <div id='typewriter1'>
-                <h1>
-                    Joji Tastugi - TASSEL Founder
-                </h1>
-            </div>-->
-            <h3>
-                Information slide
+        <div id='titleButtonContainer'>
+            <a onclick='start()'>
+                <button id='titleButton' type="button" class="btn btn-lg btn-outline-info mt-1 texth4">Click to Start</button>
+            </a>
+        </div>
+    </div>
+    <div class='phaseOne section' id='timeline-intro' style='overflow: hidden;'>
+        <div id='introContainer'>
+            <div id='introText' class='fade-in'>
+                <h3 class='texth3'>
+                    The ongoing drought and the COVID-19 pandemic have revealed an urgent need to provide for the Cambodians.
+                </h3>
+                <h5 class='texth5'>
+                    The following report details key events over the past two years that have led up to the current situation, as well as how TASSEL families have been affected.
+                </h5>
+            </div>
+            <img src='intro.PNG'>
+        </div>
+    </div>
+    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#0D1321,#1D2D44);'></div>
+    <div class='phaseOne section' id='information' style='position: relative;'>
+        <!--
+        <video id="backgroundVid">
+            <source id='video' src="final.mp4" type="video/mp4">
+        </video>
+        <div id='typewriter1'>
+            <h1>
+                Joji Tastugi - TASSEL Founder
+            </h1>
+        </div>
+        <div id='gradientbackground'>
+        </div>
+        <img id='shun' src='shun clear.png'>
+        <h3>
+            Information slide
         </h3>
-        </div>
-        <div class='section' id='gallery-intro' style='position: relative;'>
-            <div style='width: 100%;'>
-                <h1>
-                    Discover their stories.
-                </h1>
-                <h4>
-                    Click on each panel to find out more. 
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hand-index-thumb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M6.75 1a.75.75 0 0 0-.75.75V9.5a.5.5 0 0 1-.854.354l-2.41-2.411a.517.517 0 0 0-.809.631l2.512 4.185 1.232 2.465a.5.5 0 0 0 .447.276h6.302a.5.5 0 0 0 .434-.252l1.395-2.442a2.5 2.5 0 0 0 .317-.991l.272-2.715a1 1 0 0 0-.995-1.1H13.5v1a.5.5 0 1 1-1 0V7.154a4.208 4.208 0 0 0-.2-.26c-.187-.222-.368-.383-.486-.43-.124-.05-.392-.063-.708-.039a4.844 4.844 0 0 0-.106.01V8a.5.5 0 1 1-1 0V5.986c0-.167-.073-.272-.15-.314a1.657 1.657 0 0 0-.448-.182c-.179-.035-.5-.04-.816-.027l-.086.004V8a.5.5 0 1 1-1 0V1.75A.75.75 0 0 0 6.75 1zM8.5 4.466V1.75a1.75 1.75 0 1 0-3.5 0v6.543L3.443 6.736A1.517 1.517 0 0 0 1.07 8.588l2.491 4.153 1.215 2.43A1.5 1.5 0 0 0 6.118 16h6.302a1.5 1.5 0 0 0 1.302-.756l1.395-2.441a3.5 3.5 0 0 0 .444-1.389l.272-2.715a2 2 0 0 0-1.99-2.199h-.582a5.114 5.114 0 0 0-.195-.248c-.191-.229-.51-.568-.88-.716-.364-.146-.846-.132-1.158-.108l-.132.012a1.26 1.26 0 0 0-.56-.642 2.634 2.634 0 0 0-.738-.288c-.31-.062-.739-.058-1.05-.046l-.048.002zm2.094 2.025z"/>
-                    </svg>
-                </h4>
-            </div>
-            <div id='galleryButtonContainer'>
-                <a onclick="document.getElementById('gallery-container').scrollIntoView();">
-                    <svg id='galleryButton' width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="#F0EBD8" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-        <div class='section' id='gallery-container'>
-            <div class="row" id='gallery'>
-                <div class="column">
-                    <div class='element' data-toggle="modal" data-target="#modal1">
-                        <img class='image' src="exhibit1.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">
-                                <p>Sokheng</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal2">
-                        <img class='image' src="exhibit2.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Vann</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal3">
-                        <img class='image' src="exhibit3.jpeg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Piseth</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal4">
-                        <img class='image' src="exhibit4.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Sophea</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class='element' data-toggle="modal" data-target="#modal5">
-                        <img class='image' src="exhibit5.JPG" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Sina</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal6">
-                        <img class='image' src="exhibit6.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Chantha</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal7">
-                        <img class='image' src="exhibit7.jpeg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Komsot and Kreynich</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal8">
-                        <img class='image' src="exhibit8.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Dary</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class='element' data-toggle="modal" data-target="#modal9">
-                        <img class='image' src="exhibit9.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Thors</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal10">
-                        <img class='image' src="exhibit10.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Sreyna</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal11">
-                        <img class='image' src="exhibit11.PNG" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Sovath</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class='element' data-toggle="modal" data-target="#modal12">
-                        <img class='image' src="exhibit12.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Reaksa</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal13">
-                        <img class='image' src="exhibit13.jpeg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Vicheka</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal14">
-                        <img class='image' src="exhibit14.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Paneth</div>
-                        </div>
-                    </div>
-                    <div class='element' data-toggle="modal" data-target="#modal15">
-                        <img class='image' src="exhibit15.jpg" onload='increment()'>
-                        <div class="middle">
-                            <div class="text">Kakada</div>
-                        </div>
-                    </div>
+        <img id='timeline' src='Timeline.jpg'>-->
+        <h1 class='fade-in texth2' id='timelinetitle'>TASSEL CRISIS TIMELINE</h1>
+        <div class='fade-in' id='timeline'>
+            <div id='vertical'></div>
+            <div class="container above" id='firstpanel' data-toggle="modal" data-target="#modal16">
+                <div class="content">
+                    <img src='APRIL 2019 WEBSITE-01.png'>
+                    <h1 class='header texth3'>
+                        APRIL 2019
+                    </h1>
                 </div>
             </div>
-        </div>
-        <div class='section' id='teachers'>
-            <div>
-                <div class='slideText'>
-                    <h2>What has TASSEL been doing?</h2>
-                </div>
-                <div class="slideshow">
-                    <div class="images">
-                    </div>
-                </div>
-                <div class='slideText' style='margin-top: 20px;'>
-                    <h5>
-                        Although we are unable to teach due to the COVID-19 virus, our teachers are visiting families every day, identifying
-                        needs, delivering food, taking the sick to hospitals, and delivering the message
-                        of love from you. As the need for help, love, and support increases day by day, they have been working tirelessly to ensure that those needs are met.
-                    </h5>
+            <div class="container under" id="secondpanel" data-toggle="modal" data-target="#modal17">
+                <div class="content">
+                    <img src='DECEMBER 2019 WEBSITE-01.png'>
+                    <h1 class='header'>
+                        DECEMBER 2019
+                    </h1>
                 </div>
             </div>
-        </div>
-        <div class='section' id='donate'>
-            <div id='donateContent'>
-                <h5 id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
-                <h1 id='texttwo'>They need your help.</h1>
-                <span id='donateButton'><a href='https://www.tasselcambodia.org/donate-1' target="_blank"><button type="button" class="btn btn-lg btn-outline-primary mt-1">Donate</button></a></span>
+            <div class="container above" id="thirdpanel" data-toggle="modal" data-target="#modal18">
+                <div class="content">
+                    <img src='JANUARY 2020 WEBSITE-01.png'>
+                    <h1 class='header'>
+                        JANUARY 2020
+                    </h1>
+                </div>
+            </div>
+            <div class="container under" id="fourthpanel" data-toggle="modal" data-target="#modal19">
+                <div class="content">
+                    <img src='MARCH 2020 WEBSITE-01.png'>
+                    <h1 class='header'>
+                        MARCH 2020
+                    </h1>
+                </div>
+            </div>
+            <div class="container above" id="fifthpanel" data-toggle="modal" data-target="#modal20">
+                <div class="content">
+                    <img src='APRIL 2020 WEBSITE-01.png'>
+                    <h1 class='header'>
+                        APRIL 2020 - PRESENT
+                    </h1>
+                </div>
+            </div>
+            <div class="container under" id="sixthpanel" data-toggle="modal" data-target="#modal21">
+                <div class="content">
+                    <img src='MAY 2020 WEBSITE-01.png'>
+                    <h1 class='header'>
+                        MAY 2020 - PRESENT
+                    </h1>
+                </div>
             </div>
         </div>
     </div>
+    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#1D2D44, #3E5C76);'></div>
+    <div class='phaseOne section' id='gallery-intro' style='position: relative;'>
+        <div style='width: 100%;' id='gallery-intro-fade' class='fade-in'>
+            <h2 class='texth2'>
+                How have Cambodians been affected?
+            </h2>
+            <h4 class='texth4'>
+                Click on each panel to find out more. 
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hand-index-thumb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M6.75 1a.75.75 0 0 0-.75.75V9.5a.5.5 0 0 1-.854.354l-2.41-2.411a.517.517 0 0 0-.809.631l2.512 4.185 1.232 2.465a.5.5 0 0 0 .447.276h6.302a.5.5 0 0 0 .434-.252l1.395-2.442a2.5 2.5 0 0 0 .317-.991l.272-2.715a1 1 0 0 0-.995-1.1H13.5v1a.5.5 0 1 1-1 0V7.154a4.208 4.208 0 0 0-.2-.26c-.187-.222-.368-.383-.486-.43-.124-.05-.392-.063-.708-.039a4.844 4.844 0 0 0-.106.01V8a.5.5 0 1 1-1 0V5.986c0-.167-.073-.272-.15-.314a1.657 1.657 0 0 0-.448-.182c-.179-.035-.5-.04-.816-.027l-.086.004V8a.5.5 0 1 1-1 0V1.75A.75.75 0 0 0 6.75 1zM8.5 4.466V1.75a1.75 1.75 0 1 0-3.5 0v6.543L3.443 6.736A1.517 1.517 0 0 0 1.07 8.588l2.491 4.153 1.215 2.43A1.5 1.5 0 0 0 6.118 16h6.302a1.5 1.5 0 0 0 1.302-.756l1.395-2.441a3.5 3.5 0 0 0 .444-1.389l.272-2.715a2 2 0 0 0-1.99-2.199h-.582a5.114 5.114 0 0 0-.195-.248c-.191-.229-.51-.568-.88-.716-.364-.146-.846-.132-1.158-.108l-.132.012a1.26 1.26 0 0 0-.56-.642 2.634 2.634 0 0 0-.738-.288c-.31-.062-.739-.058-1.05-.046l-.048.002zm2.094 2.025z"/>
+                </svg>
+            </h4>
+        </div>
+        <img class='fade-in' src='shun clear.png'>
+        <div id='galleryButtonContainer'>
+            <a onclick="document.getElementById('gallery-container').scrollIntoView();">
+                <svg id='galleryButton' width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="#F0EBD8" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#3E5C76,#597491);'></div>
+    <div class='phaseOne section' id='gallery-container'>
+        <div class="row fade-in-gallery" id='gallery'>
+            <div class="column">
+                <div class='element' data-toggle="modal" data-target="#modal1">
+                    <img class='image' src="exhibit1.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">
+                            <p>Sokheng</p>
+                        </div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal2">
+                    <img class='image' src="exhibit2.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Vann</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal3">
+                    <img class='image' src="exhibit3.jpeg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Piseth</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal4">
+                    <img class='image' src="exhibit4.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Sophea</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class='element' data-toggle="modal" data-target="#modal5">
+                    <img class='image' src="exhibit5.JPG" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Sina</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal6">
+                    <img class='image' src="exhibit6.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Chantha</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal7">
+                    <img class='image' src="exhibit7.jpeg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Komsot and Kreynich</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal8">
+                    <img class='image' src="exhibit8.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Dary</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class='element' data-toggle="modal" data-target="#modal9">
+                    <img class='image' src="exhibit9.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Thors</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal10">
+                    <img class='image' src="exhibit10.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Sreyna</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal11">
+                    <img class='image' src="exhibit11.PNG" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Sovath</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class='element' data-toggle="modal" data-target="#modal12">
+                    <img class='image' src="exhibit12.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Reaksa</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal13">
+                    <img class='image' src="exhibit13.jpeg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Vicheka</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal14">
+                    <img class='image' src="exhibit14.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Paneth</div>
+                    </div>
+                </div>
+                <div class='element' data-toggle="modal" data-target="#modal15">
+                    <img class='image' src="exhibit15.jpg" onload='increment()'>
+                    <div class="middle">
+                        <div class="text">Kakada</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#597491,#748CAB);'></div>
+    <div class='phaseOne section' id='teachers'>
+        <div class='fade-in' id='teachers-fade' style='z-index: 0;'>
+            <div class='slideText'>
+                <h2 class='texth2'>What has TASSEL been doing?</h2>
+            </div>
+            <div class="fade-in slideshow">
+                <div class="images">
+                </div>
+            </div>
+            <div class='fade-in slideText' style='margin-top: 20px;'>
+                <h5 class='texth5'>
+                    Although we are unable to teach due to the COVID-19 virus, our teachers are visiting families every day, identifying
+                    needs, delivering food, taking the sick to hospitals, and delivering the message
+                    of love from you. As the need for help, love, and support increases day by day, they have been working tirelessly to ensure that those needs are met.
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#748CAB,#F0E8BD);'></div>
+    <div class='phaseOne section' id='donate'>
+        <img id='villagers' src='villagers.png'>
+        <div class='fade-in' id='donateContent'>
+            <h5 class='texth5' id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
+            <h2 class='texth2' id='texttwo'>They need your help.</h2>
+            <span id='donateButton'><a href='https://www.tasselcambodia.org/donate-1' target="_blank"><button type="button" class="btn btn-lg btn-outline-primary mt-1 texth5">Donate</button></a></span>
+        </div>
+    </div>
 </body>
-    <div class="modal fade" id="modal1" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal1" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Sokheng</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1238,15 +1612,15 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit1.jpg' onload='increment()'>
                     <p>
-                        Sokheng is eight years old.  He lives with his younger brother and parents.  His parents grow corn and other crops on their farm to eat and sell.  But this year due to the drought they have given up on their farm and now survive by catching fish and picking leaves along the river.   The entire family also spends almost all day at the river digging for precious gems.  If they are lucky they may find one piece of ruby to sell for $300 but like many other diggers they may dig all year  and not find anything. They clearly do not have enough to eat.
+                        Sokheng is eight years old. He lives with his younger brother and parents.  His parents grow corn and other crops on their farm to eat and sell.  But this year due to the drought they have given up on their farm and now survive by catching fish and picking leaves along the river. The entire family also spends almost all day at the river digging for precious gems.  If they are lucky they may find one piece of ruby to sell for $300 but like many other diggers they may dig all year  and not find anything. They clearly do not have enough to eat, and are struggling to make ends meet.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal2" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal2" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Vann</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1256,15 +1630,15 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit2.jpg' onload='increment()'>
                     <p>
-                        Vann is a 53-year old farmer.  Because of the drought he started to hunt for wild pigs, deer, and porcupines at night.  Three weeks before our teachers found him, he had stepped on a landmine and lost his right foot while hunting.  He told our teachers that after stepping on the landmine he crawled all night until he was discovered by a neighbor.  The neighbor told us that when he found Vann crawling, Vann was holding on to an axe because there were tigers in the area.  Vann has two children and a wife who will soon give birth to their third child.
+                        Vann is a 53-year old farmer. Because of the drought, he started to hunt for wild pigs, deer, and porcupines at night. Three weeks before our teachers found him, he had stepped on a landmine and lost his right foot while hunting. He told our teachers that, after stepping on the landmine, he crawled all night until he was discovered by a neighbor. The neighbor told us that when he found Vann crawling, Vann was holding on to an axe because there were tigers in the area. Vann has two children and a wife who will soon give birth to their third child.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal3" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal3" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Piseth</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1274,14 +1648,14 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit3.jpeg' onload='increment()'>
                     <p>
-                        Piseth is a seven-year old boy. Last year his father was travelling on a cart which lost balance and flipped over.  His father died.  His mother then ran away. Piseth now lives with his grandparents.The grandmother normally supports the family by picking and selling leaves but with the drought there are no leaves to sell.  She now goes door-to-door to neighbors' houses to help clean dishes in exchange of food.                    </p>
+                        Piseth is a seven-year old boy. Last year, his father was travelling on a cart that lost its balance and flipped over. His father died.  His mother then ran away. Piseth now lives with his grandparents.The grandmother normally supports the family by picking and selling leaves but with the drought, there are no leaves to sell. She now goes door-to-door to neighbors' houses to help clean dishes in exchange for food.</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal4" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal4" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Sophea</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1291,15 +1665,15 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit4.jpg' onload='increment()'>
                     <p>
-                        Sophea is a 14-year girl who, together with her 18-year old brother, Daruk, attend TASSEL.  Their parents used to live two hours away near theThai border and travel illegally into Thailand daily to earn income as fruit pickers.  However, with the border closing due to COVID, both parents lost their jobs and are back in their village, living with Sophea, Daruk and their grandmother. Daruk found a job as a cart loading laborer but his $60/month income is not enough to support a family of five.
+                        Sophea is a 14-year girl who, together with her 18-year old brother, Daruk, attend TASSEL. Their parents used to live two hours away near the Thai border and travel illegally into Thailand daily to earn income as fruit pickers. However, with the border closing due to COVID, both parents lost their jobs and are back in their village, living with Sophea, Daruk and their grandmother. Daruk found a job as a cart loading laborer but his $60/month of income is not enough to support a family of five.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal5" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal5" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Sina</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1309,15 +1683,15 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit5.JPG' onload='increment()'>
                     <p>
-                        Sina is a 14-year old TASSEL student who lives with her mother, cousin, grandmother and 10-year old cousin.  Her father abandoned the family before Sina was born.    The family lives in a rental room where they pay $12.50/month to their landlord.   Sina's mother normally earns money playing a Khmer musical instrument during the wedding season and working in restaurants during the off-season.  But due to COVID she lost both jobs.  They are in distress.
+                        Sina is a 14-year old TASSEL student who lives with her mother, cousin, grandmother and 10-year old cousin. Her father abandoned the family before Sina was born. The family lives in a rental room where they pay $12.50/month to their landlord. Sina's mother used to earn money by playing a Khmer musical instrument during the wedding season and working in restaurants during the off-season, but lost both jobs due to the pandemic. They are in great distress as a result of their financial instability.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal6" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal6" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Chantha</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1327,15 +1701,15 @@
                 <div class="modal-body">
                     <img class='modalimage' src='modal6.jpg' onload='increment()'>
                     <p>
-                        Chantha, a 12-year old TASSEL student lives with her parents, a 5-year old sister and a 3-year old brother. The family lives near a town where Chantha's parents are employed at a restaurant -- her mother as a dishwasher ,and her father as a security guard.   Both parents' jobs were reduced to half-time due to COVID and their combiined income has been cut to $100/month which is not enough for a family of five to survive.
+                        Chantha, a 12-year old TASSEL student lives with her parents, a 5-year old sister and a 3-year old brother. The family lives near a town where Chantha's parents are employed at a restaurant: her mother as a dishwasher, and her father as a security guard. Both parents' jobs were reduced to half-time due to COVID-19 and their combiined income has been cut to $100/month which is not enough for a family of five to survive.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal7" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal7" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Grandpa Komsot and Grandma Sreynich</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1345,15 +1719,15 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit7.jpeg' onload='increment()'>
                     <p>
-                        Grandpa Komsot is 71 and lives with his wife,  Grandma Sreynich.  Grandma Sreynich has a mental disorder.  In 1985 while working as a woodcutter in the mountains, Grandpa Komsot stepped on a landmine and lost his left foot.  They have three sons who are all poor.  The eldest used to send $15/month but can no longer help due to COVID.  The second son is disabled after falling from the second floor as a construction worker and has not been supporting them.  The third son also has not been helping them after running away from debt collectors.   Grandma Sreynich used to earn $4/month picking and selling recylcable cans and bottles; but with COVID the Thai border has closed and the recyclables cannot be sold.  Other villagers pity them and have been helping them, but the villagers are also in trouble due to COVID and the drought.
+                        Grandpa Komsot is 71 and lives with his wife, Grandma Sreynich. Grandma Sreynich has a mental disorder. In 1985, while working as a woodcutter in the mountains, Grandpa Komsot stepped on a landmine and lost his left foot. They have three sons who are all poor. The eldest used to send $15/month but can no longer help due to COVID-19.  The second son is disabled after falling from the second floor as a construction worker and has not been able to support them. The third son also has not been helping them after running away from debt collectors. Grandma Sreynich used to earn $4/month by picking and selling recylcable cans and bottles, but with COVID-19, the Thai border has closed and the recyclables cannot be sold. Other villagers pity them and have been helping them, but the villagers are also in trouble due to COVID-19 and the drought.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal8" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal8" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Dary and Dara</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1363,15 +1737,15 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit8.jpg' onload='increment()'>
                     <p>
-                        Dary (13) and brother Dara (15) are strong students at TASSEL.  They, along with four other siblings are supported by parents who sell incense at the local pagoda.  But due to COVID,  most worshippers do not go to the pagoda and  their parents' income has dropped dramatically.  The father now travels on a very old motorcycle to other villages and spmetimes even to other provicnes to find people to buy the inceses   But even so, their income is 70% lower than compared to that of pre-COVID days. The family of eight does not have enough to eat.
+                        Dary (13) and brother Dara (15) are strong students at TASSEL. They, along with four other siblings, are supported by parents who sell incense at the local pagoda. However, due to COVID-19, most worshippers stopped attending the pagoda and their parents' income has dropped dramatically. The father now travels on a very old motorcycle to other villages and spmetimes even to other provicnes to find people to buy the inceses, but even so, their income is 70% lower than compared to that of pre-COVID days. The family of eight does not have enough to eat.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal9" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal9" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Thors</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1381,15 +1755,15 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit9.jpg' onload='increment()'>
                     <p>
-                        Thors (14)  and his sister (6)  live with their grandmother and cousins.  Thors' parents are laborers in Thailand but with the border closed due to COVID, the parents have had to return to their village in Cambodia and are jobless.  The parents try hard by growing vegetables behind their house but they cannot grow enough.
+                        Thors (14) and his sister (6) live with their grandmother and cousins. Thors' parents are laborers in Thailand but with the border closed due to COVID-19, the parents have had to return to their village in Cambodia and are now jobless. The parents are persevering by growing vegetables behind their house, but they have not been able grow enough to support the family.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal10" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal10" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Sreyna</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1399,15 +1773,15 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit10.jpg' onload='increment()'>
                     <p>
-                        Sreyna is 7. Her father was a construction worker in Thailand but lost his job due to the border closing after COVID.  Her mother picked and sold leaves but due to the drought she cannot pick enough.  Sreyna, her six siblings aged 1, 3, 10, 12, and 16 and parents do not have enough.  The mother was crying when our teachers found them.
+                        Sreyna is 7. Her father was a construction worker in Thailand but lost his job due to the border closing after the virus outbreak. Her mother picked and sold leaves but due to the drought, she has not been able to generate enough income. Sreyna, her parents, and her six siblings do not have enough. The mother was crying when our teachers found them.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal11" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal11" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Sovath</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1417,15 +1791,15 @@
                 <div class="modal-body">
                     <img class='modalimage' src='modal11.PNG' onload='increment()'>
                     <p>
-                        Sovath is 53 years old.  He and his wife have five children aged 4, 6, 10, 13, and 15.  They earn $90/month finding firewood in the forest to sell. Now with COVID and the drought, finding and selling firewood have become competitive.  Sovath and his wife now go into areas where others won't go --areas where the landmines have not been cleared.  Most do not go into such areas because of the obvious danger but Sovath and his wife say they must go to avoid starvation.  The $90/month was already too little for them to get enough nutrition and now they must even face daily danger.
+                        Sovath is 53 years old. He and his wife have five children aged 4, 6, 10, 13, and 15. They earn $90/month finding firewood in the forest to sell. Now with COVID-19 and the drought, finding and selling firewood have become more competitive. Sovath and his wife now must go into areas where others won't go––areas where the landmines have not yet been cleared. Most do not go into such areas because of the obvious dangers, but Sovath and his wife say that they must go to avoid starvation.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal12" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal12" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Reaksa</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1435,15 +1809,15 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit12.jpg' onload='increment()'>
                     <p>
-                        Reaksa is 10.  He is often sick and the parents sold the family land so that he can get medical help.   His 16-year old sister was a laborer in Thailand but because of COVID the border has closed and she is now back, unemployed, and lives with the rest of the family.  Reaksa lives also with  a 12-year old sister, an 8-year old sister, an 81-year old grandmother and his parents.  The parents are farmers but with the drought  they have almost no income.  On the day our teachers met this family, Reaksa had just found some bees.  He and his family had never caught bees before but were happy that they had found something to eat.
+                        Reaksa is ten years old. He is often sick and the parents sold the family land so that he can get medical help. His 16-year old sister was a laborer in Thailand but because of COVID-19, the border has closed and she is now back, unemployed, and lives with the rest of the family. Reaksa lives also with a 12-year old sister, an 8-year old sister, an 81-year old grandmother, and his parents. The parents are farmers but with the drought, they have almost no income. On the day our teachers met this family, Reaksa had just found some bees. He and his family had never caught bees before but were happy that they had found something to eat.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal13" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal13" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Vicheka</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1453,15 +1827,15 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit13.jpeg' onload='increment()'>
                     <p>
-                        Vicheka is a twelve-year old boy.  He has two older sisters aged 14, and 17.  Vicheka's parents are sick so the older sisters earn money for the family by cutting grass and also puling casssavas.  The sisters' combined income is $60/month in normal times but with COVID and the drought, their income is now almost zero.  They live in a house on their neighbor's land.  The house has no walls and no protection from the rain, sun and wind. They are surviving by finding leaves to eat.
+                        Vicheka is a twelve year old boy. He has two older sisters aged 14 and 17. Vicheka's parents are sick so the older sisters earn money for the family by cutting grass and also puling casssavas. The sisters' combined income was $60/month, but with COVID-19 and the drought, their income is now almost zero. They live in a house on their neighbor's land. The house has no walls and no protection from the rain, sun and wind. They are surviving by finding leaves to eat.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal14" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal14" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Paneth</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1471,15 +1845,15 @@
                 <div class="modal-body">
                     <img class='modalimage' src='modal14.jpg' onload='increment()'>
                     <p>
-                        Paneth lives with his younger brother and parents in the forest. Because his family has always been poor he has been working since he was small and although he is 13, he is still in the 3rd grade.  With COVID his parents lost  their jobs  as mango pickers since the Thai  mango market, closed. Three days before our teachers found this family, the parents were in the forest trying to find mushrooms to eat.  During that time, Paneth was at an abandoned mango farm picking manoges for his younger brother when a cobra bit him.   A neighbor saw this and killed the cobra.  Although three days had passed since the incident, the family did not have the $20 to transport him to a city hospital so Paneth was still untreated.  Our teachers found and paid for transportation to bring him to a city hospital four hours away where he was then hospitalized and treated.  He has since been discharged and is now okay.  But the family still does not have enough food.
+                        Paneth lives with his younger brother and parents in the forest. Because his family has always been poor, he has been working since he was small and although he is 13, he is still in the 3rd grade. Due to COVID-19, his parents lost their jobs as mango pickers following the closure of the Thai mango market. Three days before our teachers found this family, the parents were in the forest trying to find mushrooms to eat. Paneth was at an abandoned mango farm picking manoges for his younger brother when a cobra bit him. A neighbor saw this and killed the cobra. Although three days had passed since the incident, the family did not have the $20 to transport him to a city hospital so Paneth was still untreated.  Our teachers found and paid for transportation to bring him to a city hospital four hours away where he was then hospitalized and treated. He has since been discharged and is now healthy, but the family still does not have enough food.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal15" tabindex="-1" role="dialog">
+    <div class="modal fade storymodal" id="modal15" tabindex="-1" role="dialog">
         <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='background-color: #3E5C76;'>
                 <div class="modal-header">
                     <h5 class="modal-title">Kakada</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1489,8 +1863,178 @@
                 <div class="modal-body">
                     <img class='modalimage' src='exhibit15.jpg' onload='increment()' onload='increment()'>
                     <p>
-                        Kakada is a 12-year old TASSEL student .  His mother killed herself,then his father abandoned him and his older siblings. He now lives with his 55-year old grandaunt who has a small shop; but because of COVID she earns only $1/day.  Kakada 's older brother was a factory worker in Thailand and used to send $40/month to support Kakada and his grandaunt.  But with COVID, the brother lost his job and cannot send any money.  Kakada's older sister is poor, married with children and also cannot support Kakada.  He and his grandaunt need help.
+                        Kakada is a 12-year old TASSEL student. His mother killed herself, then his father abandoned him and his older siblings. He now lives with his 55 year old grandaunt who has a small shop, but because of COVID-19 she earns only $1/day. Kakada's older brother was a factory worker in Thailand and used to send $40/month to support Kakada and his grandaunt. However, due to the virus outbreak, the brother lost his job and is unable to send any money. Kakada's older sister is poor, married with children and also cannot support Kakada.
                     </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade timelinemodal" id="modal16" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content" style='background-color: #0D1321;'>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: white;">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img style='width: 20%; margin-top: 20px; float: left;' src='april 2019– timeline.png'>
+                    <h1 style='width: 70%; float: right;' class='text-center texth2 poppinsHeavy'>APRIL 2019</h1>
+                    <h6 style='width: 70%; float: right;' class='texth3 text-center poppinsLight'>
+                        Cambodia begins to suffer from a severe and prolonged drought.
+                    </h6>
+                    <h6 style='width: 70%; float: right;' class='texth3 text-center spacing'>
+                        Monsoon rains fail to come, and foreign company dam construction disrupts water supplies from farms and fisheries. Food insecurity heightens as supplies of
+                        rice and fish, two main food staples of
+                        Cambodia, are threatened.
+                    </h6>
+                    <h6 style='width: 70%; float: right;' class='texth3 text-center spacing'>
+                        Many families are forced to scavenge
+                        for food. Most only find leaves; one
+                        TASSEL student reports trying to eat
+                        bees.
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade timelinemodal" id="modal17" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content" style='background-color: #0D1321;'>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: white;">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img style='width: 50%; margin-top: 20px; float: right;' src='december 2019– timeline.png'>
+                    <h1 style='width: 50%; float: left;' class='text-center texth2 poppinsHeavy'>DECEMBER 2019</h1>
+                    <h6 style='width: 50%; float: left; margin-bottom: 0.4em' class='texth3 text-center poppinsLight'>
+                        The drought devastates farms and fisheries.
+                    </h6>
+                    <h6 style='width: 50%; float: left;' class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
+                        Around 45,000 hectares (think 45,000 baseball fields) for rice paddies are damaged. 
+
+More than 60% of TASSEL families and farmers and many in Kampong Puoy (one of TASSEL's sponsored villages) are fishermen. 
+
+Farmers in TASSEL areas report poor crop yield, and fishermen report a 60% loss of fish in rivers and lakes, sending thousands of families deeper into poverty. 
+
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade timelinemodal" id="modal18" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content" style='background-color: #0D1321;'>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: white;">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img style='width: 30%; float: left;' src='january 2020– timeline.png'>
+                    <h1 class='text-center texth2 poppinsHeavy'>JANUARY 2020</h1>
+                    <h6 class='texth3 text-center poppinsLight' style='margin-bottom: 0.4em'>
+                        Cambodia reports first COVID-19 cases.
+                    </h6>
+                    <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
+                        Most cases come from tourists entering the
+country.
+                    </h6>
+                    <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
+                        Soon, families prepare for the worst, knowing
+                        their jobs in the tourism, manufacturing, and
+                        agriculture sectors will be jeopardized by
+                        necessary shutdowns.
+                    </h6>
+                    <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
+                        Many TASSEL families also fall into fear of
+                        catching Covid-19, knowing that their limited
+                        access to healthcare puts them in a vulnerable
+                        position.
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade timelinemodal" id="modal19" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content" style='background-color: #0D1321;'>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: white;">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img style='width: 40%; float:right;' src='march 2020– timeline.png'>
+                    <h1 class='text-center texth2 poppinsHeavy'>MARCH 2020</h1>
+                    <h6 class='texth3 poppinsLight' style='margin-bottom: 0.4em'>
+                        The Cambodian government closes schools and prohibits most gatherings. Travel is also restricted as COVID-19 cases rise. 
+                    </h6>
+                    <h6 class='texth3 spacing' style='margin-bottom: 0.2em'>
+
+Many TASSEL guardians lose their jobs because of border closures, and students cannot continue their education due to a lack of resources (eg. wifi, computers, etc.).
+
+As of now, the government plans on reopening public schools in November. 
+
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade timelinemodal" id="modal20" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content" style='background-color: #0D1321;'>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: white;">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img style='width: 60%; float:right;' src='april 2020– timeline.png'>
+                    <h1 class='text-center texth2 poppinsHeavy'>APRIL 2020 - PRESENT</h1>
+                    <h6 class='texth3 poppinsLight' style='margin-bottom: 0.4em'>
+                        Unemployment across the country rises.
+                    </h6>
+                    <h6 class='texth3 spacing' style='margin-bottom: 0.2em'>
+
+By early July, 45,000 tourist sector workers are unemployed. Cambodia's econonmy relies on international tourism, and the predicted loss of USD 3 billion by the end of this year projects disastrous prospects for the country's near future.
+
+150,000 factory workers are affected by the closure of 400+ retail factories. 
+
+Farmers are forced to borrow loans to make ends meet, and many are left with huge debts. 
+
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade timelinemodal" id="modal21" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content" style='background-color: #0D1321;'>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: white;">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img style='width: 50%; float:left;' src='may 2020– timeline.png'>
+                    <h1 class='text-center texth2 poppinsHeavy'>MAY 2020 - PRESENT</h1>
+                    <h6 class='texth3 text-center poppinsLight' style='width: 48%; float: right; margin-bottom: 0.4em'>
+                        TASSEL provides aid to as many as possible. 
+                    </h6>
+                    <h6 class='texth3 text-center spacing' style='width: 48%; float: right; margin-bottom: 0.2em'>
+TASSEL teachers visit all 2,476 TASSEL children and their families to understand the effects of COVID-19 and the drought on their lifestyles. 
+
+The teachers also visit families in their hometowns. 2/3, or about 2000 out of 3000, of the families
+visited were deemed in need of emergency
+support. Through your help, TASSEL was able to
+provide food and care to every single one of
+them during the summer months! However, the
+drought and pandemic are not over yet. 
+
+                    </h6>
                 </div>
             </div>
         </div>
