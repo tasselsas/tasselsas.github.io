@@ -78,8 +78,8 @@
     </script>
     <base target="_top">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
 
 #loader-wrapper {
     position: fixed;
@@ -261,6 +261,20 @@
 
     html.mobile{
         scroll-snap-type: none;
+    }
+
+    .poppinsHeavy{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+
+    .poppinsLight{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+    }
+
+    .spacing{
+        line-height: 1.3em;
     }
 
     #titletext{
@@ -783,6 +797,7 @@
         top: 5px;
         left: 30px;
         font-size:30px;
+        font-weight: 600;
     }
 
     #sidebar h1.change{
@@ -881,6 +896,8 @@
         position: absolute;
         top: 30px;
         line-height: 40px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
     }
     #timelinetitle::after{
         content: '';
@@ -908,12 +925,6 @@
         margin: 0 10% 20px;
     }
 
-
-    .timelinemodal img{
-        width: 60%;
-        margin: 0 20%;
-    }
-
     .timelinemodal h1{
         text-align: center;
         width: 100%;
@@ -921,8 +932,6 @@
     }
 
     .timelinemodal h6{
-        width: 90%;
-        margin: 0 10%;
         color: rgb(243, 243, 243);
     }
 
@@ -948,23 +957,23 @@
     #vertical::before{
         content: '';
         position: absolute;
-        width: 22px;
-        height: 22px;
-        top:-11px;
+        width: 16px;
+        height: 16px;
+        top:-8px;
         background-color: #7a8aa8;
         border-radius: 50%;
     }
     #vertical::after{
         content: '';
         position: absolute;
-        width: 22px;
-        height: 22px;
+        width: 16px;
+        height: 16px;
         background-color: #7a8aa8;
-        top: -11px;
+        top: -8px;
         right:0px;
         border-radius: 50%;
     }
-    .container.left::before{
+    .container.under::before{
         content: '';
         position: absolute;
         height: 40px;
@@ -973,74 +982,101 @@
         background-color: #7a8aa8;
         top: 50%;
     }
-    .container.left::after{
+    .container.under::after{
         content: '';
         position: absolute;
-        height: 18px;
+        height: 12px;
         border-radius: 50%;
-        width: 18px;
-        margin-left: -9px;
+        width: 12px;
+        margin-left: -6px;
         background-color: #7a8aa8;
         top: calc(50% + 40px);
     }
 
-    .container.right::before{
+    .container.above::before{
         content: '';
         position: absolute;
         height: 40px;
         width: 2px;
+        top:0;
         background-color: #7a8aa8;
         top: 50%;
+        margin-top: -40px;
     }
-    .container.right::after{
+    .container.above::after{
         content: '';
         position: absolute;
-        height: 18px;
+        height: 10px;
         border-radius: 50%;
-        width: 18px;
-        left: 50%;
+        width: 10px;
+        margin-left: -5px;
         background-color: #7a8aa8;
-        top: calc(50%+49px);
+        top: calc(50% - 45px);
     }
 
     .slideText h5{
         line-height: 1.5em;
     }
-    .container.left .content{
+    .container.under .content{
         position: absolute;
+        width: 200px;
+        height: 280px;
         top: calc(50% + 59px);
-        margin-left: -10px;
+        margin-left: -100px;
     }
 
-    .container.right .content{
+    .container.above .content{
         position: absolute;
-        margin-left: 120px;
-        margin-top: -370px;
-        height: 350px;
-        width: 350px;
-        top: 50%;
+        width: 200px;
+        height: 280px;
+        top: calc(50% - 325px);
+        margin-left: -100px;
     }
 
     .content .header{
-        font-size: 36px;
+        font-size: 1em;
         line-height: 40px;
-        text-align: left;
+        width: 260px;
+        margin-left: -30px;
+        text-align: center;
         color: rgb(255, 255, 145);
-    }
-
-    .timelinetext{
-        text-align: left;
-        color: rgb(248, 248, 248);
+        font-family: 'Poppins', sans-serif;
+        font-weight:600;
     }
 
     .content img{
         height: 200px;
+        width: 200px;
         cursor: pointer;
     }
 
     .content img:hover {
-        transform: scale(1.03);
-        transition-duration: 0.1s;
+        transform: scale(1.05);
+        transition-duration: 0.0.8s;
+    }
+
+    #firstpanel .content, #firstpanel::after, #firstpanel::before{
+        left:15%;
+    }
+
+    #secondpanel .content, #secondpanel::after, #secondpanel::before{
+        left:29%;
+    }
+
+    #thirdpanel .content, #thirdpanel::after, #thirdpanel::before{
+        left:43%;
+    }
+
+    #fourthpanel .content, #fourthpanel::after, #fourthpanel::before{
+        left:57%;
+    }
+
+    #fifthpanel .content, #fifthpanel::after, #fifthpanel::before{
+        left:71%;
+    }
+
+    #sixthpanel .content, #sixthpanel::after, #sixthpanel::before{
+        left:85%;
     }
 
     #backgroundVid.load{
@@ -1067,7 +1103,6 @@
         transition: opacity 0.3s ease-in;
     }
 
-    
 
     .typewriter h1 {
         color: black;
@@ -1362,64 +1397,54 @@
         <h1 class='fade-in texth2' id='timelinetitle'>TASSEL CRISIS TIMELINE</h1>
         <div class='fade-in' id='timeline'>
             <div id='vertical'></div>
-            <div class="container left" id='firstpanel'>
+            <div class="container above" id='firstpanel' data-toggle="modal" data-target="#modal16">
                 <div class="content">
+                    <img src='APRIL 2019 WEBSITE-01.png'>
                     <h1 class='header texth3'>
                         APRIL 2019
                     </h1>
-                    <img src='APRIL 2019 WEBSITE-01.png'>
                 </div>
             </div>
-            <!--<div class="container right" id="secondpanel">
+            <div class="container under" id="secondpanel" data-toggle="modal" data-target="#modal17">
                 <div class="content">
+                    <img src='DECEMBER 2019 WEBSITE-01.png'>
                     <h1 class='header'>
                         DECEMBER 2019
                     </h1>
-                    <h5 class='timelinetext'>
-                        The drought devastates agriculture and fisheries.
-                    </h5>
                 </div>
             </div>
-            <div class="container left" id="thirdpanel">
+            <div class="container above" id="thirdpanel" data-toggle="modal" data-target="#modal18">
                 <div class="content">
+                    <img src='JANUARY 2020 WEBSITE-01.png'>
                     <h1 class='header'>
                         JANUARY 2020
                     </h1>
-                    <h5 class='timelinetext'>
-                        Cambodia reports first COVID-19 cases.
-                    </h5>
                 </div>
             </div>
-            <div class="container right" id="fourthpanel">
+            <div class="container under" id="fourthpanel" data-toggle="modal" data-target="#modal19">
                 <div class="content">
+                    <img src='MARCH 2020 WEBSITE-01.png'>
                     <h1 class='header'>
                         MARCH 2020
                     </h1>
-                    <h5 class='timelinetext'>
-                        The Cambodian government closes schools and country borders. Travel is restricted as COVID-19 cases rise.
-                    </h5>
                 </div>
             </div>
-            <div class="container left" id="fifthpanel">
+            <div class="container above" id="fifthpanel" data-toggle="modal" data-target="#modal20">
                 <div class="content">
+                    <img src='APRIL 2020 WEBSITE-01.png'>
                     <h1 class='header'>
                         APRIL 2020 - PRESENT
                     </h1>
-                    <h5 class='timelinetext'>
-                        Unemployment across the country soars.
-                    </h5>
                 </div>
             </div>
-            <div class="container right" id="sixthpanel">
+            <div class="container under" id="sixthpanel" data-toggle="modal" data-target="#modal21">
                 <div class="content">
+                    <img src='MAY 2020 WEBSITE-01.png'>
                     <h1 class='header'>
                         MAY 2020 - PRESENT
                     </h1>
-                    <h5 class='timelinetext'>
-                        TASSEL provides aid to as many as possible.
-                    </h5>
                 </div>
-            </div>-->
+            </div>
         </div>
     </div>
     <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#1D2D44, #3E5C76);'></div>
@@ -1848,7 +1873,7 @@
         </div>
     </div>
     <div class="modal fade timelinemodal" id="modal16" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content" style='background-color: #0D1321;'>
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1856,17 +1881,28 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src='timeline1.png' onload='increment()' onload='increment()'>
-                    <h1 class='text-center'>APRIL 2019</h1>
-                    <h6>
+                    <img style='width: 20%; margin-top: 20px; float: left;' src='april 2019– timeline.png'>
+                    <h1 style='width: 70%; float: right;' class='text-center texth2 poppinsHeavy'>APRIL 2019</h1>
+                    <h6 style='width: 70%; float: right;' class='texth3 text-center poppinsLight'>
                         Cambodia begins to suffer from a severe and prolonged drought.
+                    </h6>
+                    <h6 style='width: 70%; float: right;' class='texth3 text-center spacing'>
+                        Monsoon rains fail to come, and foreign company dam construction disrupts water supplies from farms and fisheries. Food insecurity heightens as supplies of
+                        rice and fish, two main food staples of
+                        Cambodia, are threatened.
+                    </h6>
+                    <h6 style='width: 70%; float: right;' class='texth3 text-center spacing'>
+                        Many families are forced to scavenge
+                        for food. Most only find leaves; one
+                        TASSEL student reports trying to eat
+                        bees.
                     </h6>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade timelinemodal" id="modal17" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content" style='background-color: #0D1321;'>
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1874,17 +1910,25 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src='timeline1.png' onload='increment()' onload='increment()'>
-                    <h1 class='text-center'>DECEMBER 2019</h1>
-                    <h6>
-                        Cambodia begins to suffer from a severe and prolonged drought.
+                    <img style='width: 50%; margin-top: 20px; float: right;' src='december 2019– timeline.png'>
+                    <h1 style='width: 50%; float: left;' class='text-center texth2 poppinsHeavy'>DECEMBER 2019</h1>
+                    <h6 style='width: 50%; float: left; margin-bottom: 0.4em' class='texth3 text-center poppinsLight'>
+                        The drought devastates farms and fisheries.
+                    </h6>
+                    <h6 style='width: 50%; float: left;' class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
+                        Around 45,000 hectares (think 45,000 baseball fields) for rice paddies are damaged. 
+
+More than 60% of TASSEL families and farmers and many in Kampong Puoy (one of TASSEL's sponsored villages) are fishermen. 
+
+Farmers in TASSEL areas report poor crop yield, and fishermen report a 60% loss of fish in rivers and lakes, sending thousands of families deeper into poverty. 
+
                     </h6>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade timelinemodal" id="modal18" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content" style='background-color: #0D1321;'>
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1892,17 +1936,33 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src='timeline1.png' onload='increment()' onload='increment()'>
-                    <h1 class='text-center'>JANUARY 2020</h1>
-                    <h6>
-                        Cambodia begins to suffer from a severe and prolonged drought.
+                    <img style='width: 30%; float: left;' src='january 2020– timeline.png'>
+                    <h1 class='text-center texth2 poppinsHeavy'>JANUARY 2020</h1>
+                    <h6 class='texth3 text-center poppinsLight' style='margin-bottom: 0.4em'>
+                        Cambodia reports first COVID-19 cases.
+                    </h6>
+                    <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
+                        Most cases come from tourists entering the
+country.
+                    </h6>
+                    <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
+                        Soon, families prepare for the worst, knowing
+                        their jobs in the tourism, manufacturing, and
+                        agriculture sectors will be jeopardized by
+                        necessary shutdowns.
+                    </h6>
+                    <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
+                        Many TASSEL families also fall into fear of
+                        catching Covid-19, knowing that their limited
+                        access to healthcare puts them in a vulnerable
+                        position.
                     </h6>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade timelinemodal" id="modal19" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content" style='background-color: #0D1321;'>
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1910,17 +1970,24 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src='timeline1.png' onload='increment()' onload='increment()'>
-                    <h1 class='text-center'>MARCH 2020</h1>
-                    <h6>
-                        Cambodia begins to suffer from a severe and prolonged drought.
+                    <img style='width: 40%; float:right;' src='march 2020– timeline.png'>
+                    <h1 class='text-center texth2 poppinsHeavy'>MARCH 2020</h1>
+                    <h6 class='texth3 poppinsLight' style='margin-bottom: 0.4em'>
+                        The Cambodian government closes schools and prohibits most gatherings. Travel is also restricted as COVID-19 cases rise. 
+                    </h6>
+                    <h6 class='texth3 spacing' style='margin-bottom: 0.2em'>
+
+Many TASSEL guardians lose their jobs because of border closures, and students cannot continue their education due to a lack of resources (eg. wifi, computers, etc.).
+
+As of now, the government plans on reopening public schools in November. 
+
                     </h6>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade timelinemodal" id="modal20" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content" style='background-color: #0D1321;'>
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1928,17 +1995,26 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src='timeline1.png' onload='increment()' onload='increment()'>
-                    <h1 class='text-center'>APRIL 2020 - PRESENT</h1>
-                    <h6>
-                        Cambodia begins to suffer from a severe and prolonged drought.
+                    <img style='width: 60%; float:right;' src='april 2020– timeline.png'>
+                    <h1 class='text-center texth2 poppinsHeavy'>APRIL 2020 - PRESENT</h1>
+                    <h6 class='texth3 poppinsLight' style='margin-bottom: 0.4em'>
+                        Unemployment across the country rises.
+                    </h6>
+                    <h6 class='texth3 spacing' style='margin-bottom: 0.2em'>
+
+By early July, 45,000 tourist sector workers are unemployed. Cambodia's econonmy relies on international tourism, and the predicted loss of USD 3 billion by the end of this year projects disastrous prospects for the country's near future.
+
+150,000 factory workers are affected by the closure of 400+ retail factories. 
+
+Farmers are forced to borrow loans to make ends meet, and many are left with huge debts. 
+
                     </h6>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade timelinemodal" id="modal21" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content" style='background-color: #0D1321;'>
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1946,10 +2022,21 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src='timeline1.png' onload='increment()' onload='increment()'>
-                    <h1 class='text-center'>MAY 2020 - PRESENT</h1>
-                    <h6>
-                        Cambodia begins to suffer from a severe and prolonged drought.
+                    <img style='width: 50%; float:left;' src='may 2020– timeline.png'>
+                    <h1 class='text-center texth2 poppinsHeavy'>MAY 2020 - PRESENT</h1>
+                    <h6 class='texth3 text-center poppinsLight' style='width: 48%; float: right; margin-bottom: 0.4em'>
+                        TASSEL provides aid to as many as possible. 
+                    </h6>
+                    <h6 class='texth3 text-center spacing' style='width: 48%; float: right; margin-bottom: 0.2em'>
+TASSEL teachers visit all 2,476 TASSEL children and their families to understand the effects of COVID-19 and the drought on their lifestyles. 
+
+The teachers also visit families in their hometowns. 2/3, or about 2000 out of 3000, of the families
+visited were deemed in need of emergency
+support. Through your help, TASSEL was able to
+provide food and care to every single one of
+them during the summer months! However, the
+drought and pandemic are not over yet. 
+
                     </h6>
                 </div>
             </div>
