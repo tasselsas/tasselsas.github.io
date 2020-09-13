@@ -12,1412 +12,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script>
-
-        function start(){
-            $('.phaseOne').css({'display':'flex'});
-            setTimeout(function(){ document.getElementById('timeline-intro').scrollIntoView(); }, 50);
-        }
-
-        var assets = 0;
-        var first = true;
-
-        function showInstruction(){
-            $('#first').css({'display':'flex'});
-            $('#first h3').addClass('load');
-            setTimeout(function(){ $('#first').css({'display':'none'});}, 2800);
-            setTimeout(function(){ $('#first h3').removeClass('load');}, 2000);
-            first=false;
-        }
-
-        function increment(){
-            assets+=1;
-            if(assets>=30){
-                $('body').addClass('loaded');
-            }
-        }
-
-        function activateDonation(){
-            $("#textone").addClass("load");
-            setTimeout(function(){ $("#texttwo").addClass("load"); }, 1200)
-            setTimeout(function(){ $("#donateButton").addClass("load"); }, 2200)
-        }
-
-        $( document ).ready(function() {
-                $('.main').css('overflow-y', 'hidden');
-
-                $('#backgroundVid').on('ended',function(){
-                    $('#backgroundVid').addClass('load');
-                    $('#typewriter1').addClass('load');
-                });
-                
-
-                var links = document.getElementsByClassName('extLink');
-
-                var mouseOver = function(){
-                    var shrink=this.getElementsByClassName('shrink')[0];
-                    var expand=this.getElementsByClassName('expand')[0];
-
-                    shrink.style.display = 'none';
-                    expand.style.display = 'inline';
-                }
-
-                var mouseOut = function(){
-                    var shrink=this.getElementsByClassName('shrink')[0];
-                    var expand=this.getElementsByClassName('expand')[0];
-
-                    shrink.style.display = 'inline';
-                    expand.style.display = 'none';
-                }
-
-                for (var i = 0; i < links.length; i++) {
-                    links[i].addEventListener('mouseover', mouseOver, false);
-                    links[i].addEventListener('mouseout', mouseOut, false);
-                }
-        });
-    </script>
+    <link rel='stylesheet' href='storiesStyle.css'>
+    <script src='storiesJS.js'></script>
     <base target="_top">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
-
-
-#loader-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-}
-#loader {
-    display: block;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    width: 150px;
-    height: 150px;
-    margin: -75px 0 0 -75px;
-    border-radius: 50%;
-    border: 3px solid transparent;
-    border-top-color: #000a9b;
-
-    -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
-    animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
-
-    z-index: 1001;
-}
-
-#loader:before {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    border-radius: 50%;
-    border: 3px solid transparent;
-    border-top-color: #bdaa00;
-
-    -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
-    animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
-}
-
-    #loader:after {
-        content: "";
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        right: 15px;
-        bottom: 15px;
-        border-radius: 50%;
-        border: 3px solid transparent;
-        border-top-color: #ffffff;
-
-        -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
-          animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
-    }
-
-    @-webkit-keyframes spin {
-        0%   { 
-            -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-            -ms-transform: rotate(0deg);  /* IE 9 */
-            transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
-        }
-        100% {
-            -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-            -ms-transform: rotate(360deg);  /* IE 9 */
-            transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
-        }
-    }
-    @keyframes spin {
-        0%   { 
-            -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-            -ms-transform: rotate(0deg);  /* IE 9 */
-            transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
-        }
-        100% {
-            -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
-            -ms-transform: rotate(360deg);  /* IE 9 */
-            transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
-        }
-    }
-
-    #loader-wrapper .loader-section {
-        position: fixed;
-        top: 0;
-        width: 51%;
-        height: 100%;
-        background: #222222;
-        z-index: 1000;
-        -webkit-transform: translateX(0);  /* Chrome, Opera 15+, Safari 3.1+ */
-        -ms-transform: translateX(0);  /* IE 9 */
-        transform: translateX(0);  /* Firefox 16+, IE 10+, Opera */
-    }
-
-    #loader-wrapper .loader-section.section-left {
-        left: 0;
-    }
-
-    #loader-wrapper .loader-section.section-right {
-        right: 0;
-    }
-
-    /* Loaded */
-    .loaded #loader-wrapper .loader-section.section-left {
-        -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
-            -ms-transform: translateX(-100%);  /* IE 9 */
-                transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
-
-        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
-                transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
-    }
-
-    .loaded #loader-wrapper .loader-section.section-right {
-        -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
-            -ms-transform: translateX(100%);  /* IE 9 */
-                transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
-
--webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
-        transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
-    }
-    
-    .loaded #loader {
-        opacity: 0;
-        -webkit-transition: all 0.3s ease-out;  
-                transition: all 0.3s ease-out;
-    }
-    .loaded #loader-wrapper {
-        visibility: hidden;
-
-        -webkit-transform: translateY(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
-            -ms-transform: translateY(-100%);  /* IE 9 */
-                transform: translateY(-100%);  /* Firefox 16+, IE 10+, Opera */
-
-        -webkit-transition: all 0.3s 1s ease-out;  
-                transition: all 0.3s 1s ease-out;
-    }
-  
-    *{
-        box-sizing: border-box;
-    }
-
-
-    .text{
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-    #gallery-container::-webkit-scrollbar {
-        display: none;
-    }
-
-    .slideshow {
-        height:328px;
-        width: 80%;
-        position: relative;
-        float:right;
-        overflow: hidden;
-        transform: translate3d(0, 0, 0);
-    }
-    .images {
-        background: url(navyslides.png);
-        background-size: contain;
-        position: absolute;
-        left: 0;
-        top: 0;
-        height:328px;
-        width: 8190px;
-        height: 100%;
-        animation: slideshow 60s linear infinite;
-        transform: translate3d(0, 0, 0);
-    }
-    @keyframes slideshow {
-        100% { 
-            transform: translateX(-66.66666%);  
-        }
-    }
-
-    .modal-content{
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-
-    html.mobile{
-        scroll-snap-type: none;
-    }
-
-    .poppinsHeavy{
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-    }
-
-    .poppinsLight{
-        font-family: 'Poppins', sans-serif;
-        font-weight: 300;
-    }
-
-    .spacing{
-        line-height: 1.3em;
-    }
-
-    #titletext{
-        width: 500px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        text-align: left;
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-
-    .slideText{
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        width: 75%;
-        color: white;
-        float:right;
-        margin-right: 5%;
-    }
-
-    .slideTex{
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        width: 75%;
-        color: white;
-        float:right;
-        margin-right: 5%;
-    }
-
-    .slideText{
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        width: 75%;
-        color: white;
-        float:right;
-        margin-right: 5%;
-    }
-
-    .section {
-        scroll-snap-align: start;
-        width: 100%;
-        height: 100vh;
-        color: #F0EBD8;
-    }
-
-    body {
-        -ms-overflow-style: none; 
-    }
-
-    html{
-        scroll-snap-type: y mandatory; 
-        scroll-behavior: smooth;
-        font-size: 25px;
-    }
-
-
-    .fade-in-gallery{
-        opacity: 0;
-        transition: opacity 750ms ease-in-out;
-    }
-
-    .fade-in{
-        opacity: 0;
-        transition: opacity 750ms ease-in-out;
-    }
-    .fade-in.appear, .fade-in-gallery.appear{
-        opacity:1;
-    }
-
-    body, html{
-        background-color: #0D1321;
-    }
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 0 4px;
-        width: 80%;
-        margin-left: 20%;
-    }
-
-    /* Create four equal columns that sits next to each other */
-    .column {
-        flex: 25%;
-        max-width: 25%;
-        padding: 0 4px;
-        margin-bottom: 40px;
-    }
-
-    .column .element {
-        margin-top: 8px;
-        vertical-align: middle;
-        width: 100%;
-    }
-
-    .element{
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-        max-width: 100%;
-        height: auto;
-        cursor: pointer;
-    }
-
-    img{
-        max-width: 100%;
-    }
-
-    .bg {
-        /* The image used */
-        background-image: url("cover.jpg");
-
-        /* Full height */
-        height: 100vh;
-        position: relative;
-
-        /* Center and scale the image nicely */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        z-index: 20;
-        color: white;
-    }
-
-    .element:hover .image {
-        opacity: 0.9;
-        transform: scale(1.1);
-        transition-duration: 0.5s;
-    }
-
-    .element:hover .middle {
-        opacity: 1;
-    }
-
-    .text {
-        text-align: center;
-        font-size: 18px;
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -moz-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-    }
-
-    .image {
-        display: block;
-    }
-
-    #titleButton{
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        -webkit-transition: all 0.3s ease-in;
-        -moz-transition: all 0.3s ease-in;
-        -ms-transition: all 0.3s ease-in;
-         -o-transition: all 0.3s ease-in;
-            transition: all 0.3s ease-in;
-    }
-
-    #galleryButton{
-        color:black;
-    }
-
-    #galleryButton:hover{
-        transform: scale(1.1);
-        cursor: pointer;
-    }
-
-    #galleryButtonContainer, #titleButtonContainer{
-        margin: 0 auto;
-        position: absolute;
-        text-align: center;
-        width: 100%;
-        bottom: 120px;
-    }
-
-    #gallery-container{
-        padding-right: 15px;
-        width: 100%;
-        text-align: right;
-        height: 100vh;
-        overflow-y: scroll;
-        background-color: #597491;
-        padding-bottom: 100px;
-        display:none;
-    }
-    .mobile #gallery-container{
-        padding-right: 15px;
-        width: 100%;
-        text-align: right;
-        height: auto;
-        overflow-y: visible;
-        background-color: #597491;
-        padding-bottom: 100px;
-    }
-    #gallery{
-        -webkit-transition: opacity 0.7s ease-in;
-        -moz-transition: opacity 0.7s ease-in;
-        -ms-transition: opacity 0.7s ease-in;
-        -o-transition: opacity 0.7s ease-in;
-        transition: opacity 0.7s ease-in;
-    }
-
-
-    .btn-outline-primary{
-      color:#0D1321;
-      border-color:#0D1321;
-    }
-    .btn-outline-primary:hover{
-        color:#F0EBD8;
-        background-color:#0D1321;
-        border-color:#0D1321;
-    }
-    .btn-outline-primary.focus,.btn-outline-primary:focus{
-        box-shadow:0 0 0 .2rem rgba(13, 19, 33,0.5);
-    }
-
-    .btn-outline-primary.disabled,.btn-outline-primary:disabled{color:#0D1321;background-color:transparent}.btn-outline-primary:not(:disabled):not(.disabled).active,.btn-outline-primary:not(:disabled):not(.disabled):active,.show>.btn-outline-primary.dropdown-toggle{color:#fff;background-color:#0D1321;border-color:#0D1321}.btn-outline-primary:not(:disabled):not(.disabled).active:focus,.btn-outline-primary:not(:disabled):not(.disabled):active:focus,.show>.btn-outline-primary.dropdown-toggle:focus{box-shadow:0 0 0 .2rem #0D1321}
-
-
-    .btn-outline-info{
-      color:#F0EBD8;
-      border-color:#F0EBD8;
-    }
-    .btn-outline-info:hover{
-        color:#0D1321;
-        background-color:#F0EBD8;
-        border-color:#F0EBD8;
-    }
-    .btn-outline-info.focus,.btn-outline-info:focus{
-        box-shadow:0 0 0 .2rem rgba(240,235,216,0.5);
-    }
-
-    .btn-outline-info.disabled,.btn-outline-info:disabled{color:#F0EBD8;background-color:transparent}.btn-outline-info:not(:disabled):not(.disabled).active,.btn-outline-info:not(:disabled):not(.disabled):active,.show>.btn-outline-info.dropdown-toggle{color:#fff;background-color:#F0EBD8;border-color:#F0EBD8}.btn-outline-info:not(:disabled):not(.disabled).active:focus,.btn-outline-info:not(:disabled):not(.disabled):active:focus,.show>.btn-outline-info.dropdown-toggle:focus{box-shadow:0 0 0 .2rem #F0EBD8}
-
-    #gallery-intro{
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        width: 100%;
-        height: 100vh;
-        display: none;
-        align-items: center;
-        background-color: #3E5C76;
-    }
-
-    #gallery-intro div{
-        z-index: 100;
-    }
-
-    .modal-header{
-        font-size: 0.8em;
-    }
-
-    .modal-title{
-        font-size: 1.6em;
-    }
-
-    .close{
-        font-size: 1.8em
-    }
-
-    .modal-content{
-        font-size: 0.6em;
-    }
-
-    .texth1{
-        font-size: 1.8em;
-    }
-
-    .texth2{
-        font-size: 1.6em;
-    }
-
-    .texth3{
-        font-size: 1.3em;
-    }
-
-    .texth4{
-        font-size: 1em;
-    }
-
-    .texth5{
-        font-size: 0.8em;
-    }
-
-    .texth6{
-        font-size: 0.6em;
-    }
-
-    #gallery-intro div h4, #gallery-intro div h2{
-        text-align:left;
-        margin-left: 20%;
-        z-index: 100;
-    }
-    #gallery-intro div h2{
-        line-height: 1.6em;
-    }
-
-    #gallery-intro div h4{
-        line-height: 1.4em;
-    }
-
-    #donateContent{
-        width:60%;
-        margin: 0 auto;
-        color: #0D1321;
-        position: relative;
-    }
-
-    #textone, #texttwo{
-        -webkit-transition: opacity 0.8s ease-in;
-        -moz-transition: opacity 0.8s ease-in;
-        -ms-transition: opacity 0.8s ease-in;
-         -o-transition: opacity 0.8s ease-in;
-            transition: opacity 0.8s ease-in;
-        line-height: 1.5em;
-    }
-
-    #donateButton{
-        margin-top: 20px;
-        display:block;
-        -webkit-transition: opacity 0.5s ease-in;
-        -moz-transition: opacity 0.5s ease-in;
-        -ms-transition: opacity 0.5s ease-in;
-         -o-transition: opacity 0.5s ease-in;
-            transition: opacity 0.5s ease-in;
-    }
-
-    #information {
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        background-color: #1D2D44;
-        overflow-y: scroll;
-    }
-    #information h3{
-        position: relative;
-        z-index: 5;
-    }
-
-    ul {
-        list-style-type: none;
-        position: absolute;
-        bottom: 15px;
-        padding: 0;
-        width: 16px;
-    }
-    #donate{
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        width: 100%;
-        height: 100vh;
-        display: none;
-        align-items: center;
-        position: relative;
-        background-color: #F0E8BD;
-        text-align:left;
-    }
-
-    #introContainer{
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-
-    #introContainer div{
-        position: absolute;
-        width: 70%;
-        left: 50%;
-        margin-left: -35%;
-        top: 40%;
-    }
-
-    #introContainer div h3, #introContainer div h5{
-        line-height: 1.6em;
-    }
-
-    #introContainer img{
-        min-width: 1000px;
-        width: 100%;
-        opacity: 0.3;
-        position: absolute;
-        bottom: 0;
-    }
-
-
-    .expand{
-        color:black;
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-
-    .plus{
-        color: black;
-        z-index: 5;
-        position: absolute;
-    }
-
-    #plus-top-right{
-        position: absolute;
-        right:20px;
-        top:10px;
-    }
-
-    #plus-top-left{
-        position: absolute;
-        left:10px;
-        top:10px;
-    }
-    
-    #top-right{
-        width: 90px;
-        height: 90px;
-        position: absolute;
-        top: 0;
-        right:0;
-        background: white;
-        border-radius: 0 0 0 90px;
-        border-radius: 0 0 0 90px;
-        -moz-border-radius: 0 0 0 90px;
-        -webkit-border-radius: 0 0 0 90px;
-        transform-origin: 100% 0%;
-    }
-
-    #top-left{
-        width: 90px;
-        height: 90px;
-        position: absolute;
-        top: 0;
-        left:0;
-        background: white;
-        border-radius: 0 0 90px 0;
-        border-radius: 0 0 90px 0;
-        -moz-border-radius: 0 0 90px 0;
-        -webkit-border-radius: 0 0 90px 0;
-        transform-origin: 0% 0%;
-    }
-
-    .extLink{
-        -webkit-transition: opacity 0.6s ease-in;
-        -moz-transition: opacity 0.6s ease-in;
-        -ms-transition: opacity 0.6s ease-in;
-        -o-transition: opacity 0.6s ease-in;
-        transition: opacity 0.6s ease-in;
-        opacity: 0.5;
-    }
-
-    .extLink:hover{
-        opacity: 1;
-        transform: scale(1.2);
-    }
-
-    li div{
-        display: block;
-        color: #000;
-        background-color: #F0EBD8;
-        width: 16px;
-        height: 16px;
-        border-radius:50%;
-        margin-top: 5px;
-        text-decoration: none;
-        transition: 0.4s;
-        cursor:pointer;
-    }
-
-    li div.change{
-        background-color: #041641;
-    }
-
-    #timeline-intro{
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-
-    .modalimage{
-        margin-bottom: 10px;
-    }
-    .active{
-        background-color: #E9C46A;
-        color: white;
-        width: 24px;
-        height: 24px
-    }
-
-    /* Change the link color on hover */
-    li div:hover {
-        background-color: #E9C46A;
-        color: white;
-        width: 24px;
-        height: 24px
-    }
-
-    #teachers{
-        display: none;
-        align-items: center;
-        justify-content: flex-end;
-        background-color: #748CAB;
-    }
-
-    .expand{
-        display:none;
-    }
-
-    #sidebar{
-        margin-left:15px;
-        margin-top: 10px;
-        height: 100vh;
-        position: fixed;
-        top:0;
-        z-index: 2;
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-
-    #sidebar h1{
-        font-family: 'Poppins', sans-serif;
-        color:#F0EBD8;
-        transform: rotate(90deg);
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform-origin: 0 0;
-        position: absolute;
-        top: 5px;
-        left: 30px;
-        font-size:30px;
-        font-weight: 600;
-    }
-
-    #sidebar h1.change{
-        color:#0D1321;
-    }
-
-    .navText{
-        font-size: 18px;
-        margin-left: 5px;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-    }
-
-    .middle {
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        color: #fff;
-        padding: 15px;
-        -moz-transition: all 0.4s ease-in-out 0s;
-        -webkit-transition: all 0.4s ease-in-out 0s;
-        -ms-transition: all 0.4s ease-in-out 0s;
-        transition: all 0.4s ease-in-out 0s;
-    }
-
-    #first {
-        width: 100%;
-        height: 100vh;
-        top:0;
-        position: fixed;
-        color: white;
-        background-color: rgb(0, 0, 0, 0.6);
-        z-index: 100;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        display:none;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-
-    #first h3{
-        -moz-transition: all 0.8s ease-in;
-        -webkit-transition: all 0.8s ease-in;
-        -ms-transition: all 0.8s ease-in;
-        transition: all 0.8s ease-in;
-        opacity:0;
-    }
-
-    #backgroundVid {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        opacity:1;
-        min-width: 100%;
-        min-height: 100%;
-        -moz-transition: opacity 0s ease-in;
-        -webkit-transition: opacity 0s ease-in;
-        -ms-transition: opacity 0s ease-in;
-        transition: opacity 0s ease-in;
-    }
-
-    #gallery-intro img{
-        position: absolute;
-        bottom: 0;
-        right: 10%;
-        height: 80%;
-        z-index: 1;
-    }
-
-    #donate img{
-        width: 50%;
-        position: absolute;
-        bottom: 0px;
-        right: 0;
-        opacity: 0.8;
-        min-width: 300px;
-    }
-
-    #timelinetitle{
-        position: absolute;
-        top: 30px;
-        line-height: 40px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 300;
-    }
-    #timelinetitle::after{
-        content: '';
-        height: 2px;
-        width: 102%;
-        background-color: #7a8aa8;
-        position: absolute;
-        left: 50%;
-        margin-top: 40px;
-        margin-left: -51%;
-    }
-
-    .storymodal p{
-        width: 96%;
-        margin: 0 2%;
-        color: rgb(243, 243, 243);
-    }
-
-    .storymodal .modal-header, .storymodal span{
-        color: rgb(243, 243, 243); 
-    }
-
-    .storymodal img{
-        width: 80%;
-        margin: 0 10% 20px;
-    }
-
-    .timelinemodal h1{
-        text-align: center;
-        width: 100%;
-        color: rgb(255, 255, 145);
-    }
-
-    .timelinemodal h6{
-        color: rgb(243, 243, 243);
-    }
-    @media screen and (max-width: 700px) {
-        #firstpanel::before, #firstpanel::after, #firstpanel .content{
-            top: 400px;
-        }
-        #secondpanel::before, #secondpanel::after, #secondpanel .content{
-            top: 700px;
-        }
-
-        #thirdpanel::before, #thirdpanel::after, #thirdpanel .content{
-            top: 1000px;
-        }
-
-        #fourthpanel::before, #fourthpanel::after, #fourthpanel .content{
-            top: 1300px;
-        }
-
-        #fifthpanel::before, #fifthpanel::after, #fifthpanel .content{
-            top: 1600px;
-        }
-
-        #sixthpanel::before, #sixthpanel::after, #sixthpanel .content{
-            top: 1900px;
-        }
-    }
-    
-    #timeline{
-        top: 0;
-        margin: 0 auto;
-        height: 2100px;
-        width: 30px;
-    }
-
-    #information{
-        overflow:visible;
-        height: 2200px;
-    }
-
-    #vertical {
-        content: '';
-        position: absolute;
-        width: 2px;
-        background-color: #7a8aa8;
-        top: 150px;
-        left:70px;
-        bottom: 0;
-        height: 1900px;
-        margin-left: -1px;
-    }
-
-    #vertical::before{
-        content: '';
-        position: absolute;
-        width: 22px;
-        height: 22px;
-        background-color: #7a8aa8;
-        top: 0px;
-        left: 50%;
-        border-radius: 50%;
-        margin-left: -11px;
-    }
-    #vertical::after{
-        content: '';
-        position: absolute;
-        width: 22px;
-        height: 22px;
-        background-color: #7a8aa8;
-        top: 1900px;
-        left: 50%;
-        border-radius: 50%;
-        margin-left: -11px;
-        margin-bottom: 150px;
-    }
-
-
-    .container::before{
-        content:'';
-        height: 2px;
-        width: 40px;
-        position: absolute;
-        background-color: #7a8aa8;
-        margin-top: 0px;
-        left: 70px;
-    }
-    .container::after{
-        content: '';
-        position: absolute;
-        height: 18px;
-        border-radius: 50%;
-        width: 18px;
-        background-color: #7a8aa8;
-        left: 110px;
-        margin-left: -9px;
-        margin-top: -9px;
-    }
-
-    .container .content{
-        position: absolute;
-        margin-left: 0px;
-        margin-top: calc(-40% - 0.75em);
-        width: 40%;
-        min-width: 200px;
-        min-height: 200px;
-        left: 50%;
-        margin-left: -20%;
-        bottom: 0;
-        text-align: center;
-    }
-
-    .timelinetext{
-        text-align: left;
-        color: rgb(248, 248, 248);
-    }
-
-    .content .header{
-        width: 40%;
-        font-family: 'Poppins', sans-serif;
-        color: rgb(255, 255, 145);
-        font-weight:600;
-        width: 100%;
-        font-size: 20px;
-    }
-
-    .content img{
-        width: 100%;
-        height: auto;
-        cursor: pointer;
-    }
-
-    .content img:hover {
-        transform: scale(1.03);
-        transition-duration: 0.1s;
-    }
-
-    @media screen and (max-width: 900px) {
-        html{
-            scroll-snap-type: y mandatory; 
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-        .bg {
-            background-image: url("cover.jpg");
-
-            height: 100vh;
-            position: relative;
-
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            z-index: 20;
-            color: white;
-        }
-
-        .column {
-            flex: 50%;
-            max-width: 50%;
-        }
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 0 4px;
-            width: 80%;
-            margin-left: 20%;
-        }
-        .slideshow {
-            height: 230px;
-        }
-        #donateContent{
-            width:80%;
-            margin: 0 0 0 15%;
-        }
-        #donateContent h1{
-            font-size: 22px;
-        }
-        #donateContent h5{
-            font-size: 18px;
-        }
-        #gallery-intro div h4,#gallery-intro div h2{
-            text-align:center;
-            margin: 0 auto;
-        }
-        #gallery-intro img{
-            opacity: 0.8;
-        }
-        #titletext{
-            width: 60%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-        .images {
-            animation: slideshow 90s linear infinite;
-        }
-
-        #donate img{
-            bottom: 15%;
-        }
-    }
-
-    @media only screen and (min-width: 700px) {
-        #information{
-            overflow: visible;
-            height: 100vh;
-            position: relative;
-        }
-
-        #timelinetitle{
-            position: absolute;
-            top: 30px;
-            line-height: 40px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 300;
-        }
-        #timelinetitle::after{
-            content: '';
-            height: 2px;
-            width: 120%;
-            background-color: #7a8aa8;
-            position: relative;
-            left: 50%;
-            top: auto;
-            margin-top: 60px;
-            margin-left: -60%;
-        }
-
-        #timeline{
-            height: calc(100% - 90px);
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            top: auto;
-        }
-
-        #vertical {
-            content: '';
-            position: relative;
-            width: 90%;
-            background-color: #7a8aa8;
-            top: 50%;
-            left: 50%;
-            margin-left: -45%;
-            height: 2px;
-            margin-top: -1px;
-        }
-
-
-        #vertical::before{
-            width: 16px;
-            height: 16px;
-            top:-8px;
-            left: 0px;
-        }
-        #vertical::after{
-            width: 16px;
-            height: 16px;
-            top: -8px;
-            right: 0px;
-            left: auto;
-        }
-
-        .container.above::before{
-            content: '';
-            position: absolute;
-            height: 40px;
-            width: 2px;
-            background-color: #7a8aa8;
-            top: 50%;
-            margin-top: -40px;
-            left: auto;
-        }
-        .container.above::after{
-            height: 10px;
-            border-radius: 50%;
-            width: 10px;
-            margin-left: -4px;
-            background-color: #7a8aa8;
-            top: calc(50% - 45px);
-            margin-top: 0px;
-            left: auto;
-        }
-
-        .container.above .content{
-            width: 200px;
-            height: 280px;
-            top: calc(50% - 325px);
-            margin-left: -100px;
-            margin-top: 0;
-            left: auto;
-        }
-
-        .container.under::before{
-            content: '';
-            position: absolute;
-            height: 40px;
-            width: 2px;
-            background-color: #7a8aa8;
-            top: 50%;
-            margin-top: 0;
-            left: auto;
-        }
-        .container.under::after{
-            height: 10px;
-            border-radius: 50%;
-            width: 10px;
-            margin-left: -6px;
-            background-color: #7a8aa8;
-            top: calc(50% + 40px);
-            margin-top: 0px;
-            left: auto;
-        }
-
-        .container.under .content{
-            width: 200px;
-            height: 280px;
-            top: calc(50% + 59px);
-            margin-left: -100px;
-            margin-top: 0;
-            left: auto;
-        }
-
-        .content img{
-            height: 200px;
-            width: 200px;
-            cursor: pointer;
-        }
-
-        #firstpanel .content, #firstpanel::after, #firstpanel::before{
-            left:15%;
-        }
-
-        #secondpanel .content, #secondpanel::after, #secondpanel::before{
-            left:29%;
-        }
-
-        #thirdpanel .content, #thirdpanel::after, #thirdpanel::before{
-            left:43%;
-        }
-
-        #fourthpanel .content, #fourthpanel::after, #fourthpanel::before{
-            left:57%;
-        }
-
-        #fifthpanel .content, #fifthpanel::after, #fifthpanel::before{
-            left:71%;
-        }
-
-        #sixthpanel .content, #sixthpanel::after, #sixthpanel::before{
-            left:85%;
-        }
-
-    }
-
-    .phaseOne {
-        display:none;
-    }
-
-  </style>
-<script>
-    $( document ).ready(function() {
-        
-        var w = $(window).width();
-        if(w<650){
-            $('html').addClass('mobile');
-            /**
-            $('#sidebar ul').css('display', 'none');
-            document.getElementById('teachers').scrollIntoView();
-            $('.slideText h2').text('Please use a computer or a tablet for the best viewing experience.');
-            $('.slideText h5').text('We thank you for your help, care, and support!')
-            $('.main').css('overflow-y', 'hidden');
-            $('body').addClass('loaded');
-            **/
-        }
-        /**
-    let video = document.querySelector('video');
-    let observer = new IntersectionObserver((entries, observer) => { 
-        entries.forEach(entry => {
-            if(entry.intersectionRatio<0.5){
-                video.pause();
-            }
-            else {
-                document.getElementById('backgroundVid').currentTime=0;
-                video.play();
-            }
-
-        });
-    }, {threshold: 0.5});
-    observer.observe(video) ;**/
-
-    const options = {
-        rootMargin: '0px',
-        threshold: 0.8
-    }
-    
-    const galleryOptions = {
-        rootMargin: '0px',
-        threshold: 0
-    }
-
-    const gallery = document.querySelector("#gallery");
-
-    const appearGallery = new IntersectionObserver(function(entries, appearGallery){
-        entries.forEach(entry => {
-            if(!entry.isIntersecting){
-                entry.target.classList.remove('appear');
-            }
-            else{
-                entry.target.classList.add('appear');
-                $( "#1" ).removeClass('active');
-                $( "#2" ).removeClass('active');
-                $( "#3" ).addClass('active');
-                $( "#4" ).removeClass('active');
-                $( "#5" ).removeClass('active');
-            }
-        })
-    }, galleryOptions);
-
-    appearGallery.observe(gallery);
-    
-
-    const faders = document.querySelectorAll(".fade-in");
-
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
-        entries.forEach(entry => {
-            if(!entry.isIntersecting){
-                entry.target.classList.remove('appear');
-                return;
-            }
-            else{
-                entry.target.classList.add('appear');
-                if(entry.target.id=='introText'){
-                    $( "#1" ).addClass('active');
-                    $( "#2" ).removeClass('active');
-                    $( "#3" ).removeClass('active');
-                    $( "#4" ).removeClass('active');
-                    $( "#5" ).removeClass('active');
-                    $( "#6" ).removeClass('active');
-                }
-                if(entry.target.id=='timelinetitle'){
-                    $( "#1" ).removeClass('active');
-                    $( "#2" ).addClass('active');
-                    $( "#3" ).removeClass('active');
-                    $( "#4" ).removeClass('active');
-                    $( "#5" ).removeClass('active');
-                    $( "#6" ).removeClass('active');
-                }
-                if(entry.target.id=='gallery-intro-fade'){
-                    $( "#1" ).removeClass('active');
-                    $( "#2" ).removeClass('active');
-                    $( "#3" ).addClass('active');
-                    $( "#4" ).removeClass('active');
-                    $( "#5" ).removeClass('active');
-                    $( "#5" ).removeClass('active');
-                }
-                if(entry.target.id=='teachers-fade'){
-                    $( "#1" ).removeClass('active');
-                    $( "#2" ).removeClass('active');
-                    $( "#3" ).removeClass('active');
-                    $( "#4" ).removeClass('active');
-                    $( "#5" ).addClass('active');
-                    $( "#6" ).removeClass('active');
-                }
-                if(entry.target.id=='donateContent'){
-                    $('#sidebar h1').addClass('change');
-                    $( "#1" ).addClass('change');
-                    $( "#2" ).addClass('change');
-                    $( "#3" ).addClass('change');
-                    $( "#4" ).addClass('change');
-                    $( "#5" ).addClass('change');
-
-                    $( "#1" ).removeClass('active');
-                    $( "#2" ).removeClass('active');
-                    $( "#3" ).removeClass('active');
-                    $( "#4" ).removeClass('active');
-                    $( "#5" ).removeClass('active');
-                    $( "#6" ).addClass('active');
-                }
-                else{
-                    $('#sidebar h1').removeClass('change');
-                    $( "#1" ).removeClass('change');
-                    $( "#2" ).removeClass('change');
-                    $( "#3" ).removeClass('change');
-                    $( "#4" ).removeClass('change');
-                    $( "#5" ).removeClass('change');
-                }
-            }
-        })
-    }, options)
-
-    faders.forEach(fader =>{
-        appearOnScroll.observe(fader);
-    })
-});
-</script>
 </head>
 <body>
     <div id='first' style='background-color: rgba(0, 0, 0, 0.6)'>
@@ -1468,34 +65,17 @@
                     The following report details key events over the past two years that have led up to the current situation, as well as how TASSEL families have been affected.
                 </h5>
             </div>
-            <img src='intro.PNG'>
+            <img src='assets/intro.PNG'>
         </div>
     </div>
     <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#0D1321,#1D2D44);'></div>
     <div class='phaseOne section' id='information' style='position: relative;'>
-        <!--
-        <video id="backgroundVid">
-            <source id='video' src="final.mp4" type="video/mp4">
-        </video>
-        <div id='typewriter1'>
-            <h1>
-                Joji Tastugi - TASSEL Founder
-            </h1>
-        </div>
-        <div id='gradientbackground'>
-        </div>
-        <img id='shun' src='shun clear.png'>
-
-        <h3>
-            Information slide
-        </h3>
-        <img id='timeline' src='Timeline.jpg'>-->
         <h1 class='fade-in texth2' id='timelinetitle'>TASSEL CRISIS TIMELINE</h1>
         <div id='timeline'>
             <div id='vertical'></div>
             <div class="container above" id='firstpanel' data-toggle="modal" data-target="#modal16">
                 <div class="content">
-                    <img src='APRIL 2019 WEBSITE-01.png'>
+                    <img src='assets/APRIL 2019 WEBSITE-01.png'>
                     <h1 class='header texth3'>
                         APRIL 2019
                     </h1>
@@ -1503,7 +83,7 @@
             </div>
             <div class="container under" id="secondpanel" data-toggle="modal" data-target="#modal17">
                 <div class="content">
-                    <img src='DECEMBER 2019 WEBSITE-01.png'>
+                    <img src='assets/DECEMBER 2019 WEBSITE-01.png'>
                     <h1 class='header'>
                         DECEMBER 2019
                     </h1>
@@ -1511,7 +91,7 @@
             </div>
             <div class="container above" id="thirdpanel" data-toggle="modal" data-target="#modal18">
                 <div class="content">
-                    <img src='JANUARY 2020 WEBSITE-01.png'>
+                    <img src='assets/JANUARY 2020 WEBSITE-01.png'>
                     <h1 class='header'>
                         JANUARY 2020
                     </h1>
@@ -1519,7 +99,7 @@
             </div>
             <div class="container under" id="fourthpanel" data-toggle="modal" data-target="#modal19">
                 <div class="content">
-                    <img src='MARCH 2020 WEBSITE-01.png'>
+                    <img src='assets/MARCH 2020 WEBSITE-01.png'>
                     <h1 class='header'>
                         MARCH 2020
                     </h1>
@@ -1527,7 +107,7 @@
             </div>
             <div class="container above" id="fifthpanel" data-toggle="modal" data-target="#modal20">
                 <div class="content">
-                    <img src='APRIL 2020 WEBSITE-01.png'>
+                    <img src='assets/APRIL 2020 WEBSITE-01.png'>
                     <h1 class='header'>
                         APRIL 2020 - PRESENT
                     </h1>
@@ -1535,7 +115,7 @@
             </div>
             <div class="container under" id="sixthpanel" data-toggle="modal" data-target="#modal21">
                 <div class="content">
-                    <img src='MAY 2020 WEBSITE-01.png'>
+                    <img src='assets/MAY 2020 WEBSITE-01.png'>
                     <h1 class='header'>
                         MAY 2020 - PRESENT
                     </h1>
@@ -1556,7 +136,7 @@
                 </svg>
             </h4>
         </div>
-        <img class='fade-in' src='shun clear.png'>
+        <img class='fade-in' src='assets/shun clear.png'>
         <div id='galleryButtonContainer'>
             <a onclick="document.getElementById('gallery-container').scrollIntoView();">
                 <svg id='galleryButton' width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="#F0EBD8" xmlns="http://www.w3.org/2000/svg">
@@ -1570,7 +150,7 @@
         <div class="row fade-in-gallery" id='gallery'>
             <div class="column">
                 <div class='element' data-toggle="modal" data-target="#modal1">
-                    <img class='image' src="exhibit1.jpg" onload='increment()'>
+                    <img class='image' src="assets/exhibit1.jpg" onload='increment()'>
                     <div class="middle">
                         <div class="text">
                             <p>Sokheng</p>
@@ -1578,19 +158,19 @@
                     </div>
                 </div>
                 <div class='element' data-toggle="modal" data-target="#modal2">
-                    <img class='image' src="exhibit2.jpg" onload='increment()'>
+                    <img class='image' src="assets/exhibit2.jpg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Vann</div>
                     </div>
                 </div>
                 <div class='element' data-toggle="modal" data-target="#modal3">
-                    <img class='image' src="exhibit3.jpeg" onload='increment()'>
+                    <img class='image' src="assets/exhibit3.jpeg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Piseth</div>
                     </div>
                 </div>
                 <div class='element' data-toggle="modal" data-target="#modal4">
-                    <img class='image' src="exhibit4.jpg" onload='increment()'>
+                    <img class='image' src="assets/exhibit4.jpg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Sophea</div>
                     </div>
@@ -1598,25 +178,25 @@
             </div>
             <div class="column">
                 <div class='element' data-toggle="modal" data-target="#modal5">
-                    <img class='image' src="exhibit5.JPG" onload='increment()'>
+                    <img class='image' src="assets/exhibit5.JPG" onload='increment()'>
                     <div class="middle">
                         <div class="text">Sina</div>
                     </div>
                 </div>
                 <div class='element' data-toggle="modal" data-target="#modal6">
-                    <img class='image' src="exhibit6.jpg" onload='increment()'>
+                    <img class='image' src="assets/exhibit6.jpg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Chantha</div>
                     </div>
                 </div>
                 <div class='element' data-toggle="modal" data-target="#modal7">
-                    <img class='image' src="exhibit7.jpeg" onload='increment()'>
+                    <img class='image' src="assets/exhibit7.jpeg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Komsot and Kreynich</div>
                     </div>
                 </div>
                 <div class='element' data-toggle="modal" data-target="#modal8">
-                    <img class='image' src="exhibit8.jpg" onload='increment()'>
+                    <img class='image' src="assets/exhibit8.jpg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Dary</div>
                     </div>
@@ -1624,19 +204,19 @@
             </div>
             <div class="column">
                 <div class='element' data-toggle="modal" data-target="#modal9">
-                    <img class='image' src="exhibit9.jpg" onload='increment()'>
+                    <img class='image' src="assets/exhibit9.jpg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Thors</div>
                     </div>
                 </div>
                 <div class='element' data-toggle="modal" data-target="#modal10">
-                    <img class='image' src="exhibit10.jpg" onload='increment()'>
+                    <img class='image' src="assets/exhibit10.jpg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Sreyna</div>
                     </div>
                 </div>
                 <div class='element' data-toggle="modal" data-target="#modal11">
-                    <img class='image' src="exhibit11.PNG" onload='increment()'>
+                    <img class='image' src="assets/exhibit11.PNG" onload='increment()'>
                     <div class="middle">
                         <div class="text">Sovath</div>
                     </div>
@@ -1644,25 +224,25 @@
             </div>
             <div class="column">
                 <div class='element' data-toggle="modal" data-target="#modal12">
-                    <img class='image' src="exhibit12.jpg" onload='increment()'>
+                    <img class='image' src="assets/exhibit12.jpg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Reaksa</div>
                     </div>
                 </div>
                 <div class='element' data-toggle="modal" data-target="#modal13">
-                    <img class='image' src="exhibit13.jpeg" onload='increment()'>
+                    <img class='image' src="assets/exhibit13.jpeg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Vicheka</div>
                     </div>
                 </div>
                 <div class='element' data-toggle="modal" data-target="#modal14">
-                    <img class='image' src="exhibit14.jpg" onload='increment()'>
+                    <img class='image' src="assets/exhibit14.jpg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Paneth</div>
                     </div>
                 </div>
                 <div class='element' data-toggle="modal" data-target="#modal15">
-                    <img class='image' src="exhibit15.jpg" onload='increment()'>
+                    <img class='image' src="assets/exhibit15.jpg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Kakada</div>
                     </div>
@@ -1691,7 +271,7 @@
     </div>
     <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#748CAB,#F0E8BD);'></div>
     <div class='phaseOne section' id='donate'>
-        <img src='villagers.png'>
+        <img src='assets/villagers.png'>
         <div class='fade-in' id='donateContent'>
             <h5 class='texth5' id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
             <h2 class='texth2' id='texttwo'>They need your help.</h2>
@@ -1709,7 +289,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='exhibit1.jpg' onload='increment()'>
+                    <img class='modalimage' src='assets/exhibit1.jpg' onload='increment()'>
                     <p>
                         Sokheng is eight years old. He lives with his younger brother and parents.  His parents grow corn and other crops on their farm to eat and sell.  But this year due to the drought they have given up on their farm and now survive by catching fish and picking leaves along the river. The entire family also spends almost all day at the river digging for precious gems.  If they are lucky they may find one piece of ruby to sell for $300 but like many other diggers they may dig all year  and not find anything. They clearly do not have enough to eat, and are struggling to make ends meet.
                     </p>
@@ -1727,7 +307,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='exhibit2.jpg' onload='increment()'>
+                    <img class='modalimage' src='assets/exhibit2.jpg' onload='increment()'>
                     <p>
                         Vann is a 53-year old farmer. Because of the drought, he started to hunt for wild pigs, deer, and porcupines at night. Three weeks before our teachers found him, he had stepped on a landmine and lost his right foot while hunting. He told our teachers that, after stepping on the landmine, he crawled all night until he was discovered by a neighbor. The neighbor told us that when he found Vann crawling, Vann was holding on to an axe because there were tigers in the area. Vann has two children and a wife who will soon give birth to their third child.
                     </p>
@@ -1745,7 +325,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='exhibit3.jpeg' onload='increment()'>
+                    <img class='modalimage' src='assets/exhibit3.jpeg' onload='increment()'>
                     <p>
                         Piseth is a seven-year old boy. Last year, his father was travelling on a cart that lost its balance and flipped over. His father died.  His mother then ran away. Piseth now lives with his grandparents.The grandmother normally supports the family by picking and selling leaves but with the drought, there are no leaves to sell. She now goes door-to-door to neighbors' houses to help clean dishes in exchange for food.</p>
                 </div>
@@ -1762,7 +342,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='exhibit4.jpg' onload='increment()'>
+                    <img class='modalimage' src='assets/exhibit4.jpg' onload='increment()'>
                     <p>
                         Sophea is a 14-year girl who, together with her 18-year old brother, Daruk, attend TASSEL. Their parents used to live two hours away near the Thai border and travel illegally into Thailand daily to earn income as fruit pickers. However, with the border closing due to COVID, both parents lost their jobs and are back in their village, living with Sophea, Daruk and their grandmother. Daruk found a job as a cart loading laborer but his $60/month of income is not enough to support a family of five.
                     </p>
@@ -1780,7 +360,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='exhibit5.JPG' onload='increment()'>
+                    <img class='modalimage' src='assets/exhibit5.JPG' onload='increment()'>
                     <p>
                         Sina is a 14-year old TASSEL student who lives with her mother, cousin, grandmother and 10-year old cousin. Her father abandoned the family before Sina was born. The family lives in a rental room where they pay $12.50/month to their landlord. Sina's mother used to earn money by playing a Khmer musical instrument during the wedding season and working in restaurants during the off-season, but lost both jobs due to the pandemic. They are in great distress as a result of their financial instability.
                     </p>
@@ -1798,7 +378,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='modal6.jpg' onload='increment()'>
+                    <img class='modalimage' src='assets/modal6.jpg' onload='increment()'>
                     <p>
                         Chantha, a 12-year old TASSEL student lives with her parents, a 5-year old sister and a 3-year old brother. The family lives near a town where Chantha's parents are employed at a restaurant: her mother as a dishwasher, and her father as a security guard. Both parents' jobs were reduced to half-time due to COVID-19 and their combiined income has been cut to $100/month which is not enough for a family of five to survive.
                     </p>
@@ -1816,7 +396,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='exhibit7.jpeg' onload='increment()'>
+                    <img class='modalimage' src='assets/exhibit7.jpeg' onload='increment()'>
                     <p>
                         Grandpa Komsot is 71 and lives with his wife, Grandma Sreynich. Grandma Sreynich has a mental disorder. In 1985, while working as a woodcutter in the mountains, Grandpa Komsot stepped on a landmine and lost his left foot. They have three sons who are all poor. The eldest used to send $15/month but can no longer help due to COVID-19.  The second son is disabled after falling from the second floor as a construction worker and has not been able to support them. The third son also has not been helping them after running away from debt collectors. Grandma Sreynich used to earn $4/month by picking and selling recylcable cans and bottles, but with COVID-19, the Thai border has closed and the recyclables cannot be sold. Other villagers pity them and have been helping them, but the villagers are also in trouble due to COVID-19 and the drought.
                     </p>
@@ -1834,7 +414,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='exhibit8.jpg' onload='increment()'>
+                    <img class='modalimage' src='assets/exhibit8.jpg' onload='increment()'>
                     <p>
                         Dary (13) and brother Dara (15) are strong students at TASSEL. They, along with four other siblings, are supported by parents who sell incense at the local pagoda. However, due to COVID-19, most worshippers stopped attending the pagoda and their parents' income has dropped dramatically. The father now travels on a very old motorcycle to other villages and spmetimes even to other provicnes to find people to buy the inceses, but even so, their income is 70% lower than compared to that of pre-COVID days. The family of eight does not have enough to eat.
                     </p>
@@ -1852,7 +432,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='exhibit9.jpg' onload='increment()'>
+                    <img class='modalimage' src='assets/exhibit9.jpg' onload='increment()'>
                     <p>
                         Thors (14) and his sister (6) live with their grandmother and cousins. Thors' parents are laborers in Thailand but with the border closed due to COVID-19, the parents have had to return to their village in Cambodia and are now jobless. The parents are persevering by growing vegetables behind their house, but they have not been able grow enough to support the family.
                     </p>
@@ -1870,7 +450,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='exhibit10.jpg' onload='increment()'>
+                    <img class='modalimage' src='assets/exhibit10.jpg' onload='increment()'>
                     <p>
                         Sreyna is 7. Her father was a construction worker in Thailand but lost his job due to the border closing after the virus outbreak. Her mother picked and sold leaves but due to the drought, she has not been able to generate enough income. Sreyna, her parents, and her six siblings do not have enough. The mother was crying when our teachers found them.
                     </p>
@@ -1888,7 +468,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='modal11.PNG' onload='increment()'>
+                    <img class='modalimage' src='assets/modal11.PNG' onload='increment()'>
                     <p>
                         Sovath is 53 years old. He and his wife have five children aged 4, 6, 10, 13, and 15. They earn $90/month finding firewood in the forest to sell. Now with COVID-19 and the drought, finding and selling firewood have become more competitive. Sovath and his wife now must go into areas where others won't go––areas where the landmines have not yet been cleared. Most do not go into such areas because of the obvious dangers, but Sovath and his wife say that they must go to avoid starvation.
                     </p>
@@ -1906,7 +486,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='exhibit12.jpg' onload='increment()'>
+                    <img class='modalimage' src='assets/exhibit12.jpg' onload='increment()'>
                     <p>
                         Reaksa is ten years old. He is often sick and the parents sold the family land so that he can get medical help. His 16-year old sister was a laborer in Thailand but because of COVID-19, the border has closed and she is now back, unemployed, and lives with the rest of the family. Reaksa lives also with a 12-year old sister, an 8-year old sister, an 81-year old grandmother, and his parents. The parents are farmers but with the drought, they have almost no income. On the day our teachers met this family, Reaksa had just found some bees. He and his family had never caught bees before but were happy that they had found something to eat.
                     </p>
@@ -1924,7 +504,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='exhibit13.jpeg' onload='increment()'>
+                    <img class='modalimage' src='assets/exhibit13.jpeg' onload='increment()'>
                     <p>
                         Vicheka is a twelve year old boy. He has two older sisters aged 14 and 17. Vicheka's parents are sick so the older sisters earn money for the family by cutting grass and also puling casssavas. The sisters' combined income was $60/month, but with COVID-19 and the drought, their income is now almost zero. They live in a house on their neighbor's land. The house has no walls and no protection from the rain, sun and wind. They are surviving by finding leaves to eat.
                     </p>
@@ -1942,7 +522,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='modal14.jpg' onload='increment()'>
+                    <img class='modalimage' src='assets/modal14.jpg' onload='increment()'>
                     <p>
                         Paneth lives with his younger brother and parents in the forest. Because his family has always been poor, he has been working since he was small and although he is 13, he is still in the 3rd grade. Due to COVID-19, his parents lost their jobs as mango pickers following the closure of the Thai mango market. Three days before our teachers found this family, the parents were in the forest trying to find mushrooms to eat. Paneth was at an abandoned mango farm picking manoges for his younger brother when a cobra bit him. A neighbor saw this and killed the cobra. Although three days had passed since the incident, the family did not have the $20 to transport him to a city hospital so Paneth was still untreated.  Our teachers found and paid for transportation to bring him to a city hospital four hours away where he was then hospitalized and treated. He has since been discharged and is now healthy, but the family still does not have enough food.
                     </p>
@@ -1960,7 +540,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='exhibit15.jpg' onload='increment()' onload='increment()'>
+                    <img class='modalimage' src='assets/exhibit15.jpg' onload='increment()' onload='increment()'>
                     <p>
                         Kakada is a 12-year old TASSEL student. His mother killed herself, then his father abandoned him and his older siblings. He now lives with his 55 year old grandaunt who has a small shop, but because of COVID-19 she earns only $1/day. Kakada's older brother was a factory worker in Thailand and used to send $40/month to support Kakada and his grandaunt. However, due to the virus outbreak, the brother lost his job and is unable to send any money. Kakada's older sister is poor, married with children and also cannot support Kakada.
                     </p>
@@ -1977,7 +557,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img style='width: 20%; min-width: 110px; margin-right: 10px; margin-top: 20px; float: left;' src='april 2019– timeline.png'>
+                    <img style='width: 20%; min-width: 110px; margin-right: 10px; margin-top: 20px; float: left;' src='assets/april 2019– timeline.png'>
                     <h1 class='text-center texth2 poppinsHeavy'>APRIL 2019</h1>
                     <h6 class='texth3 text-center poppinsLight'>
                         Cambodia begins to suffer from a severe and prolonged drought.
@@ -2006,7 +586,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img style='width: 48%; margin-left: 2%; min-width: 180px; margin-top: 20px; float: right;' src='december 2019– timeline.png'>
+                    <img style='width: 48%; margin-left: 2%; min-width: 180px; margin-top: 20px; float: right;' src='assets/december 2019– timeline.png'>
                     <h1 class='text-center texth2 poppinsHeavy'>DECEMBER 2019</h1>
                     <h6 style='margin-bottom: 0.4em' class='texth3 text-center poppinsLight'>
                         The drought devastates farms and fisheries.
@@ -2033,7 +613,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img style='width: 30%; min-width: 100px; float: left;' src='january 2020– timeline.png'>
+                    <img style='width: 30%; min-width: 100px; float: left;' src='assets/january 2020– timeline.png'>
                     <h1 class='text-center texth2 poppinsHeavy'>JANUARY 2020</h1>
                     <h6 class='texth3 text-center poppinsLight' style='margin-bottom: 0.4em'>
                         Cambodia reports first COVID-19 cases.
@@ -2067,7 +647,7 @@ country.
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img style='width: 40%; min-width: 140px; margin-left: 10px; float:right;' src='march 2020– timeline.png'>
+                    <img style='width: 40%; min-width: 140px; margin-left: 10px; float:right;' src='assets/march 2020– timeline.png'>
                     <h1 class='text-center texth2 poppinsHeavy'>MARCH 2020</h1>
                     <h6 class='texth3 poppinsLight' style='margin-bottom: 0.4em'>
                         The Cambodian government closes schools and prohibits most gatherings. Travel is also restricted as COVID-19 cases rise. 
@@ -2092,7 +672,7 @@ As of now, the government plans on reopening public schools in November.
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img style='width: 60%; float:right;' src='april 2020– timeline.png'>
+                    <img style='width: 60%; float:right;' src='assets/april 2020– timeline.png'>
                     <h1 class='text-center texth2 poppinsHeavy'>APRIL 2020 - PRESENT</h1>
                     <h6 class='texth3 poppinsLight' style='margin-bottom: 0.4em'>
                         Unemployment across the country rises.
@@ -2119,7 +699,7 @@ Farmers are forced to borrow loans to make ends meet, and many are left with hug
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img style='width: 40%; margin-bottom: 24px; min-width: 120px; float:left;' src='may 2020– timeline.png'>
+                    <img style='width: 40%; margin-bottom: 24px; min-width: 120px; float:left;' src='assets/may 2020– timeline.png'>
                     <h1 class='text-center texth2 poppinsHeavy'>MAY 2020 - PRESENT</h1>
                     <h6 class='texth3 text-center poppinsLight' style='margin-bottom: 0.4em'>
                         TASSEL provides aid to as many as possible. 
