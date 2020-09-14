@@ -89,9 +89,10 @@ $( document ).ready(function() {
                 entry.target.classList.add('appear');
                 $( "#1" ).removeClass('active');
                 $( "#2" ).removeClass('active');
-                $( "#3" ).addClass('active');
-                $( "#4" ).removeClass('active');
+                $( "#3" ).removeClass('active');
+                $( "#4" ).addClass('active');
                 $( "#5" ).removeClass('active');
+                $( "#6" ).removeClass('active');
             }
         })
     }, galleryOptions);

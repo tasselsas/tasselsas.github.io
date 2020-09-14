@@ -59,10 +59,10 @@
         <div id='introContainer'>
             <div id='introText' class='fade-in'>
                 <h3 class='texth3'>
-                    The ongoing drought and the COVID-19 pandemic have revealed an urgent need to provide for the Cambodians.
+                    The combined effects of the Covid-19 pandemic and an ongoing severe drought have devastated the lives of Cambodia’s rural poor and created an urgent need.
                 </h3>
-                <h5 class='texth5'>
-                    The following report details key events over the past two years that have led up to the current situation, as well as how TASSEL families have been affected.
+                <h5 class='texth4'>
+                    The combined effects of the Covid-19 pandemic and an ongoing severe drought have devastated the lives of Cambodia’s rural poor and created an urgent need.
                 </h5>
             </div>
             <img src='assets/intro.PNG'>
@@ -131,7 +131,7 @@
                 How have Cambodians been affected?
             </h2>
             <h4 class='texth4'>
-                Click on each panel to find out more. 
+                Click on each photo of the TASSEL students below to find out more. 
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hand-index-thumb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M6.75 1a.75.75 0 0 0-.75.75V9.5a.5.5 0 0 1-.854.354l-2.41-2.411a.517.517 0 0 0-.809.631l2.512 4.185 1.232 2.465a.5.5 0 0 0 .447.276h6.302a.5.5 0 0 0 .434-.252l1.395-2.442a2.5 2.5 0 0 0 .317-.991l.272-2.715a1 1 0 0 0-.995-1.1H13.5v1a.5.5 0 1 1-1 0V7.154a4.208 4.208 0 0 0-.2-.26c-.187-.222-.368-.383-.486-.43-.124-.05-.392-.063-.708-.039a4.844 4.844 0 0 0-.106.01V8a.5.5 0 1 1-1 0V5.986c0-.167-.073-.272-.15-.314a1.657 1.657 0 0 0-.448-.182c-.179-.035-.5-.04-.816-.027l-.086.004V8a.5.5 0 1 1-1 0V1.75A.75.75 0 0 0 6.75 1zM8.5 4.466V1.75a1.75 1.75 0 1 0-3.5 0v6.543L3.443 6.736A1.517 1.517 0 0 0 1.07 8.588l2.491 4.153 1.215 2.43A1.5 1.5 0 0 0 6.118 16h6.302a1.5 1.5 0 0 0 1.302-.756l1.395-2.441a3.5 3.5 0 0 0 .444-1.389l.272-2.715a2 2 0 0 0-1.99-2.199h-.582a5.114 5.114 0 0 0-.195-.248c-.191-.229-.51-.568-.88-.716-.364-.146-.846-.132-1.158-.108l-.132.012a1.26 1.26 0 0 0-.56-.642 2.634 2.634 0 0 0-.738-.288c-.31-.062-.739-.058-1.05-.046l-.048.002zm2.094 2.025z"/>
                 </svg>
@@ -159,7 +159,7 @@
                     </div>
                 </div>
                 <div class='element' data-toggle="modal" data-target="#modal2">
-                    <img class='image' style='filter: blur(4px); -webkit-filter: blur(4px);' src="assets/exhibit2.jpg" onload='increment()'>
+                    <img class='image' style='filter: blur(6px); -webkit-filter: blur(6px);' src="assets/exhibit2.jpg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Vann</div>
                     </div>
@@ -274,10 +274,13 @@
     <div class='phaseOne section' id='donate'>
         <img src='assets/villagers.png'>
         <div class='fade-in' id='donateContent'>
-            <h5 class='texth5' id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations to survive in the midst of crisis.</h5>
-            <h2 class='texth2' id='texttwo'>They need your help.</h2>
+            <h5 class='texth5'><strong>Now, more than ever, TASSEL families and teachers are depending on donations to survive in the midst of crisis.</strong></h5>
+            <h2 class='texth2'>They need your help.</h2>
             <span id='donateButton'><a href='https://www.tasselcambodia.org/donate-1' target="_blank"><button type="button" class="btn btn-lg btn-outline-primary mt-1 texth5">Donate</button></a></span>
         </div>
+        <h1 class='texth6 poppinsLight'>
+            Developed by Kohei Sanno Illustrations by Megan Cabaero
+        </h1>
     </div>
 </body>
     <div class="modal fade storymodal" id="modal1" tabindex="-1" role="dialog">
@@ -292,7 +295,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='assets/exhibit1.jpg' onload='increment()'>
                     <p>
-                        Sokheng is eight years old. He lives with his younger brother and parents.  His parents grow corn and other crops on their farm to eat and sell.  But this year due to the drought they have given up on their farm and now survive by catching fish and picking leaves along the river. The entire family also spends almost all day at the river digging for precious gems.  If they are lucky they may find one piece of ruby to sell for $300 but like many other diggers they may dig all year  and not find anything. They clearly do not have enough to eat, and are struggling to make ends meet.
+                        Sokheng is eight years old. He lives with his younger brother and parents. Usually, his parents grow corn and other crops on their farm to eat and sell.  But this year due to the drought they have given up on their farm and now survive by catching fish and picking leaves along the river. The entire family also spends almost all day at the river digging for precious gems.  If they are lucky they may find one piece of ruby to sell for $300 but like many other diggers they may dig all year  and not find anything. They clearly do not have enough to eat, and are struggling to make ends meet.
                     </p>
                 </div>
             </div>
@@ -308,8 +311,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p id='censor'>This image may be sensitive. Click to reveal full image.</p>
-                    <img onclick='$("#censoredimage").removeClass("censored"); $("#censor").hide();' class='censored modalimage' id='censoredimage' src='assets/exhibit2.jpg' onload='increment()'>
+                    <div onclick='$("#censoredimage").removeClass("censored"); $("#censor").hide();'>
+                        <p id='censor'>This image may be sensitive. Click to reveal full image.</p>
+                        <img class='censored modalimage' id='censoredimage' src='assets/exhibit2.jpg' onload='increment()'>
+                    </div>
                     <p>
                         Vann is a 53-year old farmer. Because of the drought, he started to hunt for wild pigs, deer, and porcupines at night. Three weeks before our teachers found him, he had stepped on a landmine and lost his right foot while hunting. He told our teachers that, after stepping on the landmine, he crawled all night until he was discovered by a neighbor. The neighbor told us that when he found Vann crawling, Vann was holding on to an axe because there were tigers in the area. Vann has two children and a wife who will soon give birth to their third child.
                     </p>
@@ -346,7 +351,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='assets/exhibit4.jpg' onload='increment()'>
                     <p>
-                        Sophea is a 14-year girl who, together with her 18-year old brother, Daruk, attend TASSEL. Their parents used to live two hours away near the Thai border and travel illegally into Thailand daily to earn income as fruit pickers. However, with the border closing due to COVID, both parents lost their jobs and are back in their village, living with Sophea, Daruk and their grandmother. Daruk found a job as a cart loading laborer but his $60/month of income is not enough to support a family of five.
+                        Sophea is a 14-year-old girl who attends TASSEL, together with her 18-year old brother Daruk. Their parents used to live two hours away near the Thai border and travel illegally into Thailand daily to earn income as fruit pickers. However, with the border closing due to COVID, both parents lost their jobs and are back in their village, living with Sophea, Daruk and their grandmother. Daruk found a job as a cart-loading laborer but his $60/month income is not enough to support a family of five.
                     </p>
                 </div>
             </div>
@@ -382,7 +387,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='assets/modal6.jpg' onload='increment()'>
                     <p>
-                        Chantha, a 12-year old TASSEL student lives with her parents, a 5-year old sister and a 3-year old brother. The family lives near a town where Chantha's parents are employed at a restaurant: her mother as a dishwasher, and her father as a security guard. Both parents' jobs were reduced to half-time due to COVID-19 and their combiined income has been cut to $100/month which is not enough for a family of five to survive.
+                        Chantha, a 12-year old TASSEL student, lives with her parents, a 5-year old sister and a 3-year old brother. The family lives near a town where Chantha's parents are employed at a restaurant: her mother as a dishwasher, and her father as a security guard. Both parents’ jobs were reduced to half-time due to COVID-19, cutting their combined income to $100/month. This is not enough to enable the family of five to survive.
                     </p>
                 </div>
             </div>
@@ -400,7 +405,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='assets/exhibit7.jpeg' onload='increment()'>
                     <p>
-                        Grandpa Komsot is 71 and lives with his wife, Grandma Sreynich. Grandma Sreynich has a mental disorder. In 1985, while working as a woodcutter in the mountains, Grandpa Komsot stepped on a landmine and lost his left foot. They have three sons who are all poor. The eldest used to send $15/month but can no longer help due to COVID-19.  The second son is disabled after falling from the second floor as a construction worker and has not been able to support them. The third son also has not been helping them after running away from debt collectors. Grandma Sreynich used to earn $4/month by picking and selling recylcable cans and bottles, but with COVID-19, the Thai border has closed and the recyclables cannot be sold. Other villagers pity them and have been helping them, but the villagers are also in trouble due to COVID-19 and the drought.
+                        Grandpa Komsot is 71 and lives with his wife, Grandma Sreynich. Grandma Sreynich has a mental disorder. In 1985, while working as a woodcutter in the mountains, Grandpa Komsot stepped on a landmine and lost his left foot. They have three sons who are all poor. The eldest used to send $15/month but can no longer help due to COVID-19. The second son is disabled after falling from the second floor as a construction worker and has not been able to support them. The third son has run away from debt collectors and has not been able to help his parents either. Grandma Sreynich used to earn $4/month by picking and selling recyclable cans and bottles, but with COVID-19, the Thai border has closed and the recyclables cannot be sold. Other villagers pity them and have been helping them, but the villagers are also in trouble due to COVID-19 and the drought.
                     </p>
                 </div>
             </div>
@@ -418,7 +423,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='assets/exhibit8.jpg' onload='increment()'>
                     <p>
-                        Dary (13) and brother Dara (15) are strong students at TASSEL. They, along with four other siblings, are supported by parents who sell incense at the local pagoda. However, due to COVID-19, most worshippers stopped attending the pagoda and their parents' income has dropped dramatically. The father now travels on a very old motorcycle to other villages and spmetimes even to other provicnes to find people to buy the inceses, but even so, their income is 70% lower than compared to that of pre-COVID days. The family of eight does not have enough to eat.
+                        Dary (13) and brother Dara (15) are strong students at TASSEL. They, along with four other siblings, are supported by parents who sell incense at the local pagoda. However, due to COVID-19, most worshippers stopped attending the pagoda and their parents' income has dropped dramatically. The father now travels on a very old motorcycle to other villages and sometimes even to other provinces to find people to buy the incense. Despite this, their income is still down by 70%, and they do not have enough to feed their family of eight.
                     </p>
                 </div>
             </div>
@@ -508,7 +513,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='assets/exhibit13.jpeg' onload='increment()'>
                     <p>
-                        Vicheka is a twelve year old boy. He has two older sisters aged 14 and 17. Vicheka's parents are sick so the older sisters earn money for the family by cutting grass and also puling casssavas. The sisters' combined income was $60/month, but with COVID-19 and the drought, their income is now almost zero. They live in a house on their neighbor's land. The house has no walls and no protection from the rain, sun and wind. They are surviving by finding leaves to eat.
+                        Vicheka is a twelve year old boy. He has two older sisters aged 14 and 17. Vicheka's parents are sick so the older sisters earn money for the family by cutting grass and harvesting cassavas for others.. The sisters' combined income was $60/month, but with COVID-19 and the drought, their income is now almost zero. They live in a house on their neighbor's land. The house has no walls and no protection from the rain, sun and wind. They are surviving by finding leaves to eat.
                     </p>
                 </div>
             </div>
@@ -544,7 +549,7 @@
                 <div class="modal-body">
                     <img class='modalimage' src='assets/exhibit15.jpg' onload='increment()' onload='increment()'>
                     <p>
-                        Kakada is a 12-year old TASSEL student. His mother killed herself, then his father abandoned him and his older siblings. He now lives with his 55 year old grandaunt who has a small shop, but because of COVID-19 she earns only $1/day. Kakada's older brother was a factory worker in Thailand and used to send $40/month to support Kakada and his grandaunt. However, due to the virus outbreak, the brother lost his job and is unable to send any money. Kakada's older sister is poor, married with children and also cannot support Kakada.
+                        Kakada is a 12-year old TASSEL student. His mother killed herself, then his father abandoned him and his older siblings. He now lives with his 55 year old grandaunt who has a small shop, but because of COVID-19 she earns only $1/day. Kakada's older brother was a factory worker in Thailand and used to send $40/month to support Kakada and his grandaunt. However, due to the virus outbreak, the brother lost his job and is unable to send any money. Kakada’s older, married sister is also poor and cannot help as she is already struggling to support her own family.
                     </p>
                 </div>
             </div>
@@ -565,9 +570,9 @@
                         Cambodia begins to suffer from a severe and prolonged drought.
                     </h6>
                     <h6 class='texth3 text-center spacing'>
-                        Monsoon rains fail to come, and foreign company dam construction disrupts water supplies from farms and fisheries. Food insecurity heightens as supplies of
+                        Monsoon rains fail to come, and foreign company dam construction disrupts water supplies to farms and fisheries. Food insecurity heightens as supplies of
                         rice and fish, two main food staples of
-                        Cambodia, are threatened.
+                        Cambodia, decline drastically.
                     </h6>
                     <h6 class='texth3 text-center spacing'>
                         Many families are forced to scavenge
@@ -594,7 +599,7 @@
                         The drought devastates farms and fisheries.
                     </h6>
                     <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
-                        Around 45,000 hectares (think 45,000 baseball fields) for rice paddies are damaged. 
+                        Around 45,000 hectares (think 45,000 baseball fields) of rice paddies are damaged. 
                     </h6>
                     <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
                         More than 60% of TASSEL families and farmers and many in Kampong Puoy (one of TASSEL's sponsored villages) are fishermen.                         
@@ -656,9 +661,9 @@ country.
                     </h6>
                     <h6 class='texth3 spacing' style='margin-bottom: 0.2em'>
 
-Many TASSEL guardians lose their jobs because of border closures, and students cannot continue their education due to a lack of resources (eg. wifi, computers, etc.).
+Many TASSEL family wage-earners lose their jobs because of border closures, and students cannot continue their education due to a lack of resources (eg. wifi, computers, etc.).
 
-As of now, the government plans on reopening public schools in November. 
+As of now, the government plans to reopen in November, but there is no education available for poor students in the meantime. 
 
                     </h6>
                 </div>
@@ -681,11 +686,11 @@ As of now, the government plans on reopening public schools in November.
                     </h6>
                     <h6 class='texth3 spacing' style='margin-bottom: 0.2em'>
 
-By early July, 45,000 tourist sector workers are unemployed. Cambodia's econonmy relies on international tourism, and the predicted loss of USD 3 billion by the end of this year projects disastrous prospects for the country's near future.
+By early July, 45,000 tourist sector workers are unemployed. Cambodia's economy relies on international tourism, and the predicted loss of USD 3 billion by the end of this year projects disastrous prospects for the country's near future.
 
 150,000 factory workers are affected by the closure of 400+ retail factories. 
 
-Farmers are forced to borrow loans to make ends meet, and many are left with huge debts. 
+Farmers are forced to take out loans to make ends meet, leaving many with huge debts they cannot repay. 
 
                     </h6>
                 </div>
@@ -707,15 +712,10 @@ Farmers are forced to borrow loans to make ends meet, and many are left with hug
                         TASSEL provides aid to as many as possible. 
                     </h6>
                     <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
-TASSEL teachers visit all 2,476 TASSEL children and their families to understand the effects of COVID-19 and the drought on their lives. 
+                        In response to the crisis, TASSEL teachers have made personal visits to all 2,476 TASSEL students and their families to ensure their survival.
                     </h6>
                     <h6 class='texth3 text-center spacing' style='margin-bottom: 0.2em'>
-                        The teachers also visit families in their hometowns. About 2000 out of 3000 of the families
-                        visited were deemed in need of emergency
-                        support. Through your help, TASSEL was able to
-                        provide food and care to every single one of
-                        them over the summer. However, the
-                        drought and pandemic are not over yet. 
+                        Our teachers were also alerted to struggling families in their own hometowns. Approximately 2000 out of the 3000 families visited were in dire need of emergency aid.  Because of your support, TASSEL was able to provide food and care for every single one of them over the summer.  However, the drought and pandemic are not yet over.
                     </h6>
                 </div>
             </div>

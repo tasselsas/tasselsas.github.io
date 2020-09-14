@@ -496,19 +496,10 @@ img{
 }
 
 #donateContent{
-    width:60%;
+    width:50%;
     margin: 0 auto;
     color: #0D1321;
     position: relative;
-}
-
-#textone, #texttwo{
-    -webkit-transition: opacity 0.8s ease-in;
-    -moz-transition: opacity 0.8s ease-in;
-    -ms-transition: opacity 0.8s ease-in;
-        -o-transition: opacity 0.8s ease-in;
-        transition: opacity 0.8s ease-in;
-    line-height: 1.5em;
 }
 
 #donateButton{
@@ -582,52 +573,6 @@ ul {
 .expand{
     color:black;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.plus{
-    color: black;
-    z-index: 5;
-    position: absolute;
-}
-
-#plus-top-right{
-    position: absolute;
-    right:20px;
-    top:10px;
-}
-
-#plus-top-left{
-    position: absolute;
-    left:10px;
-    top:10px;
-}
-
-#top-right{
-    width: 90px;
-    height: 90px;
-    position: absolute;
-    top: 0;
-    right:0;
-    background: white;
-    border-radius: 0 0 0 90px;
-    border-radius: 0 0 0 90px;
-    -moz-border-radius: 0 0 0 90px;
-    -webkit-border-radius: 0 0 0 90px;
-    transform-origin: 100% 0%;
-}
-
-#top-left{
-    width: 90px;
-    height: 90px;
-    position: absolute;
-    top: 0;
-    left:0;
-    background: white;
-    border-radius: 0 0 90px 0;
-    border-radius: 0 0 90px 0;
-    -moz-border-radius: 0 0 90px 0;
-    -webkit-border-radius: 0 0 90px 0;
-    transform-origin: 0% 0%;
 }
 
 .extLink{
@@ -861,8 +806,8 @@ li div:hover {
 }
 
 #censoredimage.censored{
-    filter: blur(4px);
-    -webkit-filter: blur(4px);
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
 }
 
 
@@ -1008,6 +953,14 @@ li div:hover {
     transition-duration: 0.1s;
 }
 
+#donate h1{
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    z-index: 50;
+    color: rgb(92, 92, 92);
+}
+
 @media screen and (max-width: 900px) {
     html{
         scroll-snap-type: y mandatory; 
@@ -1042,15 +995,24 @@ li div:hover {
     .slideshow {
         height: 230px;
     }
-    #donateContent{
-        width:80%;
-        margin: 0 0 0 15%;
-    }
-    #donateContent h1{
+    #donateContent h2{
         font-size: 22px;
+        margin-bottom: 20%;
+        -webkit-transition: opacity 0.8s ease-in;
+        -moz-transition: opacity 0.8s ease-in;
+        -ms-transition: opacity 0.8s ease-in;
+            -o-transition: opacity 0.8s ease-in;
+            transition: opacity 0.8s ease-in;
+        line-height: 1.5em;
     }
     #donateContent h5{
         font-size: 18px;
+        -webkit-transition: opacity 0.8s ease-in;
+        -moz-transition: opacity 0.8s ease-in;
+        -ms-transition: opacity 0.8s ease-in;
+            -o-transition: opacity 0.8s ease-in;
+            transition: opacity 0.8s ease-in;
+        line-height: 1.5em;
     }
     #gallery-intro div h4,#gallery-intro div h2{
         text-align:center;
