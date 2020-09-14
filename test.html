@@ -158,7 +158,7 @@
                     </div>
                 </div>
                 <div class='element' data-toggle="modal" data-target="#modal2">
-                    <img class='image' src="assets/exhibit2.jpg" onload='increment()'>
+                    <img class='image' style='filter: blur(4px); -webkit-filter: blur(4px);' src="assets/exhibit2.jpg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Vann</div>
                     </div>
@@ -216,7 +216,7 @@
                     </div>
                 </div>
                 <div class='element' data-toggle="modal" data-target="#modal11">
-                    <img class='image' src="assets/exhibit11.PNG" onload='increment()'>
+                    <img class='image' src="assets/exhibit11.jpeg" onload='increment()'>
                     <div class="middle">
                         <div class="text">Sovath</div>
                     </div>
@@ -273,7 +273,7 @@
     <div class='phaseOne section' id='donate'>
         <img src='assets/villagers.png'>
         <div class='fade-in' id='donateContent'>
-            <h5 class='texth5' id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations in order to <strong>live</strong>.</h5>
+            <h5 class='texth5' id='textone'>Now, more than ever, TASSEL families and teachers are depending on donations to survive in the midst of crisis.</h5>
             <h2 class='texth2' id='texttwo'>They need your help.</h2>
             <span id='donateButton'><a href='https://www.tasselcambodia.org/donate-1' target="_blank"><button type="button" class="btn btn-lg btn-outline-primary mt-1 texth5">Donate</button></a></span>
         </div>
@@ -307,7 +307,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img class='modalimage' src='assets/exhibit2.jpg' onload='increment()'>
+                    <p id='censor'>This image may be sensitive. Click to reveal full image.</p>
+                    <img onclick='$("#censoredimage").removeClass("censored"); $("#censor").hide();' class='censored modalimage' id='censoredimage' src='assets/exhibit2.jpg' onload='increment()'>
                     <p>
                         Vann is a 53-year old farmer. Because of the drought, he started to hunt for wild pigs, deer, and porcupines at night. Three weeks before our teachers found him, he had stepped on a landmine and lost his right foot while hunting. He told our teachers that, after stepping on the landmine, he crawled all night until he was discovered by a neighbor. The neighbor told us that when he found Vann crawling, Vann was holding on to an axe because there were tigers in the area. Vann has two children and a wife who will soon give birth to their third child.
                     </p>

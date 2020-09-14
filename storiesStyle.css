@@ -834,6 +834,29 @@ li div:hover {
     margin: 0 10% 20px;
 }
 
+#censor{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 0;
+    width: 70%;
+    font-size: 18px;
+    z-index: 15;
+}
+
+#censoredimage{
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+#censoredimage.censored{
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+}
+
+
 .timelinemodal h1{
     text-align: center;
     width: 100%;
