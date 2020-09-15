@@ -89,9 +89,9 @@
     height: 100%;
     background: #222222;
     z-index: 1000;
-    -webkit-transform: translateX(0);  /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform: translateX(0);  /* IE 9 */
-    transform: translateX(0);  /* Firefox 16+, IE 10+, Opera */
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
 }
 
 #loader-wrapper .loader-section.section-left {
@@ -144,6 +144,7 @@
 
 .text{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 100%;
 }
 #gallery-container::-webkit-scrollbar {
     display: none;
@@ -949,7 +950,7 @@ li div:hover {
 }
 
 .content img:hover {
-    transform: scale(1.03);
+    transform: scale(1.08);
     transition-duration: 0.1s;
 }
 
@@ -1047,11 +1048,12 @@ li div:hover {
 
     #timelinetitle{
         position: absolute;
-        top: 30px;
+        top: 20px;
         line-height: 40px;
         font-family: 'Poppins', sans-serif;
         font-weight: 300;
     }
+
 
     #timeline{
         height: calc(100% - 90px);
@@ -1098,6 +1100,7 @@ li div:hover {
         margin-top: -40px;
         left: auto;
     }
+    
     .container.above::after{
         height: 10px;
         border-radius: 50%;
@@ -1112,7 +1115,7 @@ li div:hover {
     .container.above .content{
         width: 200px;
         height: 280px;
-        top: calc(50% - 325px);
+        top: calc(50% - 310px);
         margin-left: -100px;
         margin-top: 0;
         left: auto;
@@ -1132,7 +1135,7 @@ li div:hover {
         height: 10px;
         border-radius: 50%;
         width: 10px;
-        margin-left: -6px;
+        margin-left: -4px;
         background-color: #7a8aa8;
         top: calc(50% + 40px);
         margin-top: 0px;
