@@ -280,7 +280,6 @@ body, html{
     flex: 25%;
     max-width: 25%;
     padding: 0 4px;
-    margin-bottom: 40px;
 }
 
 .column .element {
@@ -354,21 +353,29 @@ img{
         transition: all 0.3s ease-in;
 }
 
-#galleryButton{
+.arrowButton{
     color:black;
 }
 
-#galleryButton:hover{
+.arrowButton:hover{
     transform: scale(1.1);
     cursor: pointer;
 }
 
-#galleryButtonContainer, #titleButtonContainer{
+.arrowButtonContainer{
     margin: 0 auto;
     position: absolute;
     text-align: center;
     width: 100%;
     bottom: 120px;
+}
+
+.arrowButtonContainer2{
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 10px;
 }
 
 #gallery-container{
@@ -757,7 +764,7 @@ li div:hover {
 
 #information h3{
     position: absolute;
-    top: 80px;
+    top: 70px;
     line-height: 40px;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
@@ -1023,7 +1030,7 @@ li div:hover {
         opacity: 0.8;
     }
     #titletext{
-        width: 60%;
+        width: 50%;
         position: absolute;
         top: 50%;
         left: 50%;

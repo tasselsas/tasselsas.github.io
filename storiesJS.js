@@ -78,7 +78,7 @@ $( document ).ready(function() {
         threshold: 0
     }
 
-    const gallery = document.querySelector("#gallery");
+    const gallery = document.querySelectorAll(".column");
 
     const appearGallery = new IntersectionObserver(function(entries, appearGallery){
         entries.forEach(entry => {
@@ -97,7 +97,9 @@ $( document ).ready(function() {
         })
     }, galleryOptions);
 
-    appearGallery.observe(gallery);
+    gallery.forEach(col =>{
+        appearGallery.observe(col);
+    })
 
 
     const faders = document.querySelectorAll(".fade-in");

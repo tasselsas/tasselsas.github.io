@@ -49,7 +49,7 @@
             <h1 class='texth1'>TASSEL 2020</h1>
             <h4 class='texth4'>Effects of COVID-19 and the Drought</h4>
         </div>
-        <div id='titleButtonContainer'>
+        <div class='arrowButtonContainer'>
             <a onclick='start()'>
                 <button id='titleButton' type="button" class="btn btn-lg btn-outline-info mt-1 texth4">Click to Start</button>
             </a>
@@ -138,9 +138,9 @@
             </h4>
         </div>
         <img class='fade-in' src='assets/shun clear.png'>
-        <div id='galleryButtonContainer'>
+        <div class='arrowButtonContainer'>
             <a onclick="document.getElementById('gallery-container').scrollIntoView();">
-                <svg id='galleryButton' width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="#F0EBD8" xmlns="http://www.w3.org/2000/svg">
+                <svg class='arrowButton' width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="#F0EBD8" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
                 </svg>
             </a>
@@ -148,8 +148,8 @@
     </div>
     <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#3E5C76,#597491);'></div>
     <div class='phaseOne section' id='gallery-container'>
-        <div class="row fade-in-gallery" id='gallery'>
-            <div class="column">
+        <div class="row" id='gallery'>
+            <div class="column fade-in-gallery">
                 <div class='element' data-toggle="modal" data-target="#modal1">
                     <img class='image' src="assets/exhibit1.jpg" onload='increment()'>
                     <div class="middle">
@@ -187,7 +187,7 @@
                     </div>
                 </div>
             </div>
-            <div class="column">
+            <div class="column fade-in-gallery">
                 <div class='element' data-toggle="modal" data-target="#modal5">
                     <img class='image' src="assets/exhibit5.JPG" onload='increment()'>
                     <div class="middle">
@@ -225,7 +225,7 @@
                     </div>
                 </div>
             </div>
-            <div class="column">
+            <div class="column fade-in-gallery">
                 <div class='element' data-toggle="modal" data-target="#modal9">
                     <img class='image' src="assets/exhibit9.jpg" onload='increment()'>
                     <div class="middle">
@@ -254,7 +254,7 @@
                     </div>
                 </div>
             </div>
-            <div class="column">
+            <div class="column fade-in-gallery" style='margin-bottom: 40px;'>
                 <div class='element' data-toggle="modal" data-target="#modal12">
                     <img class='image' src="assets/exhibit12.jpg" onload='increment()'>
                     <div class="middle">
@@ -295,7 +295,7 @@
         </div>
     </div>
     <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#597491,#748CAB);'></div>
-    <div class='phaseOne section' id='teachers'>
+    <div class='phaseOne section' id='teachers' style='position: relative;'>
         <div class='fade-in' id='teachers-fade' style='z-index: 0;'>
             <div class='slideText'>
                 <h2 class='texth2'>What has TASSEL been doing?</h2>
@@ -311,6 +311,13 @@
                     of love from you. As the need for help, love, and support increases day by day, they have been working tirelessly to ensure that those needs are met.
                 </h5>
             </div>
+        </div>
+        <div class='arrowButtonContainer2'>
+            <a onclick="document.getElementById('donate').scrollIntoView();">
+                <svg class='arrowButton' width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-chevron-compact-down" fill="#F0EBD8" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
+                </svg>
+            </a>
         </div>
     </div>
     <div class='phaseOne' style='display: none; height:100px;  background-image: linear-gradient(#748CAB,#F0E8BD);'></div>
