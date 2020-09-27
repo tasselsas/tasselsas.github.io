@@ -577,6 +577,10 @@ ul {
     bottom: 0;
 }
 
+#december-text{
+    margin-top: 15px;
+    width: 60%;
+}
 
 .expand{
     color:black;
@@ -969,6 +973,23 @@ li div:hover {
     color: rgb(92, 92, 92);
 }
 
+@media screen and (max-width: 990px) {
+    #december-text{
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #donate img{
+        width:180%;
+        opacity: 0.4;
+    }
+
+    #donateContent{
+        width: 75%;
+    }
+}
+
 @media screen and (max-width: 900px) {
     html{
         scroll-snap-type: y mandatory; 
@@ -1036,7 +1057,7 @@ li div:hover {
         left: 50%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-    }
+    }g
     .images {
         animation: slideshow 90s linear infinite;
     }
